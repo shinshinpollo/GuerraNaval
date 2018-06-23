@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 
 public class Principal extends JFrame{
-    
+    //Se crear los labels
     JLabel JL1_1 = new JLabel();
     JLabel JL2_1 = new JLabel();
     JLabel JL3_1 = new JLabel();
@@ -31,9 +31,11 @@ public class Principal extends JFrame{
     JLabel JLI_1 = new JLabel();
     JLabel JLJ_1 = new JLabel();
     
+    //Se crean los botones de seleccion
     JButton JBSeleccionarBarco1 = new JButton();
     JButton JBSeleccionarBarco2 = new JButton();
 
+    //Se crean los botones de la matiz
     JButton JBA1_1 = new JButton();
     JButton JBA2_1 = new JButton();
     JButton JBA3_1 = new JButton();
