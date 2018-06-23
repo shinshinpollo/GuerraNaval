@@ -282,6 +282,7 @@ public class Principal extends JFrame{
     
     
     public Principal(){
+        //llamamos el constructor
         constructor(); 
     }
 
