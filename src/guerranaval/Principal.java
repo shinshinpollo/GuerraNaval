@@ -363,19 +363,19 @@ public class Principal extends JFrame{
         JLAmetralladora1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
 
         JLMisil1.setText("");
-        JLMisil1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png"));
+        JLMisil1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png").getImage().getScaledInstance(48, 16, Image.SCALE_DEFAULT)));
         
         JLBombaNuclear1.setText("");
-        JLBombaNuclear1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png"));
+        JLBombaNuclear1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png").getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT)));
         
         JLAmetralladora2.setText("");
-        JLAmetralladora2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png"));
+        JLAmetralladora2.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
         
         JLMisil2.setText("");
-        JLMisil2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png"));
+        JLMisil2.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png").getImage().getScaledInstance(48, 16, Image.SCALE_DEFAULT)));
         
         JLBombaNuclear2.setText("");
-        JLBombaNuclear2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png"));
+        JLBombaNuclear2.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png").getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT)));
         
         JBSeleccionarBarco1.setText("Seleccionar");
         JBSeleccionarBarco2.setText("Seleccionar");
@@ -1635,7 +1635,13 @@ public class Principal extends JFrame{
         
         JBSeleccionarBarco1.reshape(50, 315, 200, 25);
         
-        JLAmetralladora1.reshape(275, 135, 50, 50);
+        JLAmetralladora1.reshape(285, 75, 50, 50);
+        JLMisil1.reshape(285, 125, 50, 50);
+        JLBombaNuclear1.reshape(285, 175, 50, 50);
+        
+        JBAmetralladora1.reshape(340, 75, 50, 50);
+        JBMisil1.reshape(340, 125, 50, 50);
+        JBBombaNuclear1.reshape(340, 175, 50, 50);
         
         JL1_2.reshape(425, 15, 25, 25);
         JL2_2.reshape(450, 15, 25, 25);
@@ -1770,6 +1776,14 @@ public class Principal extends JFrame{
         JBJ10_2.reshape(650, 265, 25, 25);
         
         JBSeleccionarBarco2.reshape(450, 315, 200, 25);
+        
+        JLAmetralladora2.reshape(685, 75, 50, 50);
+        JLMisil2.reshape(685, 125, 50, 50);
+        JLBombaNuclear2.reshape(685, 175, 50, 50);
+        
+        JBAmetralladora2.reshape(740, 75, 50, 50);
+        JBMisil2.reshape(740, 125, 50, 50);
+        JBBombaNuclear2.reshape(740, 175, 50, 50);
     
         ActivarJugador1(false);
         ActivarJugador2(false);
