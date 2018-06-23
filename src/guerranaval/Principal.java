@@ -1,6 +1,7 @@
 
 package guerranaval;
 
+import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -31,9 +32,29 @@ public class Principal extends JFrame{
     JLabel JLI_1 = new JLabel();
     JLabel JLJ_1 = new JLabel();
     
+    //Label para arma de jugador 1
+    JLabel JLAmetralladora1 = new JLabel();
+    JLabel JLMisil1 = new JLabel();
+    JLabel JLBombaNuclear1 = new JLabel();
+    
+    //Label para arma de jugador 2
+    JLabel JLAmetralladora2 = new JLabel();
+    JLabel JLMisil2 = new JLabel();
+    JLabel JLBombaNuclear2 = new JLabel();
+    
     //Se crean los botones de seleccion
     JButton JBSeleccionarBarco1 = new JButton();
     JButton JBSeleccionarBarco2 = new JButton();
+    
+    //Armas jugador 1
+    JButton JBAmetralladora1 = new JButton();
+    JButton JBMisil1 = new JButton();
+    JButton JBBombaNuclear1 = new JButton();
+    
+    //Armas jugador 2
+    JButton JBAmetralladora2 = new JButton();
+    JButton JBMisil2 = new JButton();
+    JButton JBBombaNuclear2 = new JButton();
 
     //Se crean los botones de la matiz
     JButton JBA1_1 = new JButton();
@@ -336,6 +357,24 @@ public class Principal extends JFrame{
         JLH_2.setText("H");
         JLI_2.setText("I");
         JLJ_2.setText("J");
+        
+        JLAmetralladora1.setText("");
+        JLAmetralladora1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png"));
+        
+        JLMisil1.setText("");
+        JLMisil1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png"));
+        
+        JLBombaNuclear1.setText("");
+        JLBombaNuclear1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png"));
+        
+        JLAmetralladora2.setText("");
+        JLAmetralladora2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png"));
+        
+        JLMisil2.setText("");
+        JLMisil2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png"));
+        
+        JLBombaNuclear2.setText("");
+        JLBombaNuclear2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\BombaNuclear.png"));
         
         JBSeleccionarBarco1.setText("Seleccionar");
         JBSeleccionarBarco2.setText("Seleccionar");
@@ -1310,6 +1349,14 @@ public class Principal extends JFrame{
         
         this.add(JBSeleccionarBarco1);
         
+        this.add(JLAmetralladora1);
+        this.add(JLMisil1);
+        this.add(JLBombaNuclear1);
+        
+        this.add(JBAmetralladora1);
+        this.add(JBMisil1);
+        this.add(JBBombaNuclear1);
+        
         this.add(JL1_2);
         this.add(JL2_2);
         this.add(JL3_2);
@@ -1443,6 +1490,14 @@ public class Principal extends JFrame{
         this.add(JBJ10_2);
         
         this.add(JBSeleccionarBarco2);
+        
+        this.add(JLAmetralladora2);
+        this.add(JLMisil2);
+        this.add(JLBombaNuclear2);
+        
+        this.add(JBAmetralladora2);
+        this.add(JBMisil2);
+        this.add(JBBombaNuclear2);
         
         
         JL1_1.reshape(25, 15, 25, 25);
@@ -1578,6 +1633,8 @@ public class Principal extends JFrame{
         JBJ10_1.reshape(250, 265, 25, 25);
         
         JBSeleccionarBarco1.reshape(50, 315, 200, 25);
+        
+        JLAmetralladora1.reshape(275, 135, 50, 50);
         
         JL1_2.reshape(425, 15, 25, 25);
         JL2_2.reshape(450, 15, 25, 25);
