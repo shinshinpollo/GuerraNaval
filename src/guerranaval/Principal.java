@@ -2,6 +2,7 @@
 package guerranaval;
 
 import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -359,8 +360,8 @@ public class Principal extends JFrame{
         JLJ_2.setText("J");
         
         JLAmetralladora1.setText("");
-        JLAmetralladora1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png"));
-        
+        JLAmetralladora1.setIcon(new ImageIcon(new ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Ametralladora.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
+
         JLMisil1.setText("");
         JLMisil1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Martin\\Documents\\Curso java\\Calculadora\\GuerraNaval\\dist\\Imagenes\\Misil.png"));
         
