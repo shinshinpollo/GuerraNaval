@@ -1800,6 +1800,8 @@ public class Principal extends JFrame{
             JBSeleccionarBarco1.setVisible(true);
             JBSeleccionarBarco2.setVisible(false);
             ActivarJugador2(true);
+            ActivarArmasJugador(2);
+            VisualizarArmasJugador(2);
         }
     }
     
@@ -2210,6 +2212,8 @@ public class Principal extends JFrame{
        if (ClsGlobal.Confirmacion1){
             JBSeleccionarBarco1.setVisible(false);
             ActivarJugador1(true);
+            ActivarArmasJugador(1);
+            VisualizarArmasJugador(1);
        } 
    
     }
@@ -2222,6 +2226,8 @@ public class Principal extends JFrame{
          if (ClsGlobal.Confirmacion2){
             JBSeleccionarBarco2.setVisible(false);
              ActivarJugador2(true);
+             ActivarArmasJugador(2);
+             VisualizarArmasJugador(2);
        } 
     }
 
@@ -2449,6 +2455,30 @@ public class Principal extends JFrame{
         JBJ9_2.setEnabled(Activar);
         JBJ10_2.setEnabled(Activar);
       
+    }
+
+    private void ActivarArmasJugador(int jugador) {
+        if(jugador == 1){
+            ClsGlobal.Ametralladora1 = 75;
+            ClsGlobal.Misil1 = 3;
+            ClsGlobal.BombaNuclear1 = 1;
+        }else if(jugador == 2){
+            ClsGlobal.Ametralladora2 = 75;
+            ClsGlobal.Misil2 = 3;
+            ClsGlobal.BombaNuclear2 = 1;
+        }
+    }
+
+    private void VisualizarArmasJugador(int jugador) {
+        if(jugador == 1){
+            JBAmetralladora1.setText(ClsGlobal.Ametralladora1 + "");
+            JBMisil1.setText(ClsGlobal.Misil1 + "");
+            JBBombaNuclear1.setText(ClsGlobal.BombaNuclear1 + "");
+        }else if(jugador == 2){
+            JBAmetralladora2.setText(ClsGlobal.Ametralladora2 + "");
+            JBMisil2.setText(ClsGlobal.Misil2 + "");
+            JBBombaNuclear2.setText(ClsGlobal.BombaNuclear2 + "");
+        }
     }
     
 }
