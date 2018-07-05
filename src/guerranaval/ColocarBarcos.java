@@ -141,6 +141,9 @@ public class ColocarBarcos extends javax.swing.JDialog{
     JButton JBJ9_1 = new JButton();
     JButton JBJ10_1 = new JButton();
     
+    JLabel JLBarcoA = new JLabel();
+    JLabel JLBarcoA2 = new JLabel();
+    
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
         constructor(jugador);
@@ -175,6 +178,8 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JLH_1.setText("H");
         JLI_1.setText("I");
         JLJ_1.setText("J");
+        
+        
         
         JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
@@ -286,6 +291,11 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         
+        JLBarcoA.setText("");
+        JLBarcoA.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoA2.setText("");
+        JLBarcoA2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
         
         JBA1_1.addActionListener(new java.awt.event.ActionListener() {
@@ -1020,6 +1030,9 @@ public class ColocarBarcos extends javax.swing.JDialog{
         this.add(JBJ9_1);
         this.add(JBJ10_1);
         
+        this.add(JLBarcoA);
+        this.add(JLBarcoA2);
+        
         JL1_1.reshape(25, 15, 25, 25);
         JL2_1.reshape(50, 15, 25, 25);
         JL3_1.reshape(75, 15, 25, 25);
@@ -1151,6 +1164,9 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ8_1.reshape(200, 265, 25, 25);
         JBJ9_1.reshape(225, 265, 25, 25);
         JBJ10_1.reshape(250, 265, 25, 25); 
+        
+        JLBarcoA.reshape(300, 70, 60, 70);
+        JLBarcoA2.reshape(300, 100, 60, 70);
     }
     
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
