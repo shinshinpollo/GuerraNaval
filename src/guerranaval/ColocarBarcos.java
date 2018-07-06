@@ -143,6 +143,11 @@ public class ColocarBarcos extends javax.swing.JDialog{
     
     JLabel JLBarcoA = new JLabel();
     JLabel JLBarcoA2 = new JLabel();
+    JLabel JLBarcoA3 = new JLabel();
+    JLabel JLBarcoA4 = new JLabel();
+    JLabel JLBarcoD = new JLabel();
+    JLabel JLBarcoD1 = new JLabel();
+    JLabel JLBarcoD2 = new JLabel();
     
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
@@ -296,6 +301,21 @@ public class ColocarBarcos extends javax.swing.JDialog{
         
         JLBarcoA2.setText("");
         JLBarcoA2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoA3.setText("");
+        JLBarcoA3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoA4.setText("");
+        JLBarcoA4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoD.setText("");
+        JLBarcoD.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoD1.setText("");
+        JLBarcoD1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        
+        JLBarcoD2.setText("");
+        JLBarcoD2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
         
         JBA1_1.addActionListener(new java.awt.event.ActionListener() {
@@ -1032,6 +1052,11 @@ public class ColocarBarcos extends javax.swing.JDialog{
         
         this.add(JLBarcoA);
         this.add(JLBarcoA2);
+        this.add(JLBarcoA3);
+        this.add(JLBarcoA4);
+        this.add(JLBarcoD);
+        this.add(JLBarcoD1);
+        this.add(JLBarcoD2);
         
         JL1_1.reshape(25, 15, 25, 25);
         JL2_1.reshape(50, 15, 25, 25);
@@ -1166,7 +1191,14 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ10_1.reshape(250, 265, 25, 25); 
         
         JLBarcoA.reshape(300, 70, 60, 70);
-        JLBarcoA2.reshape(300, 100, 60, 70);
+        JLBarcoA2.reshape(300, 130, 60, 70);
+        JLBarcoA3.reshape(300, 100, 60, 70);
+        JLBarcoA4.reshape(300, 160, 60, 70);
+        
+        JLBarcoD.reshape(450, 200, 60, 70);
+        JLBarcoD1.reshape(420, 200, 60, 70);
+        JLBarcoD2.reshape(390, 200, 60, 70);
+    
     }
     
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
