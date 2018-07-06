@@ -2,6 +2,9 @@
 package guerranaval;
 
 import java.awt.Image;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -9,7 +12,23 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 
-public class Principal extends JFrame{
+public class Principal extends JFrame implements Runnable{
+    //Se crea el hilo para el timmer
+    Thread h1;
+    
+    boolean BTurno1 = false;
+    boolean BTurno2 = false;
+    boolean BAmetralladora1 = false;
+    boolean BMisil1 = false;
+    boolean BBombaNuclear1 = false;
+    boolean BAmetralladora2 = false;
+    boolean BMisil2 = false;
+    boolean BBombaNuclear2 = false;
+    int ITiempo = 60;
+    
+    javax.swing.JLabel JLTurno1 = new javax.swing.JLabel();
+    javax.swing.JLabel JLTurno2 = new javax.swing.JLabel();
+    
     //Se crear los labels
     JLabel JL1_1 = new JLabel();
     JLabel JL2_1 = new JLabel();
@@ -306,6 +325,8 @@ public class Principal extends JFrame{
     public Principal(){
         //llamamos el constructor
         constructor(); 
+        h1 = new Thread(this);
+        h1.start();
     }
 
     private void constructor() {
@@ -2482,6 +2503,4932 @@ public class Principal extends JFrame{
             JBBombaNuclear2.setText(ClsGlobal.BombaNuclear2 + "");
         }
     }
+
+    @Override
+    public void run() {
+        Thread Th = Thread.currentThread();
+        while(Th == h1){      
+            if (BTurno1){
+                if (ITiempo > 0){
+                    JLTurno1.setText(ITiempo + "");
+                    JLTurno2.setText("");
+                    if(ClsGlobal.Ametralladora1 > 0){
+                        JBAmetralladora1.setEnabled(true);
+                    }else {
+                        JBAmetralladora1.setEnabled(false);
+                    }
+                    if(ClsGlobal.Misil1 > 0){
+                        JBMisil1.setEnabled(true);
+                    }else {
+                        JBMisil1.setEnabled(false);
+                    }
+                    if(ClsGlobal.BombaNuclear1 > 0){
+                        JBBombaNuclear1.setEnabled(true);
+                    }else{
+                        JBBombaNuclear1.setEnabled(false);
+                    }
+
+                    JBAmetralladora2.setEnabled(false);
+                    JBMisil2.setEnabled(false);
+                    JBBombaNuclear2.setEnabled(false);
+                    
+                    HabilitarDisparo(1);
+                    ActivarJugador2(false);
+                    ITiempo = ITiempo - 1;
+                }else {
+                    BTurno1 = false;
+                    BTurno2 = true;
+                    JLTurno1.setText("");
+                    JLTurno2.setText("");
+                    
+                    JBAmetralladora1.setEnabled(false);
+                    JBMisil1.setEnabled(false);
+                    JBBombaNuclear1.setEnabled(false);
+                    
+                    JBAmetralladora2.setEnabled(false);
+                    JBMisil2.setEnabled(false);
+                    JBBombaNuclear2.setEnabled(false);
+                    
+                    ActivarJugador1(false);
+                    ActivarJugador2(false);
+
+                    BAmetralladora1 = false;
+                    BMisil1 = false;
+                    BBombaNuclear1 = false;
+                    
+                    BAmetralladora2 = false;
+                    BMisil2 = false;
+                    BBombaNuclear2 = false;
+                    
+                    ITiempo = 60;
+                }
+            }
+            
+            if (BTurno2){
+                if (ITiempo > 0){
+                    JLTurno2.setText(ITiempo + "");
+                    JLTurno1.setText("");
+                    if(ClsGlobal.Ametralladora2 > 0){
+                        JBAmetralladora2.setEnabled(true);
+                    }else {
+                        JBAmetralladora2.setEnabled(false);
+                    }
+                    if(ClsGlobal.Misil2 > 0){
+                        JBMisil2.setEnabled(true);
+                    }else {
+                        JBMisil2.setEnabled(false);
+                    }
+                    if(ClsGlobal.BombaNuclear2 > 0){
+                        JBBombaNuclear2.setEnabled(true);
+                    }else{
+                        JBBombaNuclear2.setEnabled(false);
+                    }
+
+                    JBAmetralladora1.setEnabled(false);
+                    JBMisil1.setEnabled(false);
+                    JBBombaNuclear1.setEnabled(false);
+                    
+                    HabilitarDisparo(2);
+                    ActivarJugador1(false);
+                    ITiempo = ITiempo - 1;
+                }else {
+                    BTurno2 = false;
+                    BTurno1 = true;
+                    JLTurno1.setText("");
+                    JLTurno2.setText("");
+                    
+                    JBAmetralladora1.setEnabled(false);
+                    JBMisil1.setEnabled(false);
+                    JBBombaNuclear1.setEnabled(false);
+                    
+                    JBAmetralladora2.setEnabled(false);
+                    JBMisil2.setEnabled(false);
+                    JBBombaNuclear2.setEnabled(false);
+                    
+                    ActivarJugador1(false);
+                    ActivarJugador2(false);
+
+                    BAmetralladora1 = false;
+                    BMisil1 = false;
+                    BBombaNuclear1 = false;
+                    
+                    BAmetralladora2 = false;
+                    BMisil2 = false;
+                    BBombaNuclear2 = false;
+                    
+                    ITiempo = 60;
+                }
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+            }
+        }
+    }
+
+    private void HabilitarDisparo(int Juagador) {
+        if(Juagador == 1){
+           if(ClsGlobal.Matriz1[0][0] == 1 ||
+              ClsGlobal.Matriz1[0][0] == 121 ||
+              ClsGlobal.Matriz1[0][0] == 122 ||
+              ClsGlobal.Matriz1[0][0] == 123 ||
+              ClsGlobal.Matriz1[0][0] == 124 ||
+              ClsGlobal.Matriz1[0][0] == 131 ||
+              ClsGlobal.Matriz1[0][0] == 132 ||
+              ClsGlobal.Matriz1[0][0] == 133 ||
+              ClsGlobal.Matriz1[0][0] == 134 ||
+              ClsGlobal.Matriz1[0][0] == 221 ||
+              ClsGlobal.Matriz1[0][0] == 222 ||
+              ClsGlobal.Matriz1[0][0] == 223 ||
+              ClsGlobal.Matriz1[0][0] == 231 ||
+              ClsGlobal.Matriz1[0][0] == 232 ||
+              ClsGlobal.Matriz1[0][0] == 233 ||
+              ClsGlobal.Matriz1[0][0] == 321 ||
+              ClsGlobal.Matriz1[0][0] == 322 ||
+              ClsGlobal.Matriz1[0][0] == 331 ||
+              ClsGlobal.Matriz1[0][0] == 332){
+                JBA1_1.setEnabled(false);
+           }else{
+                JBA1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][1] == 1 ||
+              ClsGlobal.Matriz1[0][1] == 121 ||
+              ClsGlobal.Matriz1[0][1] == 122 ||
+              ClsGlobal.Matriz1[0][1] == 123 ||
+              ClsGlobal.Matriz1[0][1] == 124 ||
+              ClsGlobal.Matriz1[0][1] == 131 ||
+              ClsGlobal.Matriz1[0][1] == 132 ||
+              ClsGlobal.Matriz1[0][1] == 133 ||
+              ClsGlobal.Matriz1[0][1] == 134 ||
+              ClsGlobal.Matriz1[0][1] == 221 ||
+              ClsGlobal.Matriz1[0][1] == 222 ||
+              ClsGlobal.Matriz1[0][1] == 223 ||
+              ClsGlobal.Matriz1[0][1] == 231 ||
+              ClsGlobal.Matriz1[0][1] == 232 ||
+              ClsGlobal.Matriz1[0][1] == 233 ||
+              ClsGlobal.Matriz1[0][1] == 321 ||
+              ClsGlobal.Matriz1[0][1] == 322 ||
+              ClsGlobal.Matriz1[0][1] == 331 ||
+              ClsGlobal.Matriz1[0][1] == 332){
+                JBA2_1.setEnabled(false);
+           }else{
+                JBA2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][2] == 1 ||
+              ClsGlobal.Matriz1[0][2] == 121 ||
+              ClsGlobal.Matriz1[0][2] == 122 ||
+              ClsGlobal.Matriz1[0][2] == 123 ||
+              ClsGlobal.Matriz1[0][2] == 124 ||
+              ClsGlobal.Matriz1[0][2] == 131 ||
+              ClsGlobal.Matriz1[0][2] == 132 ||
+              ClsGlobal.Matriz1[0][2] == 133 ||
+              ClsGlobal.Matriz1[0][2] == 134 ||
+              ClsGlobal.Matriz1[0][2] == 221 ||
+              ClsGlobal.Matriz1[0][2] == 222 ||
+              ClsGlobal.Matriz1[0][2] == 223 ||
+              ClsGlobal.Matriz1[0][2] == 231 ||
+              ClsGlobal.Matriz1[0][2] == 232 ||
+              ClsGlobal.Matriz1[0][2] == 233 ||
+              ClsGlobal.Matriz1[0][2] == 321 ||
+              ClsGlobal.Matriz1[0][2] == 322 ||
+              ClsGlobal.Matriz1[0][2] == 331 ||
+              ClsGlobal.Matriz1[0][2] == 332){
+                JBA3_1.setEnabled(false);
+           }else{
+                JBA3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][3] == 1 ||
+              ClsGlobal.Matriz1[0][3] == 121 ||
+              ClsGlobal.Matriz1[0][3] == 122 ||
+              ClsGlobal.Matriz1[0][3] == 123 ||
+              ClsGlobal.Matriz1[0][3] == 124 ||
+              ClsGlobal.Matriz1[0][3] == 131 ||
+              ClsGlobal.Matriz1[0][3] == 132 ||
+              ClsGlobal.Matriz1[0][3] == 133 ||
+              ClsGlobal.Matriz1[0][3] == 134 ||
+              ClsGlobal.Matriz1[0][3] == 221 ||
+              ClsGlobal.Matriz1[0][3] == 222 ||
+              ClsGlobal.Matriz1[0][3] == 223 ||
+              ClsGlobal.Matriz1[0][3] == 231 ||
+              ClsGlobal.Matriz1[0][3] == 232 ||
+              ClsGlobal.Matriz1[0][3] == 233 ||
+              ClsGlobal.Matriz1[0][3] == 321 ||
+              ClsGlobal.Matriz1[0][3] == 322 ||
+              ClsGlobal.Matriz1[0][3] == 331 ||
+              ClsGlobal.Matriz1[0][3] == 332){
+                JBA4_1.setEnabled(false);
+           }else{
+                JBA4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][4] == 1 ||
+              ClsGlobal.Matriz1[0][4] == 121 ||
+              ClsGlobal.Matriz1[0][4] == 122 ||
+              ClsGlobal.Matriz1[0][4] == 123 ||
+              ClsGlobal.Matriz1[0][4] == 124 ||
+              ClsGlobal.Matriz1[0][4] == 131 ||
+              ClsGlobal.Matriz1[0][4] == 132 ||
+              ClsGlobal.Matriz1[0][4] == 133 ||
+              ClsGlobal.Matriz1[0][4] == 134 ||
+              ClsGlobal.Matriz1[0][4] == 221 ||
+              ClsGlobal.Matriz1[0][4] == 222 ||
+              ClsGlobal.Matriz1[0][4] == 223 ||
+              ClsGlobal.Matriz1[0][4] == 231 ||
+              ClsGlobal.Matriz1[0][4] == 232 ||
+              ClsGlobal.Matriz1[0][4] == 233 ||
+              ClsGlobal.Matriz1[0][4] == 321 ||
+              ClsGlobal.Matriz1[0][4] == 322 ||
+              ClsGlobal.Matriz1[0][4] == 331 ||
+              ClsGlobal.Matriz1[0][4] == 332){
+                JBA5_1.setEnabled(false);
+           }else{
+                JBA5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][5] == 1 ||
+              ClsGlobal.Matriz1[0][5] == 121 ||
+              ClsGlobal.Matriz1[0][5] == 122 ||
+              ClsGlobal.Matriz1[0][5] == 123 ||
+              ClsGlobal.Matriz1[0][5] == 124 ||
+              ClsGlobal.Matriz1[0][5] == 131 ||
+              ClsGlobal.Matriz1[0][5] == 132 ||
+              ClsGlobal.Matriz1[0][5] == 133 ||
+              ClsGlobal.Matriz1[0][5] == 134 ||
+              ClsGlobal.Matriz1[0][5] == 221 ||
+              ClsGlobal.Matriz1[0][5] == 222 ||
+              ClsGlobal.Matriz1[0][5] == 223 ||
+              ClsGlobal.Matriz1[0][5] == 231 ||
+              ClsGlobal.Matriz1[0][5] == 232 ||
+              ClsGlobal.Matriz1[0][5] == 233 ||
+              ClsGlobal.Matriz1[0][5] == 321 ||
+              ClsGlobal.Matriz1[0][5] == 322 ||
+              ClsGlobal.Matriz1[0][5] == 331 ||
+              ClsGlobal.Matriz1[0][5] == 332){
+                JBA6_1.setEnabled(false);
+           }else{
+                JBA6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][6] == 1 ||
+              ClsGlobal.Matriz1[0][6] == 121 ||
+              ClsGlobal.Matriz1[0][6] == 122 ||
+              ClsGlobal.Matriz1[0][6] == 123 ||
+              ClsGlobal.Matriz1[0][6] == 124 ||
+              ClsGlobal.Matriz1[0][6] == 131 ||
+              ClsGlobal.Matriz1[0][6] == 132 ||
+              ClsGlobal.Matriz1[0][6] == 133 ||
+              ClsGlobal.Matriz1[0][6] == 134 ||
+              ClsGlobal.Matriz1[0][6] == 221 ||
+              ClsGlobal.Matriz1[0][6] == 222 ||
+              ClsGlobal.Matriz1[0][6] == 223 ||
+              ClsGlobal.Matriz1[0][6] == 231 ||
+              ClsGlobal.Matriz1[0][6] == 232 ||
+              ClsGlobal.Matriz1[0][6] == 233 ||
+              ClsGlobal.Matriz1[0][6] == 321 ||
+              ClsGlobal.Matriz1[0][6] == 322 ||
+              ClsGlobal.Matriz1[0][6] == 331 ||
+              ClsGlobal.Matriz1[0][6] == 332){
+                JBA7_1.setEnabled(false);
+           }else{
+                JBA7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][7] == 1 ||
+              ClsGlobal.Matriz1[0][7] == 121 ||
+              ClsGlobal.Matriz1[0][7] == 122 ||
+              ClsGlobal.Matriz1[0][7] == 123 ||
+              ClsGlobal.Matriz1[0][7] == 124 ||
+              ClsGlobal.Matriz1[0][7] == 131 ||
+              ClsGlobal.Matriz1[0][7] == 132 ||
+              ClsGlobal.Matriz1[0][7] == 133 ||
+              ClsGlobal.Matriz1[0][7] == 134 ||
+              ClsGlobal.Matriz1[0][7] == 221 ||
+              ClsGlobal.Matriz1[0][7] == 222 ||
+              ClsGlobal.Matriz1[0][7] == 223 ||
+              ClsGlobal.Matriz1[0][7] == 231 ||
+              ClsGlobal.Matriz1[0][7] == 232 ||
+              ClsGlobal.Matriz1[0][7] == 233 ||
+              ClsGlobal.Matriz1[0][7] == 321 ||
+              ClsGlobal.Matriz1[0][7] == 322 ||
+              ClsGlobal.Matriz1[0][7] == 331 ||
+              ClsGlobal.Matriz1[0][7] == 332){
+                JBA8_1.setEnabled(false);
+           }else{
+                JBA8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][8] == 1 ||
+              ClsGlobal.Matriz1[0][8] == 121 ||
+              ClsGlobal.Matriz1[0][8] == 122 ||
+              ClsGlobal.Matriz1[0][8] == 123 ||
+              ClsGlobal.Matriz1[0][8] == 124 ||
+              ClsGlobal.Matriz1[0][8] == 131 ||
+              ClsGlobal.Matriz1[0][8] == 132 ||
+              ClsGlobal.Matriz1[0][8] == 133 ||
+              ClsGlobal.Matriz1[0][8] == 134 ||
+              ClsGlobal.Matriz1[0][8] == 221 ||
+              ClsGlobal.Matriz1[0][8] == 222 ||
+              ClsGlobal.Matriz1[0][8] == 223 ||
+              ClsGlobal.Matriz1[0][8] == 231 ||
+              ClsGlobal.Matriz1[0][8] == 232 ||
+              ClsGlobal.Matriz1[0][8] == 233 ||
+              ClsGlobal.Matriz1[0][8] == 321 ||
+              ClsGlobal.Matriz1[0][8] == 322 ||
+              ClsGlobal.Matriz1[0][8] == 331 ||
+              ClsGlobal.Matriz1[0][8] == 332){
+                JBA9_1.setEnabled(false);
+           }else{
+                JBA9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[0][9] == 1 ||
+              ClsGlobal.Matriz1[0][9] == 121 ||
+              ClsGlobal.Matriz1[0][9] == 122 ||
+              ClsGlobal.Matriz1[0][9] == 123 ||
+              ClsGlobal.Matriz1[0][9] == 124 ||
+              ClsGlobal.Matriz1[0][9] == 131 ||
+              ClsGlobal.Matriz1[0][9] == 132 ||
+              ClsGlobal.Matriz1[0][9] == 133 ||
+              ClsGlobal.Matriz1[0][9] == 134 ||
+              ClsGlobal.Matriz1[0][9] == 221 ||
+              ClsGlobal.Matriz1[0][9] == 222 ||
+              ClsGlobal.Matriz1[0][9] == 223 ||
+              ClsGlobal.Matriz1[0][9] == 231 ||
+              ClsGlobal.Matriz1[0][9] == 232 ||
+              ClsGlobal.Matriz1[0][9] == 233 ||
+              ClsGlobal.Matriz1[0][9] == 321 ||
+              ClsGlobal.Matriz1[0][9] == 322 ||
+              ClsGlobal.Matriz1[0][9] == 331 ||
+              ClsGlobal.Matriz1[0][9] == 332){
+                JBA10_1.setEnabled(false);
+           }else{
+                JBA10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][0] == 1 ||
+              ClsGlobal.Matriz1[1][0] == 121 ||
+              ClsGlobal.Matriz1[1][0] == 122 ||
+              ClsGlobal.Matriz1[1][0] == 123 ||
+              ClsGlobal.Matriz1[1][0] == 124 ||
+              ClsGlobal.Matriz1[1][0] == 131 ||
+              ClsGlobal.Matriz1[1][0] == 132 ||
+              ClsGlobal.Matriz1[1][0] == 133 ||
+              ClsGlobal.Matriz1[1][0] == 134 ||
+              ClsGlobal.Matriz1[1][0] == 221 ||
+              ClsGlobal.Matriz1[1][0] == 222 ||
+              ClsGlobal.Matriz1[1][0] == 223 ||
+              ClsGlobal.Matriz1[1][0] == 231 ||
+              ClsGlobal.Matriz1[1][0] == 232 ||
+              ClsGlobal.Matriz1[1][0] == 233 ||
+              ClsGlobal.Matriz1[1][0] == 321 ||
+              ClsGlobal.Matriz1[1][0] == 322 ||
+              ClsGlobal.Matriz1[1][0] == 331 ||
+              ClsGlobal.Matriz1[1][0] == 332){
+                JBB1_1.setEnabled(false);
+           }else{
+                JBB1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][1] == 1 ||
+              ClsGlobal.Matriz1[1][1] == 121 ||
+              ClsGlobal.Matriz1[1][1] == 122 ||
+              ClsGlobal.Matriz1[1][1] == 123 ||
+              ClsGlobal.Matriz1[1][1] == 124 ||
+              ClsGlobal.Matriz1[1][1] == 131 ||
+              ClsGlobal.Matriz1[1][1] == 132 ||
+              ClsGlobal.Matriz1[1][1] == 133 ||
+              ClsGlobal.Matriz1[1][1] == 134 ||
+              ClsGlobal.Matriz1[1][1] == 221 ||
+              ClsGlobal.Matriz1[1][1] == 222 ||
+              ClsGlobal.Matriz1[1][1] == 223 ||
+              ClsGlobal.Matriz1[1][1] == 231 ||
+              ClsGlobal.Matriz1[1][1] == 232 ||
+              ClsGlobal.Matriz1[1][1] == 233 ||
+              ClsGlobal.Matriz1[1][1] == 321 ||
+              ClsGlobal.Matriz1[1][1] == 322 ||
+              ClsGlobal.Matriz1[1][1] == 331 ||
+              ClsGlobal.Matriz1[1][1] == 332){
+                JBB2_1.setEnabled(false);
+           }else{
+                JBB2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][2] == 1 ||
+              ClsGlobal.Matriz1[1][2] == 121 ||
+              ClsGlobal.Matriz1[1][2] == 122 ||
+              ClsGlobal.Matriz1[1][2] == 123 ||
+              ClsGlobal.Matriz1[1][2] == 124 ||
+              ClsGlobal.Matriz1[1][2] == 131 ||
+              ClsGlobal.Matriz1[1][2] == 132 ||
+              ClsGlobal.Matriz1[1][2] == 133 ||
+              ClsGlobal.Matriz1[1][2] == 134 ||
+              ClsGlobal.Matriz1[1][2] == 221 ||
+              ClsGlobal.Matriz1[1][2] == 222 ||
+              ClsGlobal.Matriz1[1][2] == 223 ||
+              ClsGlobal.Matriz1[1][2] == 231 ||
+              ClsGlobal.Matriz1[1][2] == 232 ||
+              ClsGlobal.Matriz1[1][2] == 233 ||
+              ClsGlobal.Matriz1[1][2] == 321 ||
+              ClsGlobal.Matriz1[1][2] == 322 ||
+              ClsGlobal.Matriz1[1][2] == 331 ||
+              ClsGlobal.Matriz1[1][2] == 332){
+                JBB3_1.setEnabled(false);
+           }else{
+                JBB3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][3] == 1 ||
+              ClsGlobal.Matriz1[1][3] == 121 ||
+              ClsGlobal.Matriz1[1][3] == 122 ||
+              ClsGlobal.Matriz1[1][3] == 123 ||
+              ClsGlobal.Matriz1[1][3] == 124 ||
+              ClsGlobal.Matriz1[1][3] == 131 ||
+              ClsGlobal.Matriz1[1][3] == 132 ||
+              ClsGlobal.Matriz1[1][3] == 133 ||
+              ClsGlobal.Matriz1[1][3] == 134 ||
+              ClsGlobal.Matriz1[1][3] == 221 ||
+              ClsGlobal.Matriz1[1][3] == 222 ||
+              ClsGlobal.Matriz1[1][3] == 223 ||
+              ClsGlobal.Matriz1[1][3] == 231 ||
+              ClsGlobal.Matriz1[1][3] == 232 ||
+              ClsGlobal.Matriz1[1][3] == 233 ||
+              ClsGlobal.Matriz1[1][3] == 321 ||
+              ClsGlobal.Matriz1[1][3] == 322 ||
+              ClsGlobal.Matriz1[1][3] == 331 ||
+              ClsGlobal.Matriz1[1][3] == 332){
+                JBB4_1.setEnabled(false);
+           }else{
+                JBB4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][4] == 1 ||
+              ClsGlobal.Matriz1[1][4] == 121 ||
+              ClsGlobal.Matriz1[1][4] == 122 ||
+              ClsGlobal.Matriz1[1][4] == 123 ||
+              ClsGlobal.Matriz1[1][4] == 124 ||
+              ClsGlobal.Matriz1[1][4] == 131 ||
+              ClsGlobal.Matriz1[1][4] == 132 ||
+              ClsGlobal.Matriz1[1][4] == 133 ||
+              ClsGlobal.Matriz1[1][4] == 134 ||
+              ClsGlobal.Matriz1[1][4] == 221 ||
+              ClsGlobal.Matriz1[1][4] == 222 ||
+              ClsGlobal.Matriz1[1][4] == 223 ||
+              ClsGlobal.Matriz1[1][4] == 231 ||
+              ClsGlobal.Matriz1[1][4] == 232 ||
+              ClsGlobal.Matriz1[1][4] == 233 ||
+              ClsGlobal.Matriz1[1][4] == 321 ||
+              ClsGlobal.Matriz1[1][4] == 322 ||
+              ClsGlobal.Matriz1[1][4] == 331 ||
+              ClsGlobal.Matriz1[1][4] == 332){
+                JBB5_1.setEnabled(false);
+           }else{
+                JBB5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][5] == 1 ||
+              ClsGlobal.Matriz1[1][5] == 121 ||
+              ClsGlobal.Matriz1[1][5] == 122 ||
+              ClsGlobal.Matriz1[1][5] == 123 ||
+              ClsGlobal.Matriz1[1][5] == 124 ||
+              ClsGlobal.Matriz1[1][5] == 131 ||
+              ClsGlobal.Matriz1[1][5] == 132 ||
+              ClsGlobal.Matriz1[1][5] == 133 ||
+              ClsGlobal.Matriz1[1][5] == 134 ||
+              ClsGlobal.Matriz1[1][5] == 221 ||
+              ClsGlobal.Matriz1[1][5] == 222 ||
+              ClsGlobal.Matriz1[1][5] == 223 ||
+              ClsGlobal.Matriz1[1][5] == 231 ||
+              ClsGlobal.Matriz1[1][5] == 232 ||
+              ClsGlobal.Matriz1[1][5] == 233 ||
+              ClsGlobal.Matriz1[1][5] == 321 ||
+              ClsGlobal.Matriz1[1][5] == 322 ||
+              ClsGlobal.Matriz1[1][5] == 331 ||
+              ClsGlobal.Matriz1[1][5] == 332){
+                JBB6_1.setEnabled(false);
+           }else{
+                JBB6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][6] == 1 ||
+              ClsGlobal.Matriz1[1][6] == 121 ||
+              ClsGlobal.Matriz1[1][6] == 122 ||
+              ClsGlobal.Matriz1[1][6] == 123 ||
+              ClsGlobal.Matriz1[1][6] == 124 ||
+              ClsGlobal.Matriz1[1][6] == 131 ||
+              ClsGlobal.Matriz1[1][6] == 132 ||
+              ClsGlobal.Matriz1[1][6] == 133 ||
+              ClsGlobal.Matriz1[1][6] == 134 ||
+              ClsGlobal.Matriz1[1][6] == 221 ||
+              ClsGlobal.Matriz1[1][6] == 222 ||
+              ClsGlobal.Matriz1[1][6] == 223 ||
+              ClsGlobal.Matriz1[1][6] == 231 ||
+              ClsGlobal.Matriz1[1][6] == 232 ||
+              ClsGlobal.Matriz1[1][6] == 233 ||
+              ClsGlobal.Matriz1[1][6] == 321 ||
+              ClsGlobal.Matriz1[1][6] == 322 ||
+              ClsGlobal.Matriz1[1][6] == 331 ||
+              ClsGlobal.Matriz1[1][6] == 332){
+                JBB7_1.setEnabled(false);
+           }else{
+                JBB7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][7] == 1 ||
+              ClsGlobal.Matriz1[1][7] == 121 ||
+              ClsGlobal.Matriz1[1][7] == 122 ||
+              ClsGlobal.Matriz1[1][7] == 123 ||
+              ClsGlobal.Matriz1[1][7] == 124 ||
+              ClsGlobal.Matriz1[1][7] == 131 ||
+              ClsGlobal.Matriz1[1][7] == 132 ||
+              ClsGlobal.Matriz1[1][7] == 133 ||
+              ClsGlobal.Matriz1[1][7] == 134 ||
+              ClsGlobal.Matriz1[1][7] == 221 ||
+              ClsGlobal.Matriz1[1][7] == 222 ||
+              ClsGlobal.Matriz1[1][7] == 223 ||
+              ClsGlobal.Matriz1[1][7] == 231 ||
+              ClsGlobal.Matriz1[1][7] == 232 ||
+              ClsGlobal.Matriz1[1][7] == 233 ||
+              ClsGlobal.Matriz1[1][7] == 321 ||
+              ClsGlobal.Matriz1[1][7] == 322 ||
+              ClsGlobal.Matriz1[1][7] == 331 ||
+              ClsGlobal.Matriz1[1][7] == 332){
+                JBB8_1.setEnabled(false);
+           }else{
+                JBB8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][8] == 1 ||
+              ClsGlobal.Matriz1[1][8] == 121 ||
+              ClsGlobal.Matriz1[1][8] == 122 ||
+              ClsGlobal.Matriz1[1][8] == 123 ||
+              ClsGlobal.Matriz1[1][8] == 124 ||
+              ClsGlobal.Matriz1[1][8] == 131 ||
+              ClsGlobal.Matriz1[1][8] == 132 ||
+              ClsGlobal.Matriz1[1][8] == 133 ||
+              ClsGlobal.Matriz1[1][8] == 134 ||
+              ClsGlobal.Matriz1[1][8] == 221 ||
+              ClsGlobal.Matriz1[1][8] == 222 ||
+              ClsGlobal.Matriz1[1][8] == 223 ||
+              ClsGlobal.Matriz1[1][8] == 231 ||
+              ClsGlobal.Matriz1[1][8] == 232 ||
+              ClsGlobal.Matriz1[1][8] == 233 ||
+              ClsGlobal.Matriz1[1][8] == 321 ||
+              ClsGlobal.Matriz1[1][8] == 322 ||
+              ClsGlobal.Matriz1[1][8] == 331 ||
+              ClsGlobal.Matriz1[1][8] == 332){
+                JBB9_1.setEnabled(false);
+           }else{
+                JBB9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[1][9] == 1 ||
+              ClsGlobal.Matriz1[1][9] == 121 ||
+              ClsGlobal.Matriz1[1][9] == 122 ||
+              ClsGlobal.Matriz1[1][9] == 123 ||
+              ClsGlobal.Matriz1[1][9] == 124 ||
+              ClsGlobal.Matriz1[1][9] == 131 ||
+              ClsGlobal.Matriz1[1][9] == 132 ||
+              ClsGlobal.Matriz1[1][9] == 133 ||
+              ClsGlobal.Matriz1[1][9] == 134 ||
+              ClsGlobal.Matriz1[1][9] == 221 ||
+              ClsGlobal.Matriz1[1][9] == 222 ||
+              ClsGlobal.Matriz1[1][9] == 223 ||
+              ClsGlobal.Matriz1[1][9] == 231 ||
+              ClsGlobal.Matriz1[1][9] == 232 ||
+              ClsGlobal.Matriz1[1][9] == 233 ||
+              ClsGlobal.Matriz1[1][9] == 321 ||
+              ClsGlobal.Matriz1[1][9] == 322 ||
+              ClsGlobal.Matriz1[1][9] == 331 ||
+              ClsGlobal.Matriz1[1][9] == 332){
+                JBB10_1.setEnabled(false);
+           }else{
+                JBB10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][0] == 1 ||
+              ClsGlobal.Matriz1[2][0] == 121 ||
+              ClsGlobal.Matriz1[2][0] == 122 ||
+              ClsGlobal.Matriz1[2][0] == 123 ||
+              ClsGlobal.Matriz1[2][0] == 124 ||
+              ClsGlobal.Matriz1[2][0] == 131 ||
+              ClsGlobal.Matriz1[2][0] == 132 ||
+              ClsGlobal.Matriz1[2][0] == 133 ||
+              ClsGlobal.Matriz1[2][0] == 134 ||
+              ClsGlobal.Matriz1[2][0] == 221 ||
+              ClsGlobal.Matriz1[2][0] == 222 ||
+              ClsGlobal.Matriz1[2][0] == 223 ||
+              ClsGlobal.Matriz1[2][0] == 231 ||
+              ClsGlobal.Matriz1[2][0] == 232 ||
+              ClsGlobal.Matriz1[2][0] == 233 ||
+              ClsGlobal.Matriz1[2][0] == 321 ||
+              ClsGlobal.Matriz1[2][0] == 322 ||
+              ClsGlobal.Matriz1[2][0] == 331 ||
+              ClsGlobal.Matriz1[2][0] == 332){
+                JBC1_1.setEnabled(false);
+           }else{
+                JBC1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][1] == 1 ||
+              ClsGlobal.Matriz1[2][1] == 121 ||
+              ClsGlobal.Matriz1[2][1] == 122 ||
+              ClsGlobal.Matriz1[2][1] == 123 ||
+              ClsGlobal.Matriz1[2][1] == 124 ||
+              ClsGlobal.Matriz1[2][1] == 131 ||
+              ClsGlobal.Matriz1[2][1] == 132 ||
+              ClsGlobal.Matriz1[2][1] == 133 ||
+              ClsGlobal.Matriz1[2][1] == 134 ||
+              ClsGlobal.Matriz1[2][1] == 221 ||
+              ClsGlobal.Matriz1[2][1] == 222 ||
+              ClsGlobal.Matriz1[2][1] == 223 ||
+              ClsGlobal.Matriz1[2][1] == 231 ||
+              ClsGlobal.Matriz1[2][1] == 232 ||
+              ClsGlobal.Matriz1[2][1] == 233 ||
+              ClsGlobal.Matriz1[2][1] == 321 ||
+              ClsGlobal.Matriz1[2][1] == 322 ||
+              ClsGlobal.Matriz1[2][1] == 331 ||
+              ClsGlobal.Matriz1[2][1] == 332){
+                JBC2_1.setEnabled(false);
+           }else{
+                JBC2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][2] == 1 ||
+              ClsGlobal.Matriz1[2][2] == 121 ||
+              ClsGlobal.Matriz1[2][2] == 122 ||
+              ClsGlobal.Matriz1[2][2] == 123 ||
+              ClsGlobal.Matriz1[2][2] == 124 ||
+              ClsGlobal.Matriz1[2][2] == 131 ||
+              ClsGlobal.Matriz1[2][2] == 132 ||
+              ClsGlobal.Matriz1[2][2] == 133 ||
+              ClsGlobal.Matriz1[2][2] == 134 ||
+              ClsGlobal.Matriz1[2][2] == 221 ||
+              ClsGlobal.Matriz1[2][2] == 222 ||
+              ClsGlobal.Matriz1[2][2] == 223 ||
+              ClsGlobal.Matriz1[2][2] == 231 ||
+              ClsGlobal.Matriz1[2][2] == 232 ||
+              ClsGlobal.Matriz1[2][2] == 233 ||
+              ClsGlobal.Matriz1[2][2] == 321 ||
+              ClsGlobal.Matriz1[2][2] == 322 ||
+              ClsGlobal.Matriz1[2][2] == 331 ||
+              ClsGlobal.Matriz1[2][2] == 332){
+                JBC3_1.setEnabled(false);
+           }else{
+                JBC3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][3] == 1 ||
+              ClsGlobal.Matriz1[2][3] == 121 ||
+              ClsGlobal.Matriz1[2][3] == 122 ||
+              ClsGlobal.Matriz1[2][3] == 123 ||
+              ClsGlobal.Matriz1[2][3] == 124 ||
+              ClsGlobal.Matriz1[2][3] == 131 ||
+              ClsGlobal.Matriz1[2][3] == 132 ||
+              ClsGlobal.Matriz1[2][3] == 133 ||
+              ClsGlobal.Matriz1[2][3] == 134 ||
+              ClsGlobal.Matriz1[2][3] == 221 ||
+              ClsGlobal.Matriz1[2][3] == 222 ||
+              ClsGlobal.Matriz1[2][3] == 223 ||
+              ClsGlobal.Matriz1[2][3] == 231 ||
+              ClsGlobal.Matriz1[2][3] == 232 ||
+              ClsGlobal.Matriz1[2][3] == 233 ||
+              ClsGlobal.Matriz1[2][3] == 321 ||
+              ClsGlobal.Matriz1[2][3] == 322 ||
+              ClsGlobal.Matriz1[2][3] == 331 ||
+              ClsGlobal.Matriz1[2][3] == 332){
+                JBC4_1.setEnabled(false);
+           }else{
+                JBC4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][4] == 1 ||
+              ClsGlobal.Matriz1[2][4] == 121 ||
+              ClsGlobal.Matriz1[2][4] == 122 ||
+              ClsGlobal.Matriz1[2][4] == 123 ||
+              ClsGlobal.Matriz1[2][4] == 124 ||
+              ClsGlobal.Matriz1[2][4] == 131 ||
+              ClsGlobal.Matriz1[2][4] == 132 ||
+              ClsGlobal.Matriz1[2][4] == 133 ||
+              ClsGlobal.Matriz1[2][4] == 134 ||
+              ClsGlobal.Matriz1[2][4] == 221 ||
+              ClsGlobal.Matriz1[2][4] == 222 ||
+              ClsGlobal.Matriz1[2][4] == 223 ||
+              ClsGlobal.Matriz1[2][4] == 231 ||
+              ClsGlobal.Matriz1[2][4] == 232 ||
+              ClsGlobal.Matriz1[2][4] == 233 ||
+              ClsGlobal.Matriz1[2][4] == 321 ||
+              ClsGlobal.Matriz1[2][4] == 322 ||
+              ClsGlobal.Matriz1[2][4] == 331 ||
+              ClsGlobal.Matriz1[2][4] == 332){
+                JBC5_1.setEnabled(false);
+           }else{
+                JBC5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][5] == 1 ||
+              ClsGlobal.Matriz1[2][5] == 121 ||
+              ClsGlobal.Matriz1[2][5] == 122 ||
+              ClsGlobal.Matriz1[2][5] == 123 ||
+              ClsGlobal.Matriz1[2][5] == 124 ||
+              ClsGlobal.Matriz1[2][5] == 131 ||
+              ClsGlobal.Matriz1[2][5] == 132 ||
+              ClsGlobal.Matriz1[2][5] == 133 ||
+              ClsGlobal.Matriz1[2][5] == 134 ||
+              ClsGlobal.Matriz1[2][5] == 221 ||
+              ClsGlobal.Matriz1[2][5] == 222 ||
+              ClsGlobal.Matriz1[2][5] == 223 ||
+              ClsGlobal.Matriz1[2][5] == 231 ||
+              ClsGlobal.Matriz1[2][5] == 232 ||
+              ClsGlobal.Matriz1[2][5] == 233 ||
+              ClsGlobal.Matriz1[2][5] == 321 ||
+              ClsGlobal.Matriz1[2][5] == 322 ||
+              ClsGlobal.Matriz1[2][5] == 331 ||
+              ClsGlobal.Matriz1[2][5] == 332){
+                JBC6_1.setEnabled(false);
+           }else{
+                JBC6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][6] == 1 ||
+              ClsGlobal.Matriz1[2][6] == 121 ||
+              ClsGlobal.Matriz1[2][6] == 122 ||
+              ClsGlobal.Matriz1[2][6] == 123 ||
+              ClsGlobal.Matriz1[2][6] == 124 ||
+              ClsGlobal.Matriz1[2][6] == 131 ||
+              ClsGlobal.Matriz1[2][6] == 132 ||
+              ClsGlobal.Matriz1[2][6] == 133 ||
+              ClsGlobal.Matriz1[2][6] == 134 ||
+              ClsGlobal.Matriz1[2][6] == 221 ||
+              ClsGlobal.Matriz1[2][6] == 222 ||
+              ClsGlobal.Matriz1[2][6] == 223 ||
+              ClsGlobal.Matriz1[2][6] == 231 ||
+              ClsGlobal.Matriz1[2][6] == 232 ||
+              ClsGlobal.Matriz1[2][6] == 233 ||
+              ClsGlobal.Matriz1[2][6] == 321 ||
+              ClsGlobal.Matriz1[2][6] == 322 ||
+              ClsGlobal.Matriz1[2][6] == 331 ||
+              ClsGlobal.Matriz1[2][6] == 332){
+                JBC7_1.setEnabled(false);
+           }else{
+                JBC7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][7] == 1 ||
+              ClsGlobal.Matriz1[2][7] == 121 ||
+              ClsGlobal.Matriz1[2][7] == 122 ||
+              ClsGlobal.Matriz1[2][7] == 123 ||
+              ClsGlobal.Matriz1[2][7] == 124 ||
+              ClsGlobal.Matriz1[2][7] == 131 ||
+              ClsGlobal.Matriz1[2][7] == 132 ||
+              ClsGlobal.Matriz1[2][7] == 133 ||
+              ClsGlobal.Matriz1[2][7] == 134 ||
+              ClsGlobal.Matriz1[2][7] == 221 ||
+              ClsGlobal.Matriz1[2][7] == 222 ||
+              ClsGlobal.Matriz1[2][7] == 223 ||
+              ClsGlobal.Matriz1[2][7] == 231 ||
+              ClsGlobal.Matriz1[2][7] == 232 ||
+              ClsGlobal.Matriz1[2][7] == 233 ||
+              ClsGlobal.Matriz1[2][7] == 321 ||
+              ClsGlobal.Matriz1[2][7] == 322 ||
+              ClsGlobal.Matriz1[2][7] == 331 ||
+              ClsGlobal.Matriz1[2][7] == 332){
+                JBC8_1.setEnabled(false);
+           }else{
+                JBC8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][8] == 1 ||
+              ClsGlobal.Matriz1[2][8] == 121 ||
+              ClsGlobal.Matriz1[2][8] == 122 ||
+              ClsGlobal.Matriz1[2][8] == 123 ||
+              ClsGlobal.Matriz1[2][8] == 124 ||
+              ClsGlobal.Matriz1[2][8] == 131 ||
+              ClsGlobal.Matriz1[2][8] == 132 ||
+              ClsGlobal.Matriz1[2][8] == 133 ||
+              ClsGlobal.Matriz1[2][8] == 134 ||
+              ClsGlobal.Matriz1[2][8] == 221 ||
+              ClsGlobal.Matriz1[2][8] == 222 ||
+              ClsGlobal.Matriz1[2][8] == 223 ||
+              ClsGlobal.Matriz1[2][8] == 231 ||
+              ClsGlobal.Matriz1[2][8] == 232 ||
+              ClsGlobal.Matriz1[2][8] == 233 ||
+              ClsGlobal.Matriz1[2][8] == 321 ||
+              ClsGlobal.Matriz1[2][8] == 322 ||
+              ClsGlobal.Matriz1[2][8] == 331 ||
+              ClsGlobal.Matriz1[2][8] == 332){
+                JBC9_1.setEnabled(false);
+           }else{
+                JBC9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[2][9] == 1 ||
+              ClsGlobal.Matriz1[2][9] == 121 ||
+              ClsGlobal.Matriz1[2][9] == 122 ||
+              ClsGlobal.Matriz1[2][9] == 123 ||
+              ClsGlobal.Matriz1[2][9] == 124 ||
+              ClsGlobal.Matriz1[2][9] == 131 ||
+              ClsGlobal.Matriz1[2][9] == 132 ||
+              ClsGlobal.Matriz1[2][9] == 133 ||
+              ClsGlobal.Matriz1[2][9] == 134 ||
+              ClsGlobal.Matriz1[2][9] == 221 ||
+              ClsGlobal.Matriz1[2][9] == 222 ||
+              ClsGlobal.Matriz1[2][9] == 223 ||
+              ClsGlobal.Matriz1[2][9] == 231 ||
+              ClsGlobal.Matriz1[2][9] == 232 ||
+              ClsGlobal.Matriz1[2][9] == 233 ||
+              ClsGlobal.Matriz1[2][9] == 321 ||
+              ClsGlobal.Matriz1[2][9] == 322 ||
+              ClsGlobal.Matriz1[2][9] == 331 ||
+              ClsGlobal.Matriz1[2][9] == 332){
+                JBC10_1.setEnabled(false);
+           }else{
+                JBC10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][0] == 1 ||
+              ClsGlobal.Matriz1[3][0] == 121 ||
+              ClsGlobal.Matriz1[3][0] == 122 ||
+              ClsGlobal.Matriz1[3][0] == 123 ||
+              ClsGlobal.Matriz1[03][0] == 124 ||
+              ClsGlobal.Matriz1[3][0] == 131 ||
+              ClsGlobal.Matriz1[3][0] == 132 ||
+              ClsGlobal.Matriz1[3][0] == 133 ||
+              ClsGlobal.Matriz1[3][0] == 134 ||
+              ClsGlobal.Matriz1[3][0] == 221 ||
+              ClsGlobal.Matriz1[3][0] == 222 ||
+              ClsGlobal.Matriz1[3][0] == 223 ||
+              ClsGlobal.Matriz1[3][0] == 231 ||
+              ClsGlobal.Matriz1[3][0] == 232 ||
+              ClsGlobal.Matriz1[3][0] == 233 ||
+              ClsGlobal.Matriz1[3][0] == 321 ||
+              ClsGlobal.Matriz1[3][0] == 322 ||
+              ClsGlobal.Matriz1[3][0] == 331 ||
+              ClsGlobal.Matriz1[3][0] == 332){
+                JBD1_1.setEnabled(false);
+           }else{
+                JBD1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][1] == 1 ||
+              ClsGlobal.Matriz1[3][1] == 121 ||
+              ClsGlobal.Matriz1[3][1] == 122 ||
+              ClsGlobal.Matriz1[3][1] == 123 ||
+              ClsGlobal.Matriz1[3][1] == 124 ||
+              ClsGlobal.Matriz1[3][1] == 131 ||
+              ClsGlobal.Matriz1[3][1] == 132 ||
+              ClsGlobal.Matriz1[3][1] == 133 ||
+              ClsGlobal.Matriz1[3][1] == 134 ||
+              ClsGlobal.Matriz1[3][1] == 221 ||
+              ClsGlobal.Matriz1[3][1] == 222 ||
+              ClsGlobal.Matriz1[3][1] == 223 ||
+              ClsGlobal.Matriz1[3][1] == 231 ||
+              ClsGlobal.Matriz1[3][1] == 232 ||
+              ClsGlobal.Matriz1[3][1] == 233 ||
+              ClsGlobal.Matriz1[3][1] == 321 ||
+              ClsGlobal.Matriz1[3][1] == 322 ||
+              ClsGlobal.Matriz1[3][1] == 331 ||
+              ClsGlobal.Matriz1[3][1] == 332){
+                JBD2_1.setEnabled(false);
+           }else{
+                JBD2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][2] == 1 ||
+              ClsGlobal.Matriz1[3][2] == 121 ||
+              ClsGlobal.Matriz1[3][2] == 122 ||
+              ClsGlobal.Matriz1[3][2] == 123 ||
+              ClsGlobal.Matriz1[3][2] == 124 ||
+              ClsGlobal.Matriz1[3][2] == 131 ||
+              ClsGlobal.Matriz1[3][2] == 132 ||
+              ClsGlobal.Matriz1[3][2] == 133 ||
+              ClsGlobal.Matriz1[3][2] == 134 ||
+              ClsGlobal.Matriz1[3][2] == 221 ||
+              ClsGlobal.Matriz1[3][2] == 222 ||
+              ClsGlobal.Matriz1[3][2] == 223 ||
+              ClsGlobal.Matriz1[3][2] == 231 ||
+              ClsGlobal.Matriz1[3][2] == 232 ||
+              ClsGlobal.Matriz1[3][2] == 233 ||
+              ClsGlobal.Matriz1[3][2] == 321 ||
+              ClsGlobal.Matriz1[3][2] == 322 ||
+              ClsGlobal.Matriz1[3][2] == 331 ||
+              ClsGlobal.Matriz1[3][2] == 332){
+                JBD3_1.setEnabled(false);
+           }else{
+                JBD3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][3] == 1 ||
+              ClsGlobal.Matriz1[3][3] == 121 ||
+              ClsGlobal.Matriz1[3][3] == 122 ||
+              ClsGlobal.Matriz1[3][3] == 123 ||
+              ClsGlobal.Matriz1[3][3] == 124 ||
+              ClsGlobal.Matriz1[3][3] == 131 ||
+              ClsGlobal.Matriz1[3][3] == 132 ||
+              ClsGlobal.Matriz1[3][3] == 133 ||
+              ClsGlobal.Matriz1[3][3] == 134 ||
+              ClsGlobal.Matriz1[3][3] == 221 ||
+              ClsGlobal.Matriz1[3][3] == 222 ||
+              ClsGlobal.Matriz1[3][3] == 223 ||
+              ClsGlobal.Matriz1[3][3] == 231 ||
+              ClsGlobal.Matriz1[3][3] == 232 ||
+              ClsGlobal.Matriz1[3][3] == 233 ||
+              ClsGlobal.Matriz1[3][3] == 321 ||
+              ClsGlobal.Matriz1[3][3] == 322 ||
+              ClsGlobal.Matriz1[3][3] == 331 ||
+              ClsGlobal.Matriz1[3][3] == 332){
+                JBD4_1.setEnabled(false);
+           }else{
+                JBD4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][4] == 1 ||
+              ClsGlobal.Matriz1[3][4] == 121 ||
+              ClsGlobal.Matriz1[3][4] == 122 ||
+              ClsGlobal.Matriz1[3][4] == 123 ||
+              ClsGlobal.Matriz1[3][4] == 124 ||
+              ClsGlobal.Matriz1[3][4] == 131 ||
+              ClsGlobal.Matriz1[3][4] == 132 ||
+              ClsGlobal.Matriz1[3][4] == 133 ||
+              ClsGlobal.Matriz1[3][4] == 134 ||
+              ClsGlobal.Matriz1[3][4] == 221 ||
+              ClsGlobal.Matriz1[3][4] == 222 ||
+              ClsGlobal.Matriz1[3][4] == 223 ||
+              ClsGlobal.Matriz1[3][4] == 231 ||
+              ClsGlobal.Matriz1[3][4] == 232 ||
+              ClsGlobal.Matriz1[3][4] == 233 ||
+              ClsGlobal.Matriz1[3][4] == 321 ||
+              ClsGlobal.Matriz1[3][4] == 322 ||
+              ClsGlobal.Matriz1[3][4] == 331 ||
+              ClsGlobal.Matriz1[3][4] == 332){
+                JBD5_1.setEnabled(false);
+           }else{
+                JBD5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][5] == 1 ||
+              ClsGlobal.Matriz1[3][5] == 121 ||
+              ClsGlobal.Matriz1[3][5] == 122 ||
+              ClsGlobal.Matriz1[3][5] == 123 ||
+              ClsGlobal.Matriz1[3][5] == 124 ||
+              ClsGlobal.Matriz1[3][5] == 131 ||
+              ClsGlobal.Matriz1[3][5] == 132 ||
+              ClsGlobal.Matriz1[3][5] == 133 ||
+              ClsGlobal.Matriz1[3][5] == 134 ||
+              ClsGlobal.Matriz1[3][5] == 221 ||
+              ClsGlobal.Matriz1[3][5] == 222 ||
+              ClsGlobal.Matriz1[3][5] == 223 ||
+              ClsGlobal.Matriz1[3][5] == 231 ||
+              ClsGlobal.Matriz1[3][5] == 232 ||
+              ClsGlobal.Matriz1[3][5] == 233 ||
+              ClsGlobal.Matriz1[3][5] == 321 ||
+              ClsGlobal.Matriz1[3][5] == 322 ||
+              ClsGlobal.Matriz1[3][5] == 331 ||
+              ClsGlobal.Matriz1[3][5] == 332){
+                JBD6_1.setEnabled(false);
+           }else{
+                JBD6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][6] == 1 ||
+              ClsGlobal.Matriz1[3][6] == 121 ||
+              ClsGlobal.Matriz1[3][6] == 122 ||
+              ClsGlobal.Matriz1[3][6] == 123 ||
+              ClsGlobal.Matriz1[3][6] == 124 ||
+              ClsGlobal.Matriz1[3][6] == 131 ||
+              ClsGlobal.Matriz1[3][6] == 132 ||
+              ClsGlobal.Matriz1[3][6] == 133 ||
+              ClsGlobal.Matriz1[3][6] == 134 ||
+              ClsGlobal.Matriz1[3][6] == 221 ||
+              ClsGlobal.Matriz1[3][6] == 222 ||
+              ClsGlobal.Matriz1[3][6] == 223 ||
+              ClsGlobal.Matriz1[3][6] == 231 ||
+              ClsGlobal.Matriz1[3][6] == 232 ||
+              ClsGlobal.Matriz1[3][6] == 233 ||
+              ClsGlobal.Matriz1[3][6] == 321 ||
+              ClsGlobal.Matriz1[3][6] == 322 ||
+              ClsGlobal.Matriz1[3][6] == 331 ||
+              ClsGlobal.Matriz1[3][6] == 332){
+                JBD7_1.setEnabled(false);
+           }else{
+                JBD7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][7] == 1 ||
+              ClsGlobal.Matriz1[3][7] == 121 ||
+              ClsGlobal.Matriz1[3][7] == 122 ||
+              ClsGlobal.Matriz1[3][7] == 123 ||
+              ClsGlobal.Matriz1[3][7] == 124 ||
+              ClsGlobal.Matriz1[3][7] == 131 ||
+              ClsGlobal.Matriz1[3][7] == 132 ||
+              ClsGlobal.Matriz1[3][7] == 133 ||
+              ClsGlobal.Matriz1[3][7] == 134 ||
+              ClsGlobal.Matriz1[3][7] == 221 ||
+              ClsGlobal.Matriz1[3][7] == 222 ||
+              ClsGlobal.Matriz1[3][7] == 223 ||
+              ClsGlobal.Matriz1[3][7] == 231 ||
+              ClsGlobal.Matriz1[3][7] == 232 ||
+              ClsGlobal.Matriz1[3][7] == 233 ||
+              ClsGlobal.Matriz1[3][7] == 321 ||
+              ClsGlobal.Matriz1[3][7] == 322 ||
+              ClsGlobal.Matriz1[3][7] == 331 ||
+              ClsGlobal.Matriz1[3][7] == 332){
+                JBD8_1.setEnabled(false);
+           }else{
+                JBD8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][8] == 1 ||
+              ClsGlobal.Matriz1[3][8] == 121 ||
+              ClsGlobal.Matriz1[3][8] == 122 ||
+              ClsGlobal.Matriz1[3][8] == 123 ||
+              ClsGlobal.Matriz1[3][8] == 124 ||
+              ClsGlobal.Matriz1[3][8] == 131 ||
+              ClsGlobal.Matriz1[3][8] == 132 ||
+              ClsGlobal.Matriz1[3][8] == 133 ||
+              ClsGlobal.Matriz1[3][8] == 134 ||
+              ClsGlobal.Matriz1[3][8] == 221 ||
+              ClsGlobal.Matriz1[3][8] == 222 ||
+              ClsGlobal.Matriz1[3][8] == 223 ||
+              ClsGlobal.Matriz1[3][8] == 231 ||
+              ClsGlobal.Matriz1[3][8] == 232 ||
+              ClsGlobal.Matriz1[3][8] == 233 ||
+              ClsGlobal.Matriz1[3][8] == 321 ||
+              ClsGlobal.Matriz1[3][8] == 322 ||
+              ClsGlobal.Matriz1[3][8] == 331 ||
+              ClsGlobal.Matriz1[3][8] == 332){
+                JBD9_1.setEnabled(false);
+           }else{
+                JBD9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[3][9] == 1 ||
+              ClsGlobal.Matriz1[3][9] == 121 ||
+              ClsGlobal.Matriz1[3][9] == 122 ||
+              ClsGlobal.Matriz1[3][9] == 123 ||
+              ClsGlobal.Matriz1[3][9] == 124 ||
+              ClsGlobal.Matriz1[3][9] == 131 ||
+              ClsGlobal.Matriz1[3][9] == 132 ||
+              ClsGlobal.Matriz1[3][9] == 133 ||
+              ClsGlobal.Matriz1[3][9] == 134 ||
+              ClsGlobal.Matriz1[3][9] == 221 ||
+              ClsGlobal.Matriz1[3][9] == 222 ||
+              ClsGlobal.Matriz1[3][9] == 223 ||
+              ClsGlobal.Matriz1[3][9] == 231 ||
+              ClsGlobal.Matriz1[3][9] == 232 ||
+              ClsGlobal.Matriz1[3][9] == 233 ||
+              ClsGlobal.Matriz1[3][9] == 321 ||
+              ClsGlobal.Matriz1[3][9] == 322 ||
+              ClsGlobal.Matriz1[3][9] == 331 ||
+              ClsGlobal.Matriz1[3][9] == 332){
+                JBD10_1.setEnabled(false);
+           }else{
+                JBD10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][0] == 1 ||
+              ClsGlobal.Matriz1[4][0] == 121 ||
+              ClsGlobal.Matriz1[4][0] == 122 ||
+              ClsGlobal.Matriz1[4][0] == 123 ||
+              ClsGlobal.Matriz1[4][0] == 124 ||
+              ClsGlobal.Matriz1[4][0] == 131 ||
+              ClsGlobal.Matriz1[4][0] == 132 ||
+              ClsGlobal.Matriz1[4][0] == 133 ||
+              ClsGlobal.Matriz1[4][0] == 134 ||
+              ClsGlobal.Matriz1[4][0] == 221 ||
+              ClsGlobal.Matriz1[4][0] == 222 ||
+              ClsGlobal.Matriz1[4][0] == 223 ||
+              ClsGlobal.Matriz1[4][0] == 231 ||
+              ClsGlobal.Matriz1[4][0] == 232 ||
+              ClsGlobal.Matriz1[4][0] == 233 ||
+              ClsGlobal.Matriz1[4][0] == 321 ||
+              ClsGlobal.Matriz1[4][0] == 322 ||
+              ClsGlobal.Matriz1[4][0] == 331 ||
+              ClsGlobal.Matriz1[4][0] == 332){
+                JBE1_1.setEnabled(false);
+           }else{
+                JBE1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][1] == 1 ||
+              ClsGlobal.Matriz1[4][1] == 121 ||
+              ClsGlobal.Matriz1[4][1] == 122 ||
+              ClsGlobal.Matriz1[4][1] == 123 ||
+              ClsGlobal.Matriz1[4][1] == 124 ||
+              ClsGlobal.Matriz1[4][1] == 131 ||
+              ClsGlobal.Matriz1[4][1] == 132 ||
+              ClsGlobal.Matriz1[4][1] == 133 ||
+              ClsGlobal.Matriz1[4][1] == 134 ||
+              ClsGlobal.Matriz1[4][1] == 221 ||
+              ClsGlobal.Matriz1[4][1] == 222 ||
+              ClsGlobal.Matriz1[4][1] == 223 ||
+              ClsGlobal.Matriz1[4][1] == 231 ||
+              ClsGlobal.Matriz1[4][1] == 232 ||
+              ClsGlobal.Matriz1[4][1] == 233 ||
+              ClsGlobal.Matriz1[4][1] == 321 ||
+              ClsGlobal.Matriz1[4][1] == 322 ||
+              ClsGlobal.Matriz1[4][1] == 331 ||
+              ClsGlobal.Matriz1[4][1] == 332){
+                JBE2_1.setEnabled(false);
+           }else{
+                JBE2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][2] == 1 ||
+              ClsGlobal.Matriz1[4][2] == 121 ||
+              ClsGlobal.Matriz1[4][2] == 122 ||
+              ClsGlobal.Matriz1[4][2] == 123 ||
+              ClsGlobal.Matriz1[4][2] == 124 ||
+              ClsGlobal.Matriz1[4][2] == 131 ||
+              ClsGlobal.Matriz1[4][2] == 132 ||
+              ClsGlobal.Matriz1[4][2] == 133 ||
+              ClsGlobal.Matriz1[4][2] == 134 ||
+              ClsGlobal.Matriz1[4][2] == 221 ||
+              ClsGlobal.Matriz1[4][2] == 222 ||
+              ClsGlobal.Matriz1[4][2] == 223 ||
+              ClsGlobal.Matriz1[4][2] == 231 ||
+              ClsGlobal.Matriz1[4][2] == 232 ||
+              ClsGlobal.Matriz1[4][2] == 233 ||
+              ClsGlobal.Matriz1[4][2] == 321 ||
+              ClsGlobal.Matriz1[4][2] == 322 ||
+              ClsGlobal.Matriz1[4][2] == 331 ||
+              ClsGlobal.Matriz1[4][2] == 332){
+                JBE3_1.setEnabled(false);
+           }else{
+                JBE3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][3] == 1 ||
+              ClsGlobal.Matriz1[4][3] == 121 ||
+              ClsGlobal.Matriz1[4][3] == 122 ||
+              ClsGlobal.Matriz1[4][3] == 123 ||
+              ClsGlobal.Matriz1[4][3] == 124 ||
+              ClsGlobal.Matriz1[4][3] == 131 ||
+              ClsGlobal.Matriz1[4][3] == 132 ||
+              ClsGlobal.Matriz1[4][3] == 133 ||
+              ClsGlobal.Matriz1[4][3] == 134 ||
+              ClsGlobal.Matriz1[4][3] == 221 ||
+              ClsGlobal.Matriz1[4][3] == 222 ||
+              ClsGlobal.Matriz1[4][3] == 223 ||
+              ClsGlobal.Matriz1[4][3] == 231 ||
+              ClsGlobal.Matriz1[4][3] == 232 ||
+              ClsGlobal.Matriz1[4][3] == 233 ||
+              ClsGlobal.Matriz1[4][3] == 321 ||
+              ClsGlobal.Matriz1[4][3] == 322 ||
+              ClsGlobal.Matriz1[4][3] == 331 ||
+              ClsGlobal.Matriz1[4][3] == 332){
+                JBE4_1.setEnabled(false);
+           }else{
+                JBE4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][4] == 1 ||
+              ClsGlobal.Matriz1[4][4] == 121 ||
+              ClsGlobal.Matriz1[4][4] == 122 ||
+              ClsGlobal.Matriz1[4][4] == 123 ||
+              ClsGlobal.Matriz1[4][4] == 124 ||
+              ClsGlobal.Matriz1[4][4] == 131 ||
+              ClsGlobal.Matriz1[4][4] == 132 ||
+              ClsGlobal.Matriz1[4][4] == 133 ||
+              ClsGlobal.Matriz1[4][4] == 134 ||
+              ClsGlobal.Matriz1[4][4] == 221 ||
+              ClsGlobal.Matriz1[4][4] == 222 ||
+              ClsGlobal.Matriz1[4][4] == 223 ||
+              ClsGlobal.Matriz1[4][4] == 231 ||
+              ClsGlobal.Matriz1[4][4] == 232 ||
+              ClsGlobal.Matriz1[4][4] == 233 ||
+              ClsGlobal.Matriz1[4][4] == 321 ||
+              ClsGlobal.Matriz1[4][4] == 322 ||
+              ClsGlobal.Matriz1[4][4] == 331 ||
+              ClsGlobal.Matriz1[4][4] == 332){
+                JBE5_1.setEnabled(false);
+           }else{
+                JBE5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][5] == 1 ||
+              ClsGlobal.Matriz1[4][5] == 121 ||
+              ClsGlobal.Matriz1[4][5] == 122 ||
+              ClsGlobal.Matriz1[4][5] == 123 ||
+              ClsGlobal.Matriz1[4][5] == 124 ||
+              ClsGlobal.Matriz1[4][5] == 131 ||
+              ClsGlobal.Matriz1[4][5] == 132 ||
+              ClsGlobal.Matriz1[4][5] == 133 ||
+              ClsGlobal.Matriz1[4][5] == 134 ||
+              ClsGlobal.Matriz1[4][5] == 221 ||
+              ClsGlobal.Matriz1[4][5] == 222 ||
+              ClsGlobal.Matriz1[4][5] == 223 ||
+              ClsGlobal.Matriz1[4][5] == 231 ||
+              ClsGlobal.Matriz1[4][5] == 232 ||
+              ClsGlobal.Matriz1[4][5] == 233 ||
+              ClsGlobal.Matriz1[4][5] == 321 ||
+              ClsGlobal.Matriz1[4][5] == 322 ||
+              ClsGlobal.Matriz1[4][5] == 331 ||
+              ClsGlobal.Matriz1[4][5] == 332){
+                JBE6_1.setEnabled(false);
+           }else{
+                JBE6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][6] == 1 ||
+              ClsGlobal.Matriz1[4][6] == 121 ||
+              ClsGlobal.Matriz1[4][6] == 122 ||
+              ClsGlobal.Matriz1[4][6] == 123 ||
+              ClsGlobal.Matriz1[4][6] == 124 ||
+              ClsGlobal.Matriz1[4][6] == 131 ||
+              ClsGlobal.Matriz1[4][6] == 132 ||
+              ClsGlobal.Matriz1[4][6] == 133 ||
+              ClsGlobal.Matriz1[4][6] == 134 ||
+              ClsGlobal.Matriz1[4][6] == 221 ||
+              ClsGlobal.Matriz1[4][6] == 222 ||
+              ClsGlobal.Matriz1[4][6] == 223 ||
+              ClsGlobal.Matriz1[4][6] == 231 ||
+              ClsGlobal.Matriz1[4][6] == 232 ||
+              ClsGlobal.Matriz1[4][6] == 233 ||
+              ClsGlobal.Matriz1[4][6] == 321 ||
+              ClsGlobal.Matriz1[4][6] == 322 ||
+              ClsGlobal.Matriz1[4][6] == 331 ||
+              ClsGlobal.Matriz1[4][6] == 332){
+                JBE7_1.setEnabled(false);
+           }else{
+                JBE7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][7] == 1 ||
+              ClsGlobal.Matriz1[4][7] == 121 ||
+              ClsGlobal.Matriz1[4][7] == 122 ||
+              ClsGlobal.Matriz1[4][7] == 123 ||
+              ClsGlobal.Matriz1[4][7] == 124 ||
+              ClsGlobal.Matriz1[4][7] == 131 ||
+              ClsGlobal.Matriz1[4][7] == 132 ||
+              ClsGlobal.Matriz1[4][7] == 133 ||
+              ClsGlobal.Matriz1[4][7] == 134 ||
+              ClsGlobal.Matriz1[4][7] == 221 ||
+              ClsGlobal.Matriz1[4][7] == 222 ||
+              ClsGlobal.Matriz1[4][7] == 223 ||
+              ClsGlobal.Matriz1[4][7] == 231 ||
+              ClsGlobal.Matriz1[4][7] == 232 ||
+              ClsGlobal.Matriz1[4][7] == 233 ||
+              ClsGlobal.Matriz1[4][7] == 321 ||
+              ClsGlobal.Matriz1[4][7] == 322 ||
+              ClsGlobal.Matriz1[4][7] == 331 ||
+              ClsGlobal.Matriz1[4][7] == 332){
+                JBE8_1.setEnabled(false);
+           }else{
+                JBE8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][8] == 1 ||
+              ClsGlobal.Matriz1[4][8] == 121 ||
+              ClsGlobal.Matriz1[4][8] == 122 ||
+              ClsGlobal.Matriz1[4][8] == 123 ||
+              ClsGlobal.Matriz1[4][8] == 124 ||
+              ClsGlobal.Matriz1[4][8] == 131 ||
+              ClsGlobal.Matriz1[4][8] == 132 ||
+              ClsGlobal.Matriz1[4][8] == 133 ||
+              ClsGlobal.Matriz1[4][8] == 134 ||
+              ClsGlobal.Matriz1[4][8] == 221 ||
+              ClsGlobal.Matriz1[4][8] == 222 ||
+              ClsGlobal.Matriz1[4][8] == 223 ||
+              ClsGlobal.Matriz1[4][8] == 231 ||
+              ClsGlobal.Matriz1[4][8] == 232 ||
+              ClsGlobal.Matriz1[4][8] == 233 ||
+              ClsGlobal.Matriz1[4][8] == 321 ||
+              ClsGlobal.Matriz1[4][8] == 322 ||
+              ClsGlobal.Matriz1[4][8] == 331 ||
+              ClsGlobal.Matriz1[4][8] == 332){
+                JBE9_1.setEnabled(false);
+           }else{
+                JBE9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[4][9] == 1 ||
+              ClsGlobal.Matriz1[4][9] == 121 ||
+              ClsGlobal.Matriz1[4][9] == 122 ||
+              ClsGlobal.Matriz1[4][9] == 123 ||
+              ClsGlobal.Matriz1[4][9] == 124 ||
+              ClsGlobal.Matriz1[4][9] == 131 ||
+              ClsGlobal.Matriz1[4][9] == 132 ||
+              ClsGlobal.Matriz1[4][9] == 133 ||
+              ClsGlobal.Matriz1[4][9] == 134 ||
+              ClsGlobal.Matriz1[4][9] == 221 ||
+              ClsGlobal.Matriz1[4][9] == 222 ||
+              ClsGlobal.Matriz1[4][9] == 223 ||
+              ClsGlobal.Matriz1[4][9] == 231 ||
+              ClsGlobal.Matriz1[4][9] == 232 ||
+              ClsGlobal.Matriz1[4][9] == 233 ||
+              ClsGlobal.Matriz1[4][9] == 321 ||
+              ClsGlobal.Matriz1[4][9] == 322 ||
+              ClsGlobal.Matriz1[4][9] == 331 ||
+              ClsGlobal.Matriz1[4][9] == 332){
+                JBE10_1.setEnabled(false);
+           }else{
+                JBE10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][0] == 1 ||
+              ClsGlobal.Matriz1[5][0] == 121 ||
+              ClsGlobal.Matriz1[5][0] == 122 ||
+              ClsGlobal.Matriz1[5][0] == 123 ||
+              ClsGlobal.Matriz1[5][0] == 124 ||
+              ClsGlobal.Matriz1[5][0] == 131 ||
+              ClsGlobal.Matriz1[5][0] == 132 ||
+              ClsGlobal.Matriz1[5][0] == 133 ||
+              ClsGlobal.Matriz1[5][0] == 134 ||
+              ClsGlobal.Matriz1[5][0] == 221 ||
+              ClsGlobal.Matriz1[5][0] == 222 ||
+              ClsGlobal.Matriz1[5][0] == 223 ||
+              ClsGlobal.Matriz1[5][0] == 231 ||
+              ClsGlobal.Matriz1[5][0] == 232 ||
+              ClsGlobal.Matriz1[5][0] == 233 ||
+              ClsGlobal.Matriz1[5][0] == 321 ||
+              ClsGlobal.Matriz1[5][0] == 322 ||
+              ClsGlobal.Matriz1[5][0] == 331 ||
+              ClsGlobal.Matriz1[5][0] == 332){
+                JBF1_1.setEnabled(false);
+           }else{
+                JBF1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][1] == 1 ||
+              ClsGlobal.Matriz1[5][1] == 121 ||
+              ClsGlobal.Matriz1[5][1] == 122 ||
+              ClsGlobal.Matriz1[5][1] == 123 ||
+              ClsGlobal.Matriz1[5][1] == 124 ||
+              ClsGlobal.Matriz1[5][1] == 131 ||
+              ClsGlobal.Matriz1[5][1] == 132 ||
+              ClsGlobal.Matriz1[5][1] == 133 ||
+              ClsGlobal.Matriz1[5][1] == 134 ||
+              ClsGlobal.Matriz1[5][1] == 221 ||
+              ClsGlobal.Matriz1[5][1] == 222 ||
+              ClsGlobal.Matriz1[5][1] == 223 ||
+              ClsGlobal.Matriz1[5][1] == 231 ||
+              ClsGlobal.Matriz1[5][1] == 232 ||
+              ClsGlobal.Matriz1[5][1] == 233 ||
+              ClsGlobal.Matriz1[5][1] == 321 ||
+              ClsGlobal.Matriz1[5][1] == 322 ||
+              ClsGlobal.Matriz1[5][1] == 331 ||
+              ClsGlobal.Matriz1[5][1] == 332){
+                JBF2_1.setEnabled(false);
+           }else{
+                JBF2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][2] == 1 ||
+              ClsGlobal.Matriz1[5][2] == 121 ||
+              ClsGlobal.Matriz1[5][2] == 122 ||
+              ClsGlobal.Matriz1[5][2] == 123 ||
+              ClsGlobal.Matriz1[5][2] == 124 ||
+              ClsGlobal.Matriz1[5][2] == 131 ||
+              ClsGlobal.Matriz1[5][2] == 132 ||
+              ClsGlobal.Matriz1[5][2] == 133 ||
+              ClsGlobal.Matriz1[5][2] == 134 ||
+              ClsGlobal.Matriz1[5][2] == 221 ||
+              ClsGlobal.Matriz1[5][2] == 222 ||
+              ClsGlobal.Matriz1[5][2] == 223 ||
+              ClsGlobal.Matriz1[5][2] == 231 ||
+              ClsGlobal.Matriz1[5][2] == 232 ||
+              ClsGlobal.Matriz1[5][2] == 233 ||
+              ClsGlobal.Matriz1[5][2] == 321 ||
+              ClsGlobal.Matriz1[5][2] == 322 ||
+              ClsGlobal.Matriz1[5][2] == 331 ||
+              ClsGlobal.Matriz1[5][2] == 332){
+                JBF3_1.setEnabled(false);
+           }else{
+                JBF3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][3] == 1 ||
+              ClsGlobal.Matriz1[5][3] == 121 ||
+              ClsGlobal.Matriz1[5][3] == 122 ||
+              ClsGlobal.Matriz1[5][3] == 123 ||
+              ClsGlobal.Matriz1[5][3] == 124 ||
+              ClsGlobal.Matriz1[5][3] == 131 ||
+              ClsGlobal.Matriz1[5][3] == 132 ||
+              ClsGlobal.Matriz1[5][3] == 133 ||
+              ClsGlobal.Matriz1[5][3] == 134 ||
+              ClsGlobal.Matriz1[5][3] == 221 ||
+              ClsGlobal.Matriz1[5][3] == 222 ||
+              ClsGlobal.Matriz1[5][3] == 223 ||
+              ClsGlobal.Matriz1[5][3] == 231 ||
+              ClsGlobal.Matriz1[5][3] == 232 ||
+              ClsGlobal.Matriz1[5][3] == 233 ||
+              ClsGlobal.Matriz1[5][3] == 321 ||
+              ClsGlobal.Matriz1[5][3] == 322 ||
+              ClsGlobal.Matriz1[5][3] == 331 ||
+              ClsGlobal.Matriz1[5][3] == 332){
+                JBF4_1.setEnabled(false);
+           }else{
+                JBF4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][4] == 1 ||
+              ClsGlobal.Matriz1[5][4] == 121 ||
+              ClsGlobal.Matriz1[5][4] == 122 ||
+              ClsGlobal.Matriz1[5][4] == 123 ||
+              ClsGlobal.Matriz1[5][4] == 124 ||
+              ClsGlobal.Matriz1[5][4] == 131 ||
+              ClsGlobal.Matriz1[5][4] == 132 ||
+              ClsGlobal.Matriz1[5][4] == 133 ||
+              ClsGlobal.Matriz1[5][4] == 134 ||
+              ClsGlobal.Matriz1[5][4] == 221 ||
+              ClsGlobal.Matriz1[5][4] == 222 ||
+              ClsGlobal.Matriz1[5][4] == 223 ||
+              ClsGlobal.Matriz1[5][4] == 231 ||
+              ClsGlobal.Matriz1[5][4] == 232 ||
+              ClsGlobal.Matriz1[5][4] == 233 ||
+              ClsGlobal.Matriz1[5][4] == 321 ||
+              ClsGlobal.Matriz1[5][4] == 322 ||
+              ClsGlobal.Matriz1[5][4] == 331 ||
+              ClsGlobal.Matriz1[5][4] == 332){
+                JBF5_1.setEnabled(false);
+           }else{
+                JBF5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][5] == 1 ||
+              ClsGlobal.Matriz1[5][5] == 121 ||
+              ClsGlobal.Matriz1[5][5] == 122 ||
+              ClsGlobal.Matriz1[5][5] == 123 ||
+              ClsGlobal.Matriz1[5][5] == 124 ||
+              ClsGlobal.Matriz1[5][5] == 131 ||
+              ClsGlobal.Matriz1[5][5] == 132 ||
+              ClsGlobal.Matriz1[5][5] == 133 ||
+              ClsGlobal.Matriz1[5][5] == 134 ||
+              ClsGlobal.Matriz1[5][5] == 221 ||
+              ClsGlobal.Matriz1[5][5] == 222 ||
+              ClsGlobal.Matriz1[5][5] == 223 ||
+              ClsGlobal.Matriz1[5][5] == 231 ||
+              ClsGlobal.Matriz1[5][5] == 232 ||
+              ClsGlobal.Matriz1[5][5] == 233 ||
+              ClsGlobal.Matriz1[5][5] == 321 ||
+              ClsGlobal.Matriz1[5][5] == 322 ||
+              ClsGlobal.Matriz1[5][5] == 331 ||
+              ClsGlobal.Matriz1[5][5] == 332){
+                JBF6_1.setEnabled(false);
+           }else{
+                JBF6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][6] == 1 ||
+              ClsGlobal.Matriz1[5][6] == 121 ||
+              ClsGlobal.Matriz1[5][6] == 122 ||
+              ClsGlobal.Matriz1[5][6] == 123 ||
+              ClsGlobal.Matriz1[5][6] == 124 ||
+              ClsGlobal.Matriz1[5][6] == 131 ||
+              ClsGlobal.Matriz1[5][6] == 132 ||
+              ClsGlobal.Matriz1[5][6] == 133 ||
+              ClsGlobal.Matriz1[5][6] == 134 ||
+              ClsGlobal.Matriz1[5][6] == 221 ||
+              ClsGlobal.Matriz1[5][6] == 222 ||
+              ClsGlobal.Matriz1[5][6] == 223 ||
+              ClsGlobal.Matriz1[5][6] == 231 ||
+              ClsGlobal.Matriz1[5][6] == 232 ||
+              ClsGlobal.Matriz1[5][6] == 233 ||
+              ClsGlobal.Matriz1[5][6] == 321 ||
+              ClsGlobal.Matriz1[5][6] == 322 ||
+              ClsGlobal.Matriz1[5][6] == 331 ||
+              ClsGlobal.Matriz1[5][6] == 332){
+                JBF7_1.setEnabled(false);
+           }else{
+                JBF7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][7] == 1 ||
+              ClsGlobal.Matriz1[5][7] == 121 ||
+              ClsGlobal.Matriz1[5][7] == 122 ||
+              ClsGlobal.Matriz1[5][7] == 123 ||
+              ClsGlobal.Matriz1[5][7] == 124 ||
+              ClsGlobal.Matriz1[5][7] == 131 ||
+              ClsGlobal.Matriz1[5][7] == 132 ||
+              ClsGlobal.Matriz1[5][7] == 133 ||
+              ClsGlobal.Matriz1[5][7] == 134 ||
+              ClsGlobal.Matriz1[5][7] == 221 ||
+              ClsGlobal.Matriz1[5][7] == 222 ||
+              ClsGlobal.Matriz1[5][7] == 223 ||
+              ClsGlobal.Matriz1[5][7] == 231 ||
+              ClsGlobal.Matriz1[5][7] == 232 ||
+              ClsGlobal.Matriz1[5][7] == 233 ||
+              ClsGlobal.Matriz1[5][7] == 321 ||
+              ClsGlobal.Matriz1[5][7] == 322 ||
+              ClsGlobal.Matriz1[5][7] == 331 ||
+              ClsGlobal.Matriz1[5][7] == 332){
+                JBF8_1.setEnabled(false);
+           }else{
+                JBF8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][8] == 1 ||
+              ClsGlobal.Matriz1[5][8] == 121 ||
+              ClsGlobal.Matriz1[5][8] == 122 ||
+              ClsGlobal.Matriz1[5][8] == 123 ||
+              ClsGlobal.Matriz1[5][8] == 124 ||
+              ClsGlobal.Matriz1[5][8] == 131 ||
+              ClsGlobal.Matriz1[5][8] == 132 ||
+              ClsGlobal.Matriz1[5][8] == 133 ||
+              ClsGlobal.Matriz1[5][8] == 134 ||
+              ClsGlobal.Matriz1[5][8] == 221 ||
+              ClsGlobal.Matriz1[5][8] == 222 ||
+              ClsGlobal.Matriz1[5][8] == 223 ||
+              ClsGlobal.Matriz1[5][8] == 231 ||
+              ClsGlobal.Matriz1[5][8] == 232 ||
+              ClsGlobal.Matriz1[5][8] == 233 ||
+              ClsGlobal.Matriz1[5][8] == 321 ||
+              ClsGlobal.Matriz1[5][8] == 322 ||
+              ClsGlobal.Matriz1[5][8] == 331 ||
+              ClsGlobal.Matriz1[5][8] == 332){
+                JBF9_1.setEnabled(false);
+           }else{
+                JBF9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[5][9] == 1 ||
+              ClsGlobal.Matriz1[5][9] == 121 ||
+              ClsGlobal.Matriz1[5][9] == 122 ||
+              ClsGlobal.Matriz1[5][9] == 123 ||
+              ClsGlobal.Matriz1[5][9] == 124 ||
+              ClsGlobal.Matriz1[5][9] == 131 ||
+              ClsGlobal.Matriz1[5][9] == 132 ||
+              ClsGlobal.Matriz1[5][9] == 133 ||
+              ClsGlobal.Matriz1[5][9] == 134 ||
+              ClsGlobal.Matriz1[5][9] == 221 ||
+              ClsGlobal.Matriz1[5][9] == 222 ||
+              ClsGlobal.Matriz1[5][9] == 223 ||
+              ClsGlobal.Matriz1[5][9] == 231 ||
+              ClsGlobal.Matriz1[5][9] == 232 ||
+              ClsGlobal.Matriz1[5][9] == 233 ||
+              ClsGlobal.Matriz1[5][9] == 321 ||
+              ClsGlobal.Matriz1[5][9] == 322 ||
+              ClsGlobal.Matriz1[5][9] == 331 ||
+              ClsGlobal.Matriz1[5][9] == 332){
+                JBF10_1.setEnabled(false);
+           }else{
+                JBF10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][0] == 1 ||
+              ClsGlobal.Matriz1[6][0] == 121 ||
+              ClsGlobal.Matriz1[6][0] == 122 ||
+              ClsGlobal.Matriz1[6][0] == 123 ||
+              ClsGlobal.Matriz1[6][0] == 124 ||
+              ClsGlobal.Matriz1[6][0] == 131 ||
+              ClsGlobal.Matriz1[6][0] == 132 ||
+              ClsGlobal.Matriz1[6][0] == 133 ||
+              ClsGlobal.Matriz1[6][0] == 134 ||
+              ClsGlobal.Matriz1[6][0] == 221 ||
+              ClsGlobal.Matriz1[6][0] == 222 ||
+              ClsGlobal.Matriz1[6][0] == 223 ||
+              ClsGlobal.Matriz1[6][0] == 231 ||
+              ClsGlobal.Matriz1[6][0] == 232 ||
+              ClsGlobal.Matriz1[6][0] == 233 ||
+              ClsGlobal.Matriz1[6][0] == 321 ||
+              ClsGlobal.Matriz1[6][0] == 322 ||
+              ClsGlobal.Matriz1[6][0] == 331 ||
+              ClsGlobal.Matriz1[6][0] == 332){
+                JBG1_1.setEnabled(false);
+           }else{
+                JBG1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][1] == 1 ||
+              ClsGlobal.Matriz1[6][1] == 121 ||
+              ClsGlobal.Matriz1[6][1] == 122 ||
+              ClsGlobal.Matriz1[6][1] == 123 ||
+              ClsGlobal.Matriz1[6][1] == 124 ||
+              ClsGlobal.Matriz1[6][1] == 131 ||
+              ClsGlobal.Matriz1[6][1] == 132 ||
+              ClsGlobal.Matriz1[6][1] == 133 ||
+              ClsGlobal.Matriz1[6][1] == 134 ||
+              ClsGlobal.Matriz1[6][1] == 221 ||
+              ClsGlobal.Matriz1[6][1] == 222 ||
+              ClsGlobal.Matriz1[6][1] == 223 ||
+              ClsGlobal.Matriz1[6][1] == 231 ||
+              ClsGlobal.Matriz1[6][1] == 232 ||
+              ClsGlobal.Matriz1[6][1] == 233 ||
+              ClsGlobal.Matriz1[6][1] == 321 ||
+              ClsGlobal.Matriz1[6][1] == 322 ||
+              ClsGlobal.Matriz1[6][1] == 331 ||
+              ClsGlobal.Matriz1[6][1] == 332){
+                JBG2_1.setEnabled(false);
+           }else{
+                JBG2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][2] == 1 ||
+              ClsGlobal.Matriz1[6][2] == 121 ||
+              ClsGlobal.Matriz1[6][2] == 122 ||
+              ClsGlobal.Matriz1[6][2] == 123 ||
+              ClsGlobal.Matriz1[6][2] == 124 ||
+              ClsGlobal.Matriz1[6][2] == 131 ||
+              ClsGlobal.Matriz1[6][2] == 132 ||
+              ClsGlobal.Matriz1[6][2] == 133 ||
+              ClsGlobal.Matriz1[6][2] == 134 ||
+              ClsGlobal.Matriz1[6][2] == 221 ||
+              ClsGlobal.Matriz1[6][2] == 222 ||
+              ClsGlobal.Matriz1[6][2] == 223 ||
+              ClsGlobal.Matriz1[6][2] == 231 ||
+              ClsGlobal.Matriz1[6][2] == 232 ||
+              ClsGlobal.Matriz1[6][2] == 233 ||
+              ClsGlobal.Matriz1[6][2] == 321 ||
+              ClsGlobal.Matriz1[6][2] == 322 ||
+              ClsGlobal.Matriz1[6][2] == 331 ||
+              ClsGlobal.Matriz1[6][2] == 332){
+                JBG3_1.setEnabled(false);
+           }else{
+                JBG3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][3] == 1 ||
+              ClsGlobal.Matriz1[6][3] == 121 ||
+              ClsGlobal.Matriz1[6][3] == 122 ||
+              ClsGlobal.Matriz1[6][3] == 123 ||
+              ClsGlobal.Matriz1[6][3] == 124 ||
+              ClsGlobal.Matriz1[6][3] == 131 ||
+              ClsGlobal.Matriz1[6][3] == 132 ||
+              ClsGlobal.Matriz1[6][3] == 133 ||
+              ClsGlobal.Matriz1[6][3] == 134 ||
+              ClsGlobal.Matriz1[6][3] == 221 ||
+              ClsGlobal.Matriz1[6][3] == 222 ||
+              ClsGlobal.Matriz1[6][3] == 223 ||
+              ClsGlobal.Matriz1[6][3] == 231 ||
+              ClsGlobal.Matriz1[6][3] == 232 ||
+              ClsGlobal.Matriz1[6][3] == 233 ||
+              ClsGlobal.Matriz1[6][3] == 321 ||
+              ClsGlobal.Matriz1[6][3] == 322 ||
+              ClsGlobal.Matriz1[6][3] == 331 ||
+              ClsGlobal.Matriz1[6][3] == 332){
+                JBG4_1.setEnabled(false);
+           }else{
+                JBG4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][4] == 1 ||
+              ClsGlobal.Matriz1[6][4] == 121 ||
+              ClsGlobal.Matriz1[6][4] == 122 ||
+              ClsGlobal.Matriz1[6][4] == 123 ||
+              ClsGlobal.Matriz1[6][4] == 124 ||
+              ClsGlobal.Matriz1[6][4] == 131 ||
+              ClsGlobal.Matriz1[6][4] == 132 ||
+              ClsGlobal.Matriz1[6][4] == 133 ||
+              ClsGlobal.Matriz1[6][4] == 134 ||
+              ClsGlobal.Matriz1[6][4] == 221 ||
+              ClsGlobal.Matriz1[6][4] == 222 ||
+              ClsGlobal.Matriz1[6][4] == 223 ||
+              ClsGlobal.Matriz1[6][4] == 231 ||
+              ClsGlobal.Matriz1[6][4] == 232 ||
+              ClsGlobal.Matriz1[6][4] == 233 ||
+              ClsGlobal.Matriz1[6][4] == 321 ||
+              ClsGlobal.Matriz1[6][4] == 322 ||
+              ClsGlobal.Matriz1[6][4] == 331 ||
+              ClsGlobal.Matriz1[6][4] == 332){
+                JBG5_1.setEnabled(false);
+           }else{
+                JBG5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][5] == 1 ||
+              ClsGlobal.Matriz1[6][5] == 121 ||
+              ClsGlobal.Matriz1[6][5] == 122 ||
+              ClsGlobal.Matriz1[6][5] == 123 ||
+              ClsGlobal.Matriz1[6][5] == 124 ||
+              ClsGlobal.Matriz1[6][5] == 131 ||
+              ClsGlobal.Matriz1[6][5] == 132 ||
+              ClsGlobal.Matriz1[6][5] == 133 ||
+              ClsGlobal.Matriz1[6][5] == 134 ||
+              ClsGlobal.Matriz1[6][5] == 221 ||
+              ClsGlobal.Matriz1[6][5] == 222 ||
+              ClsGlobal.Matriz1[6][5] == 223 ||
+              ClsGlobal.Matriz1[6][5] == 231 ||
+              ClsGlobal.Matriz1[6][5] == 232 ||
+              ClsGlobal.Matriz1[6][5] == 233 ||
+              ClsGlobal.Matriz1[6][5] == 321 ||
+              ClsGlobal.Matriz1[6][5] == 322 ||
+              ClsGlobal.Matriz1[6][5] == 331 ||
+              ClsGlobal.Matriz1[6][5] == 332){
+                JBG6_1.setEnabled(false);
+           }else{
+                JBG6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][6] == 1 ||
+              ClsGlobal.Matriz1[6][6] == 121 ||
+              ClsGlobal.Matriz1[6][6] == 122 ||
+              ClsGlobal.Matriz1[6][6] == 123 ||
+              ClsGlobal.Matriz1[6][6] == 124 ||
+              ClsGlobal.Matriz1[6][6] == 131 ||
+              ClsGlobal.Matriz1[6][6] == 132 ||
+              ClsGlobal.Matriz1[6][6] == 133 ||
+              ClsGlobal.Matriz1[6][6] == 134 ||
+              ClsGlobal.Matriz1[6][6] == 221 ||
+              ClsGlobal.Matriz1[6][6] == 222 ||
+              ClsGlobal.Matriz1[6][6] == 223 ||
+              ClsGlobal.Matriz1[6][6] == 231 ||
+              ClsGlobal.Matriz1[6][6] == 232 ||
+              ClsGlobal.Matriz1[6][6] == 233 ||
+              ClsGlobal.Matriz1[6][6] == 321 ||
+              ClsGlobal.Matriz1[6][6] == 322 ||
+              ClsGlobal.Matriz1[6][6] == 331 ||
+              ClsGlobal.Matriz1[6][6] == 332){
+                JBG7_1.setEnabled(false);
+           }else{
+                JBG7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][7] == 1 ||
+              ClsGlobal.Matriz1[6][7] == 121 ||
+              ClsGlobal.Matriz1[6][7] == 122 ||
+              ClsGlobal.Matriz1[6][7] == 123 ||
+              ClsGlobal.Matriz1[6][7] == 124 ||
+              ClsGlobal.Matriz1[6][7] == 131 ||
+              ClsGlobal.Matriz1[6][7] == 132 ||
+              ClsGlobal.Matriz1[6][7] == 133 ||
+              ClsGlobal.Matriz1[6][7] == 134 ||
+              ClsGlobal.Matriz1[6][7] == 221 ||
+              ClsGlobal.Matriz1[6][7] == 222 ||
+              ClsGlobal.Matriz1[6][7] == 223 ||
+              ClsGlobal.Matriz1[6][7] == 231 ||
+              ClsGlobal.Matriz1[6][7] == 232 ||
+              ClsGlobal.Matriz1[6][7] == 233 ||
+              ClsGlobal.Matriz1[6][7] == 321 ||
+              ClsGlobal.Matriz1[6][7] == 322 ||
+              ClsGlobal.Matriz1[6][7] == 331 ||
+              ClsGlobal.Matriz1[6][7] == 332){
+                JBG8_1.setEnabled(false);
+           }else{
+                JBG8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][8] == 1 ||
+              ClsGlobal.Matriz1[6][8] == 121 ||
+              ClsGlobal.Matriz1[6][8] == 122 ||
+              ClsGlobal.Matriz1[6][8] == 123 ||
+              ClsGlobal.Matriz1[6][8] == 124 ||
+              ClsGlobal.Matriz1[6][8] == 131 ||
+              ClsGlobal.Matriz1[6][8] == 132 ||
+              ClsGlobal.Matriz1[6][8] == 133 ||
+              ClsGlobal.Matriz1[6][8] == 134 ||
+              ClsGlobal.Matriz1[6][8] == 221 ||
+              ClsGlobal.Matriz1[6][8] == 222 ||
+              ClsGlobal.Matriz1[6][8] == 223 ||
+              ClsGlobal.Matriz1[6][8] == 231 ||
+              ClsGlobal.Matriz1[6][8] == 232 ||
+              ClsGlobal.Matriz1[6][8] == 233 ||
+              ClsGlobal.Matriz1[6][8] == 321 ||
+              ClsGlobal.Matriz1[6][8] == 322 ||
+              ClsGlobal.Matriz1[6][8] == 331 ||
+              ClsGlobal.Matriz1[6][8] == 332){
+                JBG9_1.setEnabled(false);
+           }else{
+                JBG9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[6][9] == 1 ||
+              ClsGlobal.Matriz1[6][9] == 121 ||
+              ClsGlobal.Matriz1[6][9] == 122 ||
+              ClsGlobal.Matriz1[6][9] == 123 ||
+              ClsGlobal.Matriz1[6][9] == 124 ||
+              ClsGlobal.Matriz1[6][9] == 131 ||
+              ClsGlobal.Matriz1[6][9] == 132 ||
+              ClsGlobal.Matriz1[6][9] == 133 ||
+              ClsGlobal.Matriz1[6][9] == 134 ||
+              ClsGlobal.Matriz1[6][9] == 221 ||
+              ClsGlobal.Matriz1[6][9] == 222 ||
+              ClsGlobal.Matriz1[6][9] == 223 ||
+              ClsGlobal.Matriz1[6][9] == 231 ||
+              ClsGlobal.Matriz1[6][9] == 232 ||
+              ClsGlobal.Matriz1[6][9] == 233 ||
+              ClsGlobal.Matriz1[6][9] == 321 ||
+              ClsGlobal.Matriz1[6][9] == 322 ||
+              ClsGlobal.Matriz1[6][9] == 331 ||
+              ClsGlobal.Matriz1[6][9] == 332){
+                JBG10_1.setEnabled(false);
+           }else{
+                JBG10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][0] == 1 ||
+              ClsGlobal.Matriz1[7][0] == 121 ||
+              ClsGlobal.Matriz1[7][0] == 122 ||
+              ClsGlobal.Matriz1[7][0] == 123 ||
+              ClsGlobal.Matriz1[7][0] == 124 ||
+              ClsGlobal.Matriz1[7][0] == 131 ||
+              ClsGlobal.Matriz1[7][0] == 132 ||
+              ClsGlobal.Matriz1[7][0] == 133 ||
+              ClsGlobal.Matriz1[7][0] == 134 ||
+              ClsGlobal.Matriz1[7][0] == 221 ||
+              ClsGlobal.Matriz1[7][0] == 222 ||
+              ClsGlobal.Matriz1[7][0] == 223 ||
+              ClsGlobal.Matriz1[7][0] == 231 ||
+              ClsGlobal.Matriz1[7][0] == 232 ||
+              ClsGlobal.Matriz1[7][0] == 233 ||
+              ClsGlobal.Matriz1[7][0] == 321 ||
+              ClsGlobal.Matriz1[7][0] == 322 ||
+              ClsGlobal.Matriz1[7][0] == 331 ||
+              ClsGlobal.Matriz1[7][0] == 332){
+                JBH1_1.setEnabled(false);
+           }else{
+                JBH1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][1] == 1 ||
+              ClsGlobal.Matriz1[7][1] == 121 ||
+              ClsGlobal.Matriz1[7][1] == 122 ||
+              ClsGlobal.Matriz1[7][1] == 123 ||
+              ClsGlobal.Matriz1[7][1] == 124 ||
+              ClsGlobal.Matriz1[7][1] == 131 ||
+              ClsGlobal.Matriz1[7][1] == 132 ||
+              ClsGlobal.Matriz1[7][1] == 133 ||
+              ClsGlobal.Matriz1[7][1] == 134 ||
+              ClsGlobal.Matriz1[7][1] == 221 ||
+              ClsGlobal.Matriz1[7][1] == 222 ||
+              ClsGlobal.Matriz1[7][1] == 223 ||
+              ClsGlobal.Matriz1[7][1] == 231 ||
+              ClsGlobal.Matriz1[7][1] == 232 ||
+              ClsGlobal.Matriz1[7][1] == 233 ||
+              ClsGlobal.Matriz1[7][1] == 321 ||
+              ClsGlobal.Matriz1[7][1] == 322 ||
+              ClsGlobal.Matriz1[7][1] == 331 ||
+              ClsGlobal.Matriz1[7][1] == 332){
+                JBH2_1.setEnabled(false);
+           }else{
+                JBH2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][2] == 1 ||
+              ClsGlobal.Matriz1[7][2] == 121 ||
+              ClsGlobal.Matriz1[7][2] == 122 ||
+              ClsGlobal.Matriz1[7][2] == 123 ||
+              ClsGlobal.Matriz1[7][2] == 124 ||
+              ClsGlobal.Matriz1[7][2] == 131 ||
+              ClsGlobal.Matriz1[7][2] == 132 ||
+              ClsGlobal.Matriz1[7][2] == 133 ||
+              ClsGlobal.Matriz1[7][2] == 134 ||
+              ClsGlobal.Matriz1[7][2] == 221 ||
+              ClsGlobal.Matriz1[7][2] == 222 ||
+              ClsGlobal.Matriz1[7][2] == 223 ||
+              ClsGlobal.Matriz1[7][2] == 231 ||
+              ClsGlobal.Matriz1[7][2] == 232 ||
+              ClsGlobal.Matriz1[7][2] == 233 ||
+              ClsGlobal.Matriz1[7][2] == 321 ||
+              ClsGlobal.Matriz1[7][2] == 322 ||
+              ClsGlobal.Matriz1[7][2] == 331 ||
+              ClsGlobal.Matriz1[7][2] == 332){
+                JBH3_1.setEnabled(false);
+           }else{
+                JBH3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][3] == 1 ||
+              ClsGlobal.Matriz1[7][3] == 121 ||
+              ClsGlobal.Matriz1[7][3] == 122 ||
+              ClsGlobal.Matriz1[7][3] == 123 ||
+              ClsGlobal.Matriz1[7][3] == 124 ||
+              ClsGlobal.Matriz1[7][3] == 131 ||
+              ClsGlobal.Matriz1[7][3] == 132 ||
+              ClsGlobal.Matriz1[7][3] == 133 ||
+              ClsGlobal.Matriz1[7][3] == 134 ||
+              ClsGlobal.Matriz1[7][3] == 221 ||
+              ClsGlobal.Matriz1[7][3] == 222 ||
+              ClsGlobal.Matriz1[7][3] == 223 ||
+              ClsGlobal.Matriz1[7][3] == 231 ||
+              ClsGlobal.Matriz1[7][3] == 232 ||
+              ClsGlobal.Matriz1[7][3] == 233 ||
+              ClsGlobal.Matriz1[7][3] == 321 ||
+              ClsGlobal.Matriz1[7][3] == 322 ||
+              ClsGlobal.Matriz1[7][3] == 331 ||
+              ClsGlobal.Matriz1[7][3] == 332){
+                JBH4_1.setEnabled(false);
+           }else{
+                JBH4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][4] == 1 ||
+              ClsGlobal.Matriz1[7][4] == 121 ||
+              ClsGlobal.Matriz1[7][4] == 122 ||
+              ClsGlobal.Matriz1[7][4] == 123 ||
+              ClsGlobal.Matriz1[7][4] == 124 ||
+              ClsGlobal.Matriz1[7][4] == 131 ||
+              ClsGlobal.Matriz1[7][4] == 132 ||
+              ClsGlobal.Matriz1[7][4] == 133 ||
+              ClsGlobal.Matriz1[7][4] == 134 ||
+              ClsGlobal.Matriz1[7][4] == 221 ||
+              ClsGlobal.Matriz1[7][4] == 222 ||
+              ClsGlobal.Matriz1[7][4] == 223 ||
+              ClsGlobal.Matriz1[7][4] == 231 ||
+              ClsGlobal.Matriz1[7][4] == 232 ||
+              ClsGlobal.Matriz1[7][4] == 233 ||
+              ClsGlobal.Matriz1[7][4] == 321 ||
+              ClsGlobal.Matriz1[7][4] == 322 ||
+              ClsGlobal.Matriz1[7][4] == 331 ||
+              ClsGlobal.Matriz1[7][4] == 332){
+                JBH5_1.setEnabled(false);
+           }else{
+                JBH5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][5] == 1 ||
+              ClsGlobal.Matriz1[7][5] == 121 ||
+              ClsGlobal.Matriz1[7][5] == 122 ||
+              ClsGlobal.Matriz1[7][5] == 123 ||
+              ClsGlobal.Matriz1[7][5] == 124 ||
+              ClsGlobal.Matriz1[7][5] == 131 ||
+              ClsGlobal.Matriz1[7][5] == 132 ||
+              ClsGlobal.Matriz1[7][5] == 133 ||
+              ClsGlobal.Matriz1[7][5] == 134 ||
+              ClsGlobal.Matriz1[7][5] == 221 ||
+              ClsGlobal.Matriz1[7][5] == 222 ||
+              ClsGlobal.Matriz1[7][5] == 223 ||
+              ClsGlobal.Matriz1[7][5] == 231 ||
+              ClsGlobal.Matriz1[7][5] == 232 ||
+              ClsGlobal.Matriz1[7][5] == 233 ||
+              ClsGlobal.Matriz1[7][5] == 321 ||
+              ClsGlobal.Matriz1[7][5] == 322 ||
+              ClsGlobal.Matriz1[7][5] == 331 ||
+              ClsGlobal.Matriz1[7][5] == 332){
+                JBH6_1.setEnabled(false);
+           }else{
+                JBH6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][6] == 1 ||
+              ClsGlobal.Matriz1[7][6] == 121 ||
+              ClsGlobal.Matriz1[7][6] == 122 ||
+              ClsGlobal.Matriz1[7][6] == 123 ||
+              ClsGlobal.Matriz1[7][6] == 124 ||
+              ClsGlobal.Matriz1[7][6] == 131 ||
+              ClsGlobal.Matriz1[7][6] == 132 ||
+              ClsGlobal.Matriz1[7][6] == 133 ||
+              ClsGlobal.Matriz1[7][6] == 134 ||
+              ClsGlobal.Matriz1[7][6] == 221 ||
+              ClsGlobal.Matriz1[7][6] == 222 ||
+              ClsGlobal.Matriz1[7][6] == 223 ||
+              ClsGlobal.Matriz1[7][6] == 231 ||
+              ClsGlobal.Matriz1[7][6] == 232 ||
+              ClsGlobal.Matriz1[7][6] == 233 ||
+              ClsGlobal.Matriz1[7][6] == 321 ||
+              ClsGlobal.Matriz1[7][6] == 322 ||
+              ClsGlobal.Matriz1[7][6] == 331 ||
+              ClsGlobal.Matriz1[7][6] == 332){
+                JBH7_1.setEnabled(false);
+           }else{
+                JBH7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][7] == 1 ||
+              ClsGlobal.Matriz1[7][7] == 121 ||
+              ClsGlobal.Matriz1[7][7] == 122 ||
+              ClsGlobal.Matriz1[7][7] == 123 ||
+              ClsGlobal.Matriz1[7][7] == 124 ||
+              ClsGlobal.Matriz1[7][7] == 131 ||
+              ClsGlobal.Matriz1[7][7] == 132 ||
+              ClsGlobal.Matriz1[7][7] == 133 ||
+              ClsGlobal.Matriz1[7][7] == 134 ||
+              ClsGlobal.Matriz1[7][7] == 221 ||
+              ClsGlobal.Matriz1[7][7] == 222 ||
+              ClsGlobal.Matriz1[7][7] == 223 ||
+              ClsGlobal.Matriz1[7][7] == 231 ||
+              ClsGlobal.Matriz1[7][7] == 232 ||
+              ClsGlobal.Matriz1[7][7] == 233 ||
+              ClsGlobal.Matriz1[7][7] == 321 ||
+              ClsGlobal.Matriz1[7][7] == 322 ||
+              ClsGlobal.Matriz1[7][7] == 331 ||
+              ClsGlobal.Matriz1[7][7] == 332){
+                JBH8_1.setEnabled(false);
+           }else{
+                JBH8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][8] == 1 ||
+              ClsGlobal.Matriz1[7][8] == 121 ||
+              ClsGlobal.Matriz1[7][8] == 122 ||
+              ClsGlobal.Matriz1[7][8] == 123 ||
+              ClsGlobal.Matriz1[7][8] == 124 ||
+              ClsGlobal.Matriz1[7][8] == 131 ||
+              ClsGlobal.Matriz1[7][8] == 132 ||
+              ClsGlobal.Matriz1[7][8] == 133 ||
+              ClsGlobal.Matriz1[7][8] == 134 ||
+              ClsGlobal.Matriz1[7][8] == 221 ||
+              ClsGlobal.Matriz1[7][8] == 222 ||
+              ClsGlobal.Matriz1[7][8] == 223 ||
+              ClsGlobal.Matriz1[7][8] == 231 ||
+              ClsGlobal.Matriz1[7][8] == 232 ||
+              ClsGlobal.Matriz1[7][8] == 233 ||
+              ClsGlobal.Matriz1[7][8] == 321 ||
+              ClsGlobal.Matriz1[7][8] == 322 ||
+              ClsGlobal.Matriz1[7][8] == 331 ||
+              ClsGlobal.Matriz1[7][8] == 332){
+                JBH9_1.setEnabled(false);
+           }else{
+                JBH9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[7][9] == 1 ||
+              ClsGlobal.Matriz1[7][9] == 121 ||
+              ClsGlobal.Matriz1[7][9] == 122 ||
+              ClsGlobal.Matriz1[7][9] == 123 ||
+              ClsGlobal.Matriz1[7][9] == 124 ||
+              ClsGlobal.Matriz1[7][9] == 131 ||
+              ClsGlobal.Matriz1[7][9] == 132 ||
+              ClsGlobal.Matriz1[7][9] == 133 ||
+              ClsGlobal.Matriz1[7][9] == 134 ||
+              ClsGlobal.Matriz1[7][9] == 221 ||
+              ClsGlobal.Matriz1[7][9] == 222 ||
+              ClsGlobal.Matriz1[7][9] == 223 ||
+              ClsGlobal.Matriz1[7][9] == 231 ||
+              ClsGlobal.Matriz1[7][9] == 232 ||
+              ClsGlobal.Matriz1[7][9] == 233 ||
+              ClsGlobal.Matriz1[7][9] == 321 ||
+              ClsGlobal.Matriz1[7][9] == 322 ||
+              ClsGlobal.Matriz1[7][9] == 331 ||
+              ClsGlobal.Matriz1[7][9] == 332){
+                JBH10_1.setEnabled(false);
+           }else{
+                JBH10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][0] == 1 ||
+              ClsGlobal.Matriz1[8][0] == 121 ||
+              ClsGlobal.Matriz1[8][0] == 122 ||
+              ClsGlobal.Matriz1[8][0] == 123 ||
+              ClsGlobal.Matriz1[8][0] == 124 ||
+              ClsGlobal.Matriz1[8][0] == 131 ||
+              ClsGlobal.Matriz1[8][0] == 132 ||
+              ClsGlobal.Matriz1[8][0] == 133 ||
+              ClsGlobal.Matriz1[8][0] == 134 ||
+              ClsGlobal.Matriz1[8][0] == 221 ||
+              ClsGlobal.Matriz1[8][0] == 222 ||
+              ClsGlobal.Matriz1[8][0] == 223 ||
+              ClsGlobal.Matriz1[8][0] == 231 ||
+              ClsGlobal.Matriz1[8][0] == 232 ||
+              ClsGlobal.Matriz1[8][0] == 233 ||
+              ClsGlobal.Matriz1[8][0] == 321 ||
+              ClsGlobal.Matriz1[8][0] == 322 ||
+              ClsGlobal.Matriz1[8][0] == 331 ||
+              ClsGlobal.Matriz1[8][0] == 332){
+                JBI1_1.setEnabled(false);
+           }else{
+                JBI1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][1] == 1 ||
+              ClsGlobal.Matriz1[8][1] == 121 ||
+              ClsGlobal.Matriz1[8][1] == 122 ||
+              ClsGlobal.Matriz1[8][1] == 123 ||
+              ClsGlobal.Matriz1[8][1] == 124 ||
+              ClsGlobal.Matriz1[8][1] == 131 ||
+              ClsGlobal.Matriz1[8][1] == 132 ||
+              ClsGlobal.Matriz1[8][1] == 133 ||
+              ClsGlobal.Matriz1[8][1] == 134 ||
+              ClsGlobal.Matriz1[8][1] == 221 ||
+              ClsGlobal.Matriz1[8][1] == 222 ||
+              ClsGlobal.Matriz1[8][1] == 223 ||
+              ClsGlobal.Matriz1[8][1] == 231 ||
+              ClsGlobal.Matriz1[8][1] == 232 ||
+              ClsGlobal.Matriz1[8][1] == 233 ||
+              ClsGlobal.Matriz1[8][1] == 321 ||
+              ClsGlobal.Matriz1[8][1] == 322 ||
+              ClsGlobal.Matriz1[8][1] == 331 ||
+              ClsGlobal.Matriz1[8][1] == 332){
+                JBI2_1.setEnabled(false);
+           }else{
+                JBI2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][2] == 1 ||
+              ClsGlobal.Matriz1[8][2] == 121 ||
+              ClsGlobal.Matriz1[8][2] == 122 ||
+              ClsGlobal.Matriz1[8][2] == 123 ||
+              ClsGlobal.Matriz1[8][2] == 124 ||
+              ClsGlobal.Matriz1[8][2] == 131 ||
+              ClsGlobal.Matriz1[8][2] == 132 ||
+              ClsGlobal.Matriz1[8][2] == 133 ||
+              ClsGlobal.Matriz1[8][2] == 134 ||
+              ClsGlobal.Matriz1[8][2] == 221 ||
+              ClsGlobal.Matriz1[8][2] == 222 ||
+              ClsGlobal.Matriz1[8][2] == 223 ||
+              ClsGlobal.Matriz1[8][2] == 231 ||
+              ClsGlobal.Matriz1[8][2] == 232 ||
+              ClsGlobal.Matriz1[8][2] == 233 ||
+              ClsGlobal.Matriz1[8][2] == 321 ||
+              ClsGlobal.Matriz1[8][2] == 322 ||
+              ClsGlobal.Matriz1[8][2] == 331 ||
+              ClsGlobal.Matriz1[8][2] == 332){
+                JBI3_1.setEnabled(false);
+           }else{
+                JBI3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][3] == 1 ||
+              ClsGlobal.Matriz1[8][3] == 121 ||
+              ClsGlobal.Matriz1[8][3] == 122 ||
+              ClsGlobal.Matriz1[8][3] == 123 ||
+              ClsGlobal.Matriz1[8][3] == 124 ||
+              ClsGlobal.Matriz1[8][3] == 131 ||
+              ClsGlobal.Matriz1[8][3] == 132 ||
+              ClsGlobal.Matriz1[8][3] == 133 ||
+              ClsGlobal.Matriz1[8][3] == 134 ||
+              ClsGlobal.Matriz1[8][3] == 221 ||
+              ClsGlobal.Matriz1[8][3] == 222 ||
+              ClsGlobal.Matriz1[8][3] == 223 ||
+              ClsGlobal.Matriz1[8][3] == 231 ||
+              ClsGlobal.Matriz1[8][3] == 232 ||
+              ClsGlobal.Matriz1[8][3] == 233 ||
+              ClsGlobal.Matriz1[8][3] == 321 ||
+              ClsGlobal.Matriz1[8][3] == 322 ||
+              ClsGlobal.Matriz1[8][3] == 331 ||
+              ClsGlobal.Matriz1[8][3] == 332){
+                JBI4_1.setEnabled(false);
+           }else{
+                JBI4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][4] == 1 ||
+              ClsGlobal.Matriz1[8][4] == 121 ||
+              ClsGlobal.Matriz1[8][4] == 122 ||
+              ClsGlobal.Matriz1[8][4] == 123 ||
+              ClsGlobal.Matriz1[8][4] == 124 ||
+              ClsGlobal.Matriz1[8][4] == 131 ||
+              ClsGlobal.Matriz1[8][4] == 132 ||
+              ClsGlobal.Matriz1[8][4] == 133 ||
+              ClsGlobal.Matriz1[8][4] == 134 ||
+              ClsGlobal.Matriz1[8][4] == 221 ||
+              ClsGlobal.Matriz1[8][4] == 222 ||
+              ClsGlobal.Matriz1[8][4] == 223 ||
+              ClsGlobal.Matriz1[8][4] == 231 ||
+              ClsGlobal.Matriz1[8][4] == 232 ||
+              ClsGlobal.Matriz1[8][4] == 233 ||
+              ClsGlobal.Matriz1[8][4] == 321 ||
+              ClsGlobal.Matriz1[8][4] == 322 ||
+              ClsGlobal.Matriz1[8][4] == 331 ||
+              ClsGlobal.Matriz1[8][4] == 332){
+                JBI5_1.setEnabled(false);
+           }else{
+                JBI5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][5] == 1 ||
+              ClsGlobal.Matriz1[8][5] == 121 ||
+              ClsGlobal.Matriz1[8][5] == 122 ||
+              ClsGlobal.Matriz1[8][5] == 123 ||
+              ClsGlobal.Matriz1[8][5] == 124 ||
+              ClsGlobal.Matriz1[8][5] == 131 ||
+              ClsGlobal.Matriz1[8][5] == 132 ||
+              ClsGlobal.Matriz1[8][5] == 133 ||
+              ClsGlobal.Matriz1[8][5] == 134 ||
+              ClsGlobal.Matriz1[8][5] == 221 ||
+              ClsGlobal.Matriz1[8][5] == 222 ||
+              ClsGlobal.Matriz1[8][5] == 223 ||
+              ClsGlobal.Matriz1[8][5] == 231 ||
+              ClsGlobal.Matriz1[8][5] == 232 ||
+              ClsGlobal.Matriz1[8][5] == 233 ||
+              ClsGlobal.Matriz1[8][5] == 321 ||
+              ClsGlobal.Matriz1[8][5] == 322 ||
+              ClsGlobal.Matriz1[8][5] == 331 ||
+              ClsGlobal.Matriz1[8][5] == 332){
+                JBI6_1.setEnabled(false);
+           }else{
+                JBI6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][6] == 1 ||
+              ClsGlobal.Matriz1[8][6] == 121 ||
+              ClsGlobal.Matriz1[8][6] == 122 ||
+              ClsGlobal.Matriz1[8][6] == 123 ||
+              ClsGlobal.Matriz1[8][6] == 124 ||
+              ClsGlobal.Matriz1[8][6] == 131 ||
+              ClsGlobal.Matriz1[8][6] == 132 ||
+              ClsGlobal.Matriz1[8][6] == 133 ||
+              ClsGlobal.Matriz1[8][6] == 134 ||
+              ClsGlobal.Matriz1[8][6] == 221 ||
+              ClsGlobal.Matriz1[8][6] == 222 ||
+              ClsGlobal.Matriz1[8][6] == 223 ||
+              ClsGlobal.Matriz1[8][6] == 231 ||
+              ClsGlobal.Matriz1[8][6] == 232 ||
+              ClsGlobal.Matriz1[8][6] == 233 ||
+              ClsGlobal.Matriz1[8][6] == 321 ||
+              ClsGlobal.Matriz1[8][6] == 322 ||
+              ClsGlobal.Matriz1[8][6] == 331 ||
+              ClsGlobal.Matriz1[8][6] == 332){
+                JBI7_1.setEnabled(false);
+           }else{
+                JBI7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][7] == 1 ||
+              ClsGlobal.Matriz1[8][7] == 121 ||
+              ClsGlobal.Matriz1[8][7] == 122 ||
+              ClsGlobal.Matriz1[8][7] == 123 ||
+              ClsGlobal.Matriz1[8][7] == 124 ||
+              ClsGlobal.Matriz1[8][7] == 131 ||
+              ClsGlobal.Matriz1[8][7] == 132 ||
+              ClsGlobal.Matriz1[8][7] == 133 ||
+              ClsGlobal.Matriz1[8][7] == 134 ||
+              ClsGlobal.Matriz1[8][7] == 221 ||
+              ClsGlobal.Matriz1[8][7] == 222 ||
+              ClsGlobal.Matriz1[8][7] == 223 ||
+              ClsGlobal.Matriz1[8][7] == 231 ||
+              ClsGlobal.Matriz1[8][7] == 232 ||
+              ClsGlobal.Matriz1[8][7] == 233 ||
+              ClsGlobal.Matriz1[8][7] == 321 ||
+              ClsGlobal.Matriz1[8][7] == 322 ||
+              ClsGlobal.Matriz1[8][7] == 331 ||
+              ClsGlobal.Matriz1[8][7] == 332){
+                JBI8_1.setEnabled(false);
+           }else{
+                JBI8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][8] == 1 ||
+              ClsGlobal.Matriz1[8][8] == 121 ||
+              ClsGlobal.Matriz1[8][8] == 122 ||
+              ClsGlobal.Matriz1[8][8] == 123 ||
+              ClsGlobal.Matriz1[8][8] == 124 ||
+              ClsGlobal.Matriz1[8][8] == 131 ||
+              ClsGlobal.Matriz1[8][8] == 132 ||
+              ClsGlobal.Matriz1[8][8] == 133 ||
+              ClsGlobal.Matriz1[8][8] == 134 ||
+              ClsGlobal.Matriz1[8][8] == 221 ||
+              ClsGlobal.Matriz1[8][8] == 222 ||
+              ClsGlobal.Matriz1[8][8] == 223 ||
+              ClsGlobal.Matriz1[8][8] == 231 ||
+              ClsGlobal.Matriz1[8][8] == 232 ||
+              ClsGlobal.Matriz1[8][8] == 233 ||
+              ClsGlobal.Matriz1[8][8] == 321 ||
+              ClsGlobal.Matriz1[8][8] == 322 ||
+              ClsGlobal.Matriz1[8][8] == 331 ||
+              ClsGlobal.Matriz1[8][8] == 332){
+                JBI9_1.setEnabled(false);
+           }else{
+                JBI9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[8][9] == 1 ||
+              ClsGlobal.Matriz1[8][9] == 121 ||
+              ClsGlobal.Matriz1[8][9] == 122 ||
+              ClsGlobal.Matriz1[8][9] == 123 ||
+              ClsGlobal.Matriz1[8][9] == 124 ||
+              ClsGlobal.Matriz1[8][9] == 131 ||
+              ClsGlobal.Matriz1[8][9] == 132 ||
+              ClsGlobal.Matriz1[8][9] == 133 ||
+              ClsGlobal.Matriz1[8][9] == 134 ||
+              ClsGlobal.Matriz1[8][9] == 221 ||
+              ClsGlobal.Matriz1[8][9] == 222 ||
+              ClsGlobal.Matriz1[8][9] == 223 ||
+              ClsGlobal.Matriz1[8][9] == 231 ||
+              ClsGlobal.Matriz1[8][9] == 232 ||
+              ClsGlobal.Matriz1[8][9] == 233 ||
+              ClsGlobal.Matriz1[8][9] == 321 ||
+              ClsGlobal.Matriz1[8][9] == 322 ||
+              ClsGlobal.Matriz1[8][9] == 331 ||
+              ClsGlobal.Matriz1[8][9] == 332){
+                JBI10_1.setEnabled(false);
+           }else{
+                JBI10_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][0] == 1 ||
+              ClsGlobal.Matriz1[9][0] == 121 ||
+              ClsGlobal.Matriz1[9][0] == 122 ||
+              ClsGlobal.Matriz1[9][0] == 123 ||
+              ClsGlobal.Matriz1[9][0] == 124 ||
+              ClsGlobal.Matriz1[9][0] == 131 ||
+              ClsGlobal.Matriz1[9][0] == 132 ||
+              ClsGlobal.Matriz1[9][0] == 133 ||
+              ClsGlobal.Matriz1[9][0] == 134 ||
+              ClsGlobal.Matriz1[9][0] == 221 ||
+              ClsGlobal.Matriz1[9][0] == 222 ||
+              ClsGlobal.Matriz1[9][0] == 223 ||
+              ClsGlobal.Matriz1[9][0] == 231 ||
+              ClsGlobal.Matriz1[9][0] == 232 ||
+              ClsGlobal.Matriz1[9][0] == 233 ||
+              ClsGlobal.Matriz1[9][0] == 321 ||
+              ClsGlobal.Matriz1[9][0] == 322 ||
+              ClsGlobal.Matriz1[9][0] == 331 ||
+              ClsGlobal.Matriz1[9][0] == 332){
+                JBJ1_1.setEnabled(false);
+           }else{
+                JBJ1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][1] == 1 ||
+              ClsGlobal.Matriz1[9][1] == 121 ||
+              ClsGlobal.Matriz1[9][1] == 122 ||
+              ClsGlobal.Matriz1[9][1] == 123 ||
+              ClsGlobal.Matriz1[9][1] == 124 ||
+              ClsGlobal.Matriz1[9][1] == 131 ||
+              ClsGlobal.Matriz1[9][1] == 132 ||
+              ClsGlobal.Matriz1[9][1] == 133 ||
+              ClsGlobal.Matriz1[9][1] == 134 ||
+              ClsGlobal.Matriz1[9][1] == 221 ||
+              ClsGlobal.Matriz1[9][1] == 222 ||
+              ClsGlobal.Matriz1[9][1] == 223 ||
+              ClsGlobal.Matriz1[9][1] == 231 ||
+              ClsGlobal.Matriz1[9][1] == 232 ||
+              ClsGlobal.Matriz1[9][1] == 233 ||
+              ClsGlobal.Matriz1[9][1] == 321 ||
+              ClsGlobal.Matriz1[9][1] == 322 ||
+              ClsGlobal.Matriz1[9][1] == 331 ||
+              ClsGlobal.Matriz1[9][1] == 332){
+                JBJ2_1.setEnabled(false);
+           }else{
+                JBJ2_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][2] == 1 ||
+              ClsGlobal.Matriz1[9][2] == 121 ||
+              ClsGlobal.Matriz1[9][2] == 122 ||
+              ClsGlobal.Matriz1[9][2] == 123 ||
+              ClsGlobal.Matriz1[9][2] == 124 ||
+              ClsGlobal.Matriz1[9][2] == 131 ||
+              ClsGlobal.Matriz1[9][2] == 132 ||
+              ClsGlobal.Matriz1[9][2] == 133 ||
+              ClsGlobal.Matriz1[9][2] == 134 ||
+              ClsGlobal.Matriz1[9][2] == 221 ||
+              ClsGlobal.Matriz1[9][2] == 222 ||
+              ClsGlobal.Matriz1[9][2] == 223 ||
+              ClsGlobal.Matriz1[9][2] == 231 ||
+              ClsGlobal.Matriz1[9][2] == 232 ||
+              ClsGlobal.Matriz1[9][2] == 233 ||
+              ClsGlobal.Matriz1[9][2] == 321 ||
+              ClsGlobal.Matriz1[9][2] == 322 ||
+              ClsGlobal.Matriz1[9][2] == 331 ||
+              ClsGlobal.Matriz1[9][2] == 332){
+                JBJ3_1.setEnabled(false);
+           }else{
+                JBJ3_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][3] == 1 ||
+              ClsGlobal.Matriz1[9][3] == 121 ||
+              ClsGlobal.Matriz1[9][3] == 122 ||
+              ClsGlobal.Matriz1[9][3] == 123 ||
+              ClsGlobal.Matriz1[9][3] == 124 ||
+              ClsGlobal.Matriz1[9][3] == 131 ||
+              ClsGlobal.Matriz1[9][3] == 132 ||
+              ClsGlobal.Matriz1[9][3] == 133 ||
+              ClsGlobal.Matriz1[9][3] == 134 ||
+              ClsGlobal.Matriz1[9][3] == 221 ||
+              ClsGlobal.Matriz1[9][3] == 222 ||
+              ClsGlobal.Matriz1[9][3] == 223 ||
+              ClsGlobal.Matriz1[9][3] == 231 ||
+              ClsGlobal.Matriz1[9][3] == 232 ||
+              ClsGlobal.Matriz1[9][3] == 233 ||
+              ClsGlobal.Matriz1[9][3] == 321 ||
+              ClsGlobal.Matriz1[9][3] == 322 ||
+              ClsGlobal.Matriz1[9][3] == 331 ||
+              ClsGlobal.Matriz1[9][3] == 332){
+                JBJ4_1.setEnabled(false);
+           }else{
+                JBJ4_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][4] == 1 ||
+              ClsGlobal.Matriz1[9][4] == 121 ||
+              ClsGlobal.Matriz1[9][4] == 122 ||
+              ClsGlobal.Matriz1[9][4] == 123 ||
+              ClsGlobal.Matriz1[9][4] == 124 ||
+              ClsGlobal.Matriz1[9][4] == 131 ||
+              ClsGlobal.Matriz1[9][4] == 132 ||
+              ClsGlobal.Matriz1[9][4] == 133 ||
+              ClsGlobal.Matriz1[9][4] == 134 ||
+              ClsGlobal.Matriz1[9][4] == 221 ||
+              ClsGlobal.Matriz1[9][4] == 222 ||
+              ClsGlobal.Matriz1[9][4] == 223 ||
+              ClsGlobal.Matriz1[9][4] == 231 ||
+              ClsGlobal.Matriz1[9][4] == 232 ||
+              ClsGlobal.Matriz1[9][4] == 233 ||
+              ClsGlobal.Matriz1[9][4] == 321 ||
+              ClsGlobal.Matriz1[9][4] == 322 ||
+              ClsGlobal.Matriz1[9][4] == 331 ||
+              ClsGlobal.Matriz1[9][4] == 332){
+                JBJ5_1.setEnabled(false);
+           }else{
+                JBJ5_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][5] == 1 ||
+              ClsGlobal.Matriz1[9][5] == 121 ||
+              ClsGlobal.Matriz1[9][5] == 122 ||
+              ClsGlobal.Matriz1[9][5] == 123 ||
+              ClsGlobal.Matriz1[9][5] == 124 ||
+              ClsGlobal.Matriz1[9][5] == 131 ||
+              ClsGlobal.Matriz1[9][5] == 132 ||
+              ClsGlobal.Matriz1[9][5] == 133 ||
+              ClsGlobal.Matriz1[9][5] == 134 ||
+              ClsGlobal.Matriz1[9][5] == 221 ||
+              ClsGlobal.Matriz1[9][5] == 222 ||
+              ClsGlobal.Matriz1[9][5] == 223 ||
+              ClsGlobal.Matriz1[9][5] == 231 ||
+              ClsGlobal.Matriz1[9][5] == 232 ||
+              ClsGlobal.Matriz1[9][5] == 233 ||
+              ClsGlobal.Matriz1[9][5] == 321 ||
+              ClsGlobal.Matriz1[9][5] == 322 ||
+              ClsGlobal.Matriz1[9][5] == 331 ||
+              ClsGlobal.Matriz1[9][5] == 332){
+                JBJ6_1.setEnabled(false);
+           }else{
+                JBJ6_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][6] == 1 ||
+              ClsGlobal.Matriz1[9][6] == 121 ||
+              ClsGlobal.Matriz1[9][6] == 122 ||
+              ClsGlobal.Matriz1[9][6] == 123 ||
+              ClsGlobal.Matriz1[9][6] == 124 ||
+              ClsGlobal.Matriz1[9][6] == 131 ||
+              ClsGlobal.Matriz1[9][6] == 132 ||
+              ClsGlobal.Matriz1[9][6] == 133 ||
+              ClsGlobal.Matriz1[9][6] == 134 ||
+              ClsGlobal.Matriz1[9][6] == 221 ||
+              ClsGlobal.Matriz1[9][6] == 222 ||
+              ClsGlobal.Matriz1[9][6] == 223 ||
+              ClsGlobal.Matriz1[9][6] == 231 ||
+              ClsGlobal.Matriz1[9][6] == 232 ||
+              ClsGlobal.Matriz1[9][6] == 233 ||
+              ClsGlobal.Matriz1[9][6] == 321 ||
+              ClsGlobal.Matriz1[9][6] == 322 ||
+              ClsGlobal.Matriz1[9][6] == 331 ||
+              ClsGlobal.Matriz1[9][6] == 332){
+                JBJ7_1.setEnabled(false);
+           }else{
+                JBJ7_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][7] == 1 ||
+              ClsGlobal.Matriz1[9][7] == 121 ||
+              ClsGlobal.Matriz1[9][7] == 122 ||
+              ClsGlobal.Matriz1[9][7] == 123 ||
+              ClsGlobal.Matriz1[9][7] == 124 ||
+              ClsGlobal.Matriz1[9][7] == 131 ||
+              ClsGlobal.Matriz1[9][7] == 132 ||
+              ClsGlobal.Matriz1[9][7] == 133 ||
+              ClsGlobal.Matriz1[9][7] == 134 ||
+              ClsGlobal.Matriz1[9][7] == 221 ||
+              ClsGlobal.Matriz1[9][7] == 222 ||
+              ClsGlobal.Matriz1[9][7] == 223 ||
+              ClsGlobal.Matriz1[9][7] == 231 ||
+              ClsGlobal.Matriz1[9][7] == 232 ||
+              ClsGlobal.Matriz1[9][7] == 233 ||
+              ClsGlobal.Matriz1[9][7] == 321 ||
+              ClsGlobal.Matriz1[9][7] == 322 ||
+              ClsGlobal.Matriz1[9][7] == 331 ||
+              ClsGlobal.Matriz1[9][7] == 332){
+                JBJ8_1.setEnabled(false);
+           }else{
+                JBJ8_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][8] == 1 ||
+              ClsGlobal.Matriz1[9][8] == 121 ||
+              ClsGlobal.Matriz1[9][8] == 122 ||
+              ClsGlobal.Matriz1[9][8] == 123 ||
+              ClsGlobal.Matriz1[9][8] == 124 ||
+              ClsGlobal.Matriz1[9][8] == 131 ||
+              ClsGlobal.Matriz1[9][8] == 132 ||
+              ClsGlobal.Matriz1[9][8] == 133 ||
+              ClsGlobal.Matriz1[9][8] == 134 ||
+              ClsGlobal.Matriz1[9][8] == 221 ||
+              ClsGlobal.Matriz1[9][8] == 222 ||
+              ClsGlobal.Matriz1[9][8] == 223 ||
+              ClsGlobal.Matriz1[9][8] == 231 ||
+              ClsGlobal.Matriz1[9][8] == 232 ||
+              ClsGlobal.Matriz1[9][8] == 233 ||
+              ClsGlobal.Matriz1[9][8] == 321 ||
+              ClsGlobal.Matriz1[9][8] == 322 ||
+              ClsGlobal.Matriz1[9][8] == 331 ||
+              ClsGlobal.Matriz1[9][8] == 332){
+                JBJ9_1.setEnabled(false);
+           }else{
+                JBJ9_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz1[9][9] == 1 ||
+              ClsGlobal.Matriz1[9][9] == 121 ||
+              ClsGlobal.Matriz1[9][9] == 122 ||
+              ClsGlobal.Matriz1[9][9] == 123 ||
+              ClsGlobal.Matriz1[9][9] == 124 ||
+              ClsGlobal.Matriz1[9][9] == 131 ||
+              ClsGlobal.Matriz1[9][9] == 132 ||
+              ClsGlobal.Matriz1[9][9] == 133 ||
+              ClsGlobal.Matriz1[9][9] == 134 ||
+              ClsGlobal.Matriz1[9][9] == 221 ||
+              ClsGlobal.Matriz1[9][9] == 222 ||
+              ClsGlobal.Matriz1[9][9] == 223 ||
+              ClsGlobal.Matriz1[9][9] == 231 ||
+              ClsGlobal.Matriz1[9][9] == 232 ||
+              ClsGlobal.Matriz1[9][9] == 233 ||
+              ClsGlobal.Matriz1[9][9] == 321 ||
+              ClsGlobal.Matriz1[9][9] == 322 ||
+              ClsGlobal.Matriz1[9][9] == 331 ||
+              ClsGlobal.Matriz1[9][9] == 332){
+                JBJ10_1.setEnabled(false);
+           }else{
+                JBJ10_1.setEnabled(true);
+           }
+        }
+        if(Juagador == 2){
+           if(ClsGlobal.Matriz2[0][0] == 1 ||
+              ClsGlobal.Matriz2[0][0] == 121 ||
+              ClsGlobal.Matriz2[0][0] == 122 ||
+              ClsGlobal.Matriz2[0][0] == 123 ||
+              ClsGlobal.Matriz2[0][0] == 124 ||
+              ClsGlobal.Matriz2[0][0] == 131 ||
+              ClsGlobal.Matriz2[0][0] == 132 ||
+              ClsGlobal.Matriz2[0][0] == 133 ||
+              ClsGlobal.Matriz2[0][0] == 134 ||
+              ClsGlobal.Matriz2[0][0] == 221 ||
+              ClsGlobal.Matriz2[0][0] == 222 ||
+              ClsGlobal.Matriz2[0][0] == 223 ||
+              ClsGlobal.Matriz2[0][0] == 231 ||
+              ClsGlobal.Matriz2[0][0] == 232 ||
+              ClsGlobal.Matriz2[0][0] == 233 ||
+              ClsGlobal.Matriz2[0][0] == 321 ||
+              ClsGlobal.Matriz2[0][0] == 322 ||
+              ClsGlobal.Matriz2[0][0] == 331 ||
+              ClsGlobal.Matriz2[0][0] == 332){
+                JBA1_2.setEnabled(false);
+           }else{
+                JBA1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][1] == 1 ||
+              ClsGlobal.Matriz2[0][1] == 121 ||
+              ClsGlobal.Matriz2[0][1] == 122 ||
+              ClsGlobal.Matriz2[0][1] == 123 ||
+              ClsGlobal.Matriz2[0][1] == 124 ||
+              ClsGlobal.Matriz2[0][1] == 131 ||
+              ClsGlobal.Matriz2[0][1] == 132 ||
+              ClsGlobal.Matriz2[0][1] == 133 ||
+              ClsGlobal.Matriz2[0][1] == 134 ||
+              ClsGlobal.Matriz2[0][1] == 221 ||
+              ClsGlobal.Matriz2[0][1] == 222 ||
+              ClsGlobal.Matriz2[0][1] == 223 ||
+              ClsGlobal.Matriz2[0][1] == 231 ||
+              ClsGlobal.Matriz2[0][1] == 232 ||
+              ClsGlobal.Matriz2[0][1] == 233 ||
+              ClsGlobal.Matriz2[0][1] == 321 ||
+              ClsGlobal.Matriz2[0][1] == 322 ||
+              ClsGlobal.Matriz2[0][1] == 331 ||
+              ClsGlobal.Matriz2[0][1] == 332){
+                JBA2_2.setEnabled(false);
+           }else{
+                JBA2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][2] == 1 ||
+              ClsGlobal.Matriz2[0][2] == 121 ||
+              ClsGlobal.Matriz2[0][2] == 122 ||
+              ClsGlobal.Matriz2[0][2] == 123 ||
+              ClsGlobal.Matriz2[0][2] == 124 ||
+              ClsGlobal.Matriz2[0][2] == 131 ||
+              ClsGlobal.Matriz2[0][2] == 132 ||
+              ClsGlobal.Matriz2[0][2] == 133 ||
+              ClsGlobal.Matriz2[0][2] == 134 ||
+              ClsGlobal.Matriz2[0][2] == 221 ||
+              ClsGlobal.Matriz2[0][2] == 222 ||
+              ClsGlobal.Matriz2[0][2] == 223 ||
+              ClsGlobal.Matriz2[0][2] == 231 ||
+              ClsGlobal.Matriz2[0][2] == 232 ||
+              ClsGlobal.Matriz2[0][2] == 233 ||
+              ClsGlobal.Matriz2[0][2] == 321 ||
+              ClsGlobal.Matriz2[0][2] == 322 ||
+              ClsGlobal.Matriz2[0][2] == 331 ||
+              ClsGlobal.Matriz2[0][2] == 332){
+                JBA3_2.setEnabled(false);
+           }else{
+                JBA3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][3] == 1 ||
+              ClsGlobal.Matriz2[0][3] == 121 ||
+              ClsGlobal.Matriz2[0][3] == 122 ||
+              ClsGlobal.Matriz2[0][3] == 123 ||
+              ClsGlobal.Matriz2[0][3] == 124 ||
+              ClsGlobal.Matriz2[0][3] == 131 ||
+              ClsGlobal.Matriz2[0][3] == 132 ||
+              ClsGlobal.Matriz2[0][3] == 133 ||
+              ClsGlobal.Matriz2[0][3] == 134 ||
+              ClsGlobal.Matriz2[0][3] == 221 ||
+              ClsGlobal.Matriz2[0][3] == 222 ||
+              ClsGlobal.Matriz2[0][3] == 223 ||
+              ClsGlobal.Matriz2[0][3] == 231 ||
+              ClsGlobal.Matriz2[0][3] == 232 ||
+              ClsGlobal.Matriz2[0][3] == 233 ||
+              ClsGlobal.Matriz2[0][3] == 321 ||
+              ClsGlobal.Matriz2[0][3] == 322 ||
+              ClsGlobal.Matriz2[0][3] == 331 ||
+              ClsGlobal.Matriz2[0][3] == 332){
+                JBA4_2.setEnabled(false);
+           }else{
+                JBA4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][4] == 1 ||
+              ClsGlobal.Matriz2[0][4] == 121 ||
+              ClsGlobal.Matriz2[0][4] == 122 ||
+              ClsGlobal.Matriz2[0][4] == 123 ||
+              ClsGlobal.Matriz2[0][4] == 124 ||
+              ClsGlobal.Matriz2[0][4] == 131 ||
+              ClsGlobal.Matriz2[0][4] == 132 ||
+              ClsGlobal.Matriz2[0][4] == 133 ||
+              ClsGlobal.Matriz2[0][4] == 134 ||
+              ClsGlobal.Matriz2[0][4] == 221 ||
+              ClsGlobal.Matriz2[0][4] == 222 ||
+              ClsGlobal.Matriz2[0][4] == 223 ||
+              ClsGlobal.Matriz2[0][4] == 231 ||
+              ClsGlobal.Matriz2[0][4] == 232 ||
+              ClsGlobal.Matriz2[0][4] == 233 ||
+              ClsGlobal.Matriz2[0][4] == 321 ||
+              ClsGlobal.Matriz2[0][4] == 322 ||
+              ClsGlobal.Matriz2[0][4] == 331 ||
+              ClsGlobal.Matriz2[0][4] == 332){
+                JBA5_2.setEnabled(false);
+           }else{
+                JBA5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][5] == 1 ||
+              ClsGlobal.Matriz2[0][5] == 121 ||
+              ClsGlobal.Matriz2[0][5] == 122 ||
+              ClsGlobal.Matriz2[0][5] == 123 ||
+              ClsGlobal.Matriz2[0][5] == 124 ||
+              ClsGlobal.Matriz2[0][5] == 131 ||
+              ClsGlobal.Matriz2[0][5] == 132 ||
+              ClsGlobal.Matriz2[0][5] == 133 ||
+              ClsGlobal.Matriz2[0][5] == 134 ||
+              ClsGlobal.Matriz2[0][5] == 221 ||
+              ClsGlobal.Matriz2[0][5] == 222 ||
+              ClsGlobal.Matriz2[0][5] == 223 ||
+              ClsGlobal.Matriz2[0][5] == 231 ||
+              ClsGlobal.Matriz2[0][5] == 232 ||
+              ClsGlobal.Matriz2[0][5] == 233 ||
+              ClsGlobal.Matriz2[0][5] == 321 ||
+              ClsGlobal.Matriz2[0][5] == 322 ||
+              ClsGlobal.Matriz2[0][5] == 331 ||
+              ClsGlobal.Matriz2[0][5] == 332){
+                JBA6_2.setEnabled(false);
+           }else{
+                JBA6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][6] == 1 ||
+              ClsGlobal.Matriz2[0][6] == 121 ||
+              ClsGlobal.Matriz2[0][6] == 122 ||
+              ClsGlobal.Matriz2[0][6] == 123 ||
+              ClsGlobal.Matriz2[0][6] == 124 ||
+              ClsGlobal.Matriz2[0][6] == 131 ||
+              ClsGlobal.Matriz2[0][6] == 132 ||
+              ClsGlobal.Matriz2[0][6] == 133 ||
+              ClsGlobal.Matriz2[0][6] == 134 ||
+              ClsGlobal.Matriz2[0][6] == 221 ||
+              ClsGlobal.Matriz2[0][6] == 222 ||
+              ClsGlobal.Matriz2[0][6] == 223 ||
+              ClsGlobal.Matriz2[0][6] == 231 ||
+              ClsGlobal.Matriz2[0][6] == 232 ||
+              ClsGlobal.Matriz2[0][6] == 233 ||
+              ClsGlobal.Matriz2[0][6] == 321 ||
+              ClsGlobal.Matriz2[0][6] == 322 ||
+              ClsGlobal.Matriz2[0][6] == 331 ||
+              ClsGlobal.Matriz2[0][6] == 332){
+                JBA7_2.setEnabled(false);
+           }else{
+                JBA7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][7] == 1 ||
+              ClsGlobal.Matriz2[0][7] == 121 ||
+              ClsGlobal.Matriz2[0][7] == 122 ||
+              ClsGlobal.Matriz2[0][7] == 123 ||
+              ClsGlobal.Matriz2[0][7] == 124 ||
+              ClsGlobal.Matriz2[0][7] == 131 ||
+              ClsGlobal.Matriz2[0][7] == 132 ||
+              ClsGlobal.Matriz2[0][7] == 133 ||
+              ClsGlobal.Matriz2[0][7] == 134 ||
+              ClsGlobal.Matriz2[0][7] == 221 ||
+              ClsGlobal.Matriz2[0][7] == 222 ||
+              ClsGlobal.Matriz2[0][7] == 223 ||
+              ClsGlobal.Matriz2[0][7] == 231 ||
+              ClsGlobal.Matriz2[0][7] == 232 ||
+              ClsGlobal.Matriz2[0][7] == 233 ||
+              ClsGlobal.Matriz2[0][7] == 321 ||
+              ClsGlobal.Matriz2[0][7] == 322 ||
+              ClsGlobal.Matriz2[0][7] == 331 ||
+              ClsGlobal.Matriz2[0][7] == 332){
+                JBA8_2.setEnabled(false);
+           }else{
+                JBA8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][8] == 1 ||
+              ClsGlobal.Matriz2[0][8] == 121 ||
+              ClsGlobal.Matriz2[0][8] == 122 ||
+              ClsGlobal.Matriz2[0][8] == 123 ||
+              ClsGlobal.Matriz2[0][8] == 124 ||
+              ClsGlobal.Matriz2[0][8] == 131 ||
+              ClsGlobal.Matriz2[0][8] == 132 ||
+              ClsGlobal.Matriz2[0][8] == 133 ||
+              ClsGlobal.Matriz2[0][8] == 134 ||
+              ClsGlobal.Matriz2[0][8] == 221 ||
+              ClsGlobal.Matriz2[0][8] == 222 ||
+              ClsGlobal.Matriz2[0][8] == 223 ||
+              ClsGlobal.Matriz2[0][8] == 231 ||
+              ClsGlobal.Matriz2[0][8] == 232 ||
+              ClsGlobal.Matriz2[0][8] == 233 ||
+              ClsGlobal.Matriz2[0][8] == 321 ||
+              ClsGlobal.Matriz2[0][8] == 322 ||
+              ClsGlobal.Matriz2[0][8] == 331 ||
+              ClsGlobal.Matriz2[0][8] == 332){
+                JBA9_2.setEnabled(false);
+           }else{
+                JBA9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[0][9] == 1 ||
+              ClsGlobal.Matriz2[0][9] == 121 ||
+              ClsGlobal.Matriz2[0][9] == 122 ||
+              ClsGlobal.Matriz2[0][9] == 123 ||
+              ClsGlobal.Matriz2[0][9] == 124 ||
+              ClsGlobal.Matriz2[0][9] == 131 ||
+              ClsGlobal.Matriz2[0][9] == 132 ||
+              ClsGlobal.Matriz2[0][9] == 133 ||
+              ClsGlobal.Matriz2[0][9] == 134 ||
+              ClsGlobal.Matriz2[0][9] == 221 ||
+              ClsGlobal.Matriz2[0][9] == 222 ||
+              ClsGlobal.Matriz2[0][9] == 223 ||
+              ClsGlobal.Matriz2[0][9] == 231 ||
+              ClsGlobal.Matriz2[0][9] == 232 ||
+              ClsGlobal.Matriz2[0][9] == 233 ||
+              ClsGlobal.Matriz2[0][9] == 321 ||
+              ClsGlobal.Matriz2[0][9] == 322 ||
+              ClsGlobal.Matriz2[0][9] == 331 ||
+              ClsGlobal.Matriz2[0][9] == 332){
+                JBA10_2.setEnabled(false);
+           }else{
+                JBA10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][0] == 1 ||
+              ClsGlobal.Matriz2[1][0] == 121 ||
+              ClsGlobal.Matriz2[1][0] == 122 ||
+              ClsGlobal.Matriz2[1][0] == 123 ||
+              ClsGlobal.Matriz2[1][0] == 124 ||
+              ClsGlobal.Matriz2[1][0] == 131 ||
+              ClsGlobal.Matriz2[1][0] == 132 ||
+              ClsGlobal.Matriz2[1][0] == 133 ||
+              ClsGlobal.Matriz2[1][0] == 134 ||
+              ClsGlobal.Matriz2[1][0] == 221 ||
+              ClsGlobal.Matriz2[1][0] == 222 ||
+              ClsGlobal.Matriz2[1][0] == 223 ||
+              ClsGlobal.Matriz2[1][0] == 231 ||
+              ClsGlobal.Matriz2[1][0] == 232 ||
+              ClsGlobal.Matriz2[1][0] == 233 ||
+              ClsGlobal.Matriz2[1][0] == 321 ||
+              ClsGlobal.Matriz2[1][0] == 322 ||
+              ClsGlobal.Matriz2[1][0] == 331 ||
+              ClsGlobal.Matriz2[1][0] == 332){
+                JBB1_2.setEnabled(false);
+           }else{
+                JBB1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][1] == 1 ||
+              ClsGlobal.Matriz2[1][1] == 121 ||
+              ClsGlobal.Matriz2[1][1] == 122 ||
+              ClsGlobal.Matriz2[1][1] == 123 ||
+              ClsGlobal.Matriz2[1][1] == 124 ||
+              ClsGlobal.Matriz2[1][1] == 131 ||
+              ClsGlobal.Matriz2[1][1] == 132 ||
+              ClsGlobal.Matriz2[1][1] == 133 ||
+              ClsGlobal.Matriz2[1][1] == 134 ||
+              ClsGlobal.Matriz2[1][1] == 221 ||
+              ClsGlobal.Matriz2[1][1] == 222 ||
+              ClsGlobal.Matriz2[1][1] == 223 ||
+              ClsGlobal.Matriz2[1][1] == 231 ||
+              ClsGlobal.Matriz2[1][1] == 232 ||
+              ClsGlobal.Matriz2[1][1] == 233 ||
+              ClsGlobal.Matriz2[1][1] == 321 ||
+              ClsGlobal.Matriz2[1][1] == 322 ||
+              ClsGlobal.Matriz2[1][1] == 331 ||
+              ClsGlobal.Matriz2[1][1] == 332){
+                JBB2_2.setEnabled(false);
+           }else{
+                JBB2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][2] == 1 ||
+              ClsGlobal.Matriz2[1][2] == 121 ||
+              ClsGlobal.Matriz2[1][2] == 122 ||
+              ClsGlobal.Matriz2[1][2] == 123 ||
+              ClsGlobal.Matriz2[1][2] == 124 ||
+              ClsGlobal.Matriz2[1][2] == 131 ||
+              ClsGlobal.Matriz2[1][2] == 132 ||
+              ClsGlobal.Matriz2[1][2] == 133 ||
+              ClsGlobal.Matriz2[1][2] == 134 ||
+              ClsGlobal.Matriz2[1][2] == 221 ||
+              ClsGlobal.Matriz2[1][2] == 222 ||
+              ClsGlobal.Matriz2[1][2] == 223 ||
+              ClsGlobal.Matriz2[1][2] == 231 ||
+              ClsGlobal.Matriz2[1][2] == 232 ||
+              ClsGlobal.Matriz2[1][2] == 233 ||
+              ClsGlobal.Matriz2[1][2] == 321 ||
+              ClsGlobal.Matriz2[1][2] == 322 ||
+              ClsGlobal.Matriz2[1][2] == 331 ||
+              ClsGlobal.Matriz2[1][2] == 332){
+                JBB3_2.setEnabled(false);
+           }else{
+                JBB3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][3] == 1 ||
+              ClsGlobal.Matriz2[1][3] == 121 ||
+              ClsGlobal.Matriz2[1][3] == 122 ||
+              ClsGlobal.Matriz2[1][3] == 123 ||
+              ClsGlobal.Matriz2[1][3] == 124 ||
+              ClsGlobal.Matriz2[1][3] == 131 ||
+              ClsGlobal.Matriz2[1][3] == 132 ||
+              ClsGlobal.Matriz2[1][3] == 133 ||
+              ClsGlobal.Matriz2[1][3] == 134 ||
+              ClsGlobal.Matriz2[1][3] == 221 ||
+              ClsGlobal.Matriz2[1][3] == 222 ||
+              ClsGlobal.Matriz2[1][3] == 223 ||
+              ClsGlobal.Matriz2[1][3] == 231 ||
+              ClsGlobal.Matriz2[1][3] == 232 ||
+              ClsGlobal.Matriz2[1][3] == 233 ||
+              ClsGlobal.Matriz2[1][3] == 321 ||
+              ClsGlobal.Matriz2[1][3] == 322 ||
+              ClsGlobal.Matriz2[1][3] == 331 ||
+              ClsGlobal.Matriz2[1][3] == 332){
+                JBB4_2.setEnabled(false);
+           }else{
+                JBB4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][4] == 1 ||
+              ClsGlobal.Matriz2[1][4] == 121 ||
+              ClsGlobal.Matriz2[1][4] == 122 ||
+              ClsGlobal.Matriz2[1][4] == 123 ||
+              ClsGlobal.Matriz2[1][4] == 124 ||
+              ClsGlobal.Matriz2[1][4] == 131 ||
+              ClsGlobal.Matriz2[1][4] == 132 ||
+              ClsGlobal.Matriz2[1][4] == 133 ||
+              ClsGlobal.Matriz2[1][4] == 134 ||
+              ClsGlobal.Matriz2[1][4] == 221 ||
+              ClsGlobal.Matriz2[1][4] == 222 ||
+              ClsGlobal.Matriz2[1][4] == 223 ||
+              ClsGlobal.Matriz2[1][4] == 231 ||
+              ClsGlobal.Matriz2[1][4] == 232 ||
+              ClsGlobal.Matriz2[1][4] == 233 ||
+              ClsGlobal.Matriz2[1][4] == 321 ||
+              ClsGlobal.Matriz2[1][4] == 322 ||
+              ClsGlobal.Matriz2[1][4] == 331 ||
+              ClsGlobal.Matriz2[1][4] == 332){
+                JBB5_2.setEnabled(false);
+           }else{
+                JBB5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][5] == 1 ||
+              ClsGlobal.Matriz2[1][5] == 121 ||
+              ClsGlobal.Matriz2[1][5] == 122 ||
+              ClsGlobal.Matriz2[1][5] == 123 ||
+              ClsGlobal.Matriz2[1][5] == 124 ||
+              ClsGlobal.Matriz2[1][5] == 131 ||
+              ClsGlobal.Matriz2[1][5] == 132 ||
+              ClsGlobal.Matriz2[1][5] == 133 ||
+              ClsGlobal.Matriz2[1][5] == 134 ||
+              ClsGlobal.Matriz2[1][5] == 221 ||
+              ClsGlobal.Matriz2[1][5] == 222 ||
+              ClsGlobal.Matriz2[1][5] == 223 ||
+              ClsGlobal.Matriz2[1][5] == 231 ||
+              ClsGlobal.Matriz2[1][5] == 232 ||
+              ClsGlobal.Matriz2[1][5] == 233 ||
+              ClsGlobal.Matriz2[1][5] == 321 ||
+              ClsGlobal.Matriz2[1][5] == 322 ||
+              ClsGlobal.Matriz2[1][5] == 331 ||
+              ClsGlobal.Matriz2[1][5] == 332){
+                JBB6_2.setEnabled(false);
+           }else{
+                JBB6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][6] == 1 ||
+              ClsGlobal.Matriz2[1][6] == 121 ||
+              ClsGlobal.Matriz2[1][6] == 122 ||
+              ClsGlobal.Matriz2[1][6] == 123 ||
+              ClsGlobal.Matriz2[1][6] == 124 ||
+              ClsGlobal.Matriz2[1][6] == 131 ||
+              ClsGlobal.Matriz2[1][6] == 132 ||
+              ClsGlobal.Matriz2[1][6] == 133 ||
+              ClsGlobal.Matriz2[1][6] == 134 ||
+              ClsGlobal.Matriz2[1][6] == 221 ||
+              ClsGlobal.Matriz2[1][6] == 222 ||
+              ClsGlobal.Matriz2[1][6] == 223 ||
+              ClsGlobal.Matriz2[1][6] == 231 ||
+              ClsGlobal.Matriz2[1][6] == 232 ||
+              ClsGlobal.Matriz2[1][6] == 233 ||
+              ClsGlobal.Matriz2[1][6] == 321 ||
+              ClsGlobal.Matriz2[1][6] == 322 ||
+              ClsGlobal.Matriz2[1][6] == 331 ||
+              ClsGlobal.Matriz2[1][6] == 332){
+                JBB7_2.setEnabled(false);
+           }else{
+                JBB7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][7] == 1 ||
+              ClsGlobal.Matriz2[1][7] == 121 ||
+              ClsGlobal.Matriz2[1][7] == 122 ||
+              ClsGlobal.Matriz2[1][7] == 123 ||
+              ClsGlobal.Matriz2[1][7] == 124 ||
+              ClsGlobal.Matriz2[1][7] == 131 ||
+              ClsGlobal.Matriz2[1][7] == 132 ||
+              ClsGlobal.Matriz2[1][7] == 133 ||
+              ClsGlobal.Matriz2[1][7] == 134 ||
+              ClsGlobal.Matriz2[1][7] == 221 ||
+              ClsGlobal.Matriz2[1][7] == 222 ||
+              ClsGlobal.Matriz2[1][7] == 223 ||
+              ClsGlobal.Matriz2[1][7] == 231 ||
+              ClsGlobal.Matriz2[1][7] == 232 ||
+              ClsGlobal.Matriz2[1][7] == 233 ||
+              ClsGlobal.Matriz2[1][7] == 321 ||
+              ClsGlobal.Matriz2[1][7] == 322 ||
+              ClsGlobal.Matriz2[1][7] == 331 ||
+              ClsGlobal.Matriz2[1][7] == 332){
+                JBB8_2.setEnabled(false);
+           }else{
+                JBB8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][8] == 1 ||
+              ClsGlobal.Matriz2[1][8] == 121 ||
+              ClsGlobal.Matriz2[1][8] == 122 ||
+              ClsGlobal.Matriz2[1][8] == 123 ||
+              ClsGlobal.Matriz2[1][8] == 124 ||
+              ClsGlobal.Matriz2[1][8] == 131 ||
+              ClsGlobal.Matriz2[1][8] == 132 ||
+              ClsGlobal.Matriz2[1][8] == 133 ||
+              ClsGlobal.Matriz2[1][8] == 134 ||
+              ClsGlobal.Matriz2[1][8] == 221 ||
+              ClsGlobal.Matriz2[1][8] == 222 ||
+              ClsGlobal.Matriz2[1][8] == 223 ||
+              ClsGlobal.Matriz2[1][8] == 231 ||
+              ClsGlobal.Matriz2[1][8] == 232 ||
+              ClsGlobal.Matriz2[1][8] == 233 ||
+              ClsGlobal.Matriz2[1][8] == 321 ||
+              ClsGlobal.Matriz2[1][8] == 322 ||
+              ClsGlobal.Matriz2[1][8] == 331 ||
+              ClsGlobal.Matriz2[1][8] == 332){
+                JBB9_2.setEnabled(false);
+           }else{
+                JBB9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[1][9] == 1 ||
+              ClsGlobal.Matriz2[1][9] == 121 ||
+              ClsGlobal.Matriz2[1][9] == 122 ||
+              ClsGlobal.Matriz2[1][9] == 123 ||
+              ClsGlobal.Matriz2[1][9] == 124 ||
+              ClsGlobal.Matriz2[1][9] == 131 ||
+              ClsGlobal.Matriz2[1][9] == 132 ||
+              ClsGlobal.Matriz2[1][9] == 133 ||
+              ClsGlobal.Matriz2[1][9] == 134 ||
+              ClsGlobal.Matriz2[1][9] == 221 ||
+              ClsGlobal.Matriz2[1][9] == 222 ||
+              ClsGlobal.Matriz2[1][9] == 223 ||
+              ClsGlobal.Matriz2[1][9] == 231 ||
+              ClsGlobal.Matriz2[1][9] == 232 ||
+              ClsGlobal.Matriz2[1][9] == 233 ||
+              ClsGlobal.Matriz2[1][9] == 321 ||
+              ClsGlobal.Matriz2[1][9] == 322 ||
+              ClsGlobal.Matriz2[1][9] == 331 ||
+              ClsGlobal.Matriz2[1][9] == 332){
+                JBB10_2.setEnabled(false);
+           }else{
+                JBB10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][0] == 1 ||
+              ClsGlobal.Matriz2[2][0] == 121 ||
+              ClsGlobal.Matriz2[2][0] == 122 ||
+              ClsGlobal.Matriz2[2][0] == 123 ||
+              ClsGlobal.Matriz2[2][0] == 124 ||
+              ClsGlobal.Matriz2[2][0] == 131 ||
+              ClsGlobal.Matriz2[2][0] == 132 ||
+              ClsGlobal.Matriz2[2][0] == 133 ||
+              ClsGlobal.Matriz2[2][0] == 134 ||
+              ClsGlobal.Matriz2[2][0] == 221 ||
+              ClsGlobal.Matriz2[2][0] == 222 ||
+              ClsGlobal.Matriz2[2][0] == 223 ||
+              ClsGlobal.Matriz2[2][0] == 231 ||
+              ClsGlobal.Matriz2[2][0] == 232 ||
+              ClsGlobal.Matriz2[2][0] == 233 ||
+              ClsGlobal.Matriz2[2][0] == 321 ||
+              ClsGlobal.Matriz2[2][0] == 322 ||
+              ClsGlobal.Matriz2[2][0] == 331 ||
+              ClsGlobal.Matriz2[2][0] == 332){
+                JBC1_2.setEnabled(false);
+           }else{
+                JBC1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][1] == 1 ||
+              ClsGlobal.Matriz2[2][1] == 121 ||
+              ClsGlobal.Matriz2[2][1] == 122 ||
+              ClsGlobal.Matriz2[2][1] == 123 ||
+              ClsGlobal.Matriz2[2][1] == 124 ||
+              ClsGlobal.Matriz2[2][1] == 131 ||
+              ClsGlobal.Matriz2[2][1] == 132 ||
+              ClsGlobal.Matriz2[2][1] == 133 ||
+              ClsGlobal.Matriz2[2][1] == 134 ||
+              ClsGlobal.Matriz2[2][1] == 221 ||
+              ClsGlobal.Matriz2[2][1] == 222 ||
+              ClsGlobal.Matriz2[2][1] == 223 ||
+              ClsGlobal.Matriz2[2][1] == 231 ||
+              ClsGlobal.Matriz2[2][1] == 232 ||
+              ClsGlobal.Matriz2[2][1] == 233 ||
+              ClsGlobal.Matriz2[2][1] == 321 ||
+              ClsGlobal.Matriz2[2][1] == 322 ||
+              ClsGlobal.Matriz2[2][1] == 331 ||
+              ClsGlobal.Matriz2[2][1] == 332){
+                JBC2_2.setEnabled(false);
+           }else{
+                JBC2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][2] == 1 ||
+              ClsGlobal.Matriz2[2][2] == 121 ||
+              ClsGlobal.Matriz2[2][2] == 122 ||
+              ClsGlobal.Matriz2[2][2] == 123 ||
+              ClsGlobal.Matriz2[2][2] == 124 ||
+              ClsGlobal.Matriz2[2][2] == 131 ||
+              ClsGlobal.Matriz2[2][2] == 132 ||
+              ClsGlobal.Matriz2[2][2] == 133 ||
+              ClsGlobal.Matriz2[2][2] == 134 ||
+              ClsGlobal.Matriz2[2][2] == 221 ||
+              ClsGlobal.Matriz2[2][2] == 222 ||
+              ClsGlobal.Matriz2[2][2] == 223 ||
+              ClsGlobal.Matriz2[2][2] == 231 ||
+              ClsGlobal.Matriz2[2][2] == 232 ||
+              ClsGlobal.Matriz2[2][2] == 233 ||
+              ClsGlobal.Matriz2[2][2] == 321 ||
+              ClsGlobal.Matriz2[2][2] == 322 ||
+              ClsGlobal.Matriz2[2][2] == 331 ||
+              ClsGlobal.Matriz2[2][2] == 332){
+                JBC3_2.setEnabled(false);
+           }else{
+                JBC3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][3] == 1 ||
+              ClsGlobal.Matriz2[2][3] == 121 ||
+              ClsGlobal.Matriz2[2][3] == 122 ||
+              ClsGlobal.Matriz2[2][3] == 123 ||
+              ClsGlobal.Matriz2[2][3] == 124 ||
+              ClsGlobal.Matriz2[2][3] == 131 ||
+              ClsGlobal.Matriz2[2][3] == 132 ||
+              ClsGlobal.Matriz2[2][3] == 133 ||
+              ClsGlobal.Matriz2[2][3] == 134 ||
+              ClsGlobal.Matriz2[2][3] == 221 ||
+              ClsGlobal.Matriz2[2][3] == 222 ||
+              ClsGlobal.Matriz2[2][3] == 223 ||
+              ClsGlobal.Matriz2[2][3] == 231 ||
+              ClsGlobal.Matriz2[2][3] == 232 ||
+              ClsGlobal.Matriz2[2][3] == 233 ||
+              ClsGlobal.Matriz2[2][3] == 321 ||
+              ClsGlobal.Matriz2[2][3] == 322 ||
+              ClsGlobal.Matriz2[2][3] == 331 ||
+              ClsGlobal.Matriz2[2][3] == 332){
+                JBC4_2.setEnabled(false);
+           }else{
+                JBC4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][4] == 1 ||
+              ClsGlobal.Matriz2[2][4] == 121 ||
+              ClsGlobal.Matriz2[2][4] == 122 ||
+              ClsGlobal.Matriz2[2][4] == 123 ||
+              ClsGlobal.Matriz2[2][4] == 124 ||
+              ClsGlobal.Matriz2[2][4] == 131 ||
+              ClsGlobal.Matriz2[2][4] == 132 ||
+              ClsGlobal.Matriz2[2][4] == 133 ||
+              ClsGlobal.Matriz2[2][4] == 134 ||
+              ClsGlobal.Matriz2[2][4] == 221 ||
+              ClsGlobal.Matriz2[2][4] == 222 ||
+              ClsGlobal.Matriz2[2][4] == 223 ||
+              ClsGlobal.Matriz2[2][4] == 231 ||
+              ClsGlobal.Matriz2[2][4] == 232 ||
+              ClsGlobal.Matriz2[2][4] == 233 ||
+              ClsGlobal.Matriz2[2][4] == 321 ||
+              ClsGlobal.Matriz2[2][4] == 322 ||
+              ClsGlobal.Matriz2[2][4] == 331 ||
+              ClsGlobal.Matriz2[2][4] == 332){
+                JBC5_2.setEnabled(false);
+           }else{
+                JBC5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][5] == 1 ||
+              ClsGlobal.Matriz2[2][5] == 121 ||
+              ClsGlobal.Matriz2[2][5] == 122 ||
+              ClsGlobal.Matriz2[2][5] == 123 ||
+              ClsGlobal.Matriz2[2][5] == 124 ||
+              ClsGlobal.Matriz2[2][5] == 131 ||
+              ClsGlobal.Matriz2[2][5] == 132 ||
+              ClsGlobal.Matriz2[2][5] == 133 ||
+              ClsGlobal.Matriz2[2][5] == 134 ||
+              ClsGlobal.Matriz2[2][5] == 221 ||
+              ClsGlobal.Matriz2[2][5] == 222 ||
+              ClsGlobal.Matriz2[2][5] == 223 ||
+              ClsGlobal.Matriz2[2][5] == 231 ||
+              ClsGlobal.Matriz2[2][5] == 232 ||
+              ClsGlobal.Matriz2[2][5] == 233 ||
+              ClsGlobal.Matriz2[2][5] == 321 ||
+              ClsGlobal.Matriz2[2][5] == 322 ||
+              ClsGlobal.Matriz2[2][5] == 331 ||
+              ClsGlobal.Matriz2[2][5] == 332){
+                JBC6_2.setEnabled(false);
+           }else{
+                JBC6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][6] == 1 ||
+              ClsGlobal.Matriz2[2][6] == 121 ||
+              ClsGlobal.Matriz2[2][6] == 122 ||
+              ClsGlobal.Matriz2[2][6] == 123 ||
+              ClsGlobal.Matriz2[2][6] == 124 ||
+              ClsGlobal.Matriz2[2][6] == 131 ||
+              ClsGlobal.Matriz2[2][6] == 132 ||
+              ClsGlobal.Matriz2[2][6] == 133 ||
+              ClsGlobal.Matriz2[2][6] == 134 ||
+              ClsGlobal.Matriz2[2][6] == 221 ||
+              ClsGlobal.Matriz2[2][6] == 222 ||
+              ClsGlobal.Matriz2[2][6] == 223 ||
+              ClsGlobal.Matriz2[2][6] == 231 ||
+              ClsGlobal.Matriz2[2][6] == 232 ||
+              ClsGlobal.Matriz2[2][6] == 233 ||
+              ClsGlobal.Matriz2[2][6] == 321 ||
+              ClsGlobal.Matriz2[2][6] == 322 ||
+              ClsGlobal.Matriz2[2][6] == 331 ||
+              ClsGlobal.Matriz2[2][6] == 332){
+                JBC7_2.setEnabled(false);
+           }else{
+                JBC7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][7] == 1 ||
+              ClsGlobal.Matriz2[2][7] == 121 ||
+              ClsGlobal.Matriz2[2][7] == 122 ||
+              ClsGlobal.Matriz2[2][7] == 123 ||
+              ClsGlobal.Matriz2[2][7] == 124 ||
+              ClsGlobal.Matriz2[2][7] == 131 ||
+              ClsGlobal.Matriz2[2][7] == 132 ||
+              ClsGlobal.Matriz2[2][7] == 133 ||
+              ClsGlobal.Matriz2[2][7] == 134 ||
+              ClsGlobal.Matriz2[2][7] == 221 ||
+              ClsGlobal.Matriz2[2][7] == 222 ||
+              ClsGlobal.Matriz2[2][7] == 223 ||
+              ClsGlobal.Matriz2[2][7] == 231 ||
+              ClsGlobal.Matriz2[2][7] == 232 ||
+              ClsGlobal.Matriz2[2][7] == 233 ||
+              ClsGlobal.Matriz2[2][7] == 321 ||
+              ClsGlobal.Matriz2[2][7] == 322 ||
+              ClsGlobal.Matriz2[2][7] == 331 ||
+              ClsGlobal.Matriz2[2][7] == 332){
+                JBC8_2.setEnabled(false);
+           }else{
+                JBC8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][8] == 1 ||
+              ClsGlobal.Matriz2[2][8] == 121 ||
+              ClsGlobal.Matriz2[2][8] == 122 ||
+              ClsGlobal.Matriz2[2][8] == 123 ||
+              ClsGlobal.Matriz2[2][8] == 124 ||
+              ClsGlobal.Matriz2[2][8] == 131 ||
+              ClsGlobal.Matriz2[2][8] == 132 ||
+              ClsGlobal.Matriz2[2][8] == 133 ||
+              ClsGlobal.Matriz2[2][8] == 134 ||
+              ClsGlobal.Matriz2[2][8] == 221 ||
+              ClsGlobal.Matriz2[2][8] == 222 ||
+              ClsGlobal.Matriz2[2][8] == 223 ||
+              ClsGlobal.Matriz2[2][8] == 231 ||
+              ClsGlobal.Matriz2[2][8] == 232 ||
+              ClsGlobal.Matriz2[2][8] == 233 ||
+              ClsGlobal.Matriz2[2][8] == 321 ||
+              ClsGlobal.Matriz2[2][8] == 322 ||
+              ClsGlobal.Matriz2[2][8] == 331 ||
+              ClsGlobal.Matriz2[2][8] == 332){
+                JBC9_2.setEnabled(false);
+           }else{
+                JBC9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[2][9] == 1 ||
+              ClsGlobal.Matriz2[2][9] == 121 ||
+              ClsGlobal.Matriz2[2][9] == 122 ||
+              ClsGlobal.Matriz2[2][9] == 123 ||
+              ClsGlobal.Matriz2[2][9] == 124 ||
+              ClsGlobal.Matriz2[2][9] == 131 ||
+              ClsGlobal.Matriz2[2][9] == 132 ||
+              ClsGlobal.Matriz2[2][9] == 133 ||
+              ClsGlobal.Matriz2[2][9] == 134 ||
+              ClsGlobal.Matriz2[2][9] == 221 ||
+              ClsGlobal.Matriz2[2][9] == 222 ||
+              ClsGlobal.Matriz2[2][9] == 223 ||
+              ClsGlobal.Matriz2[2][9] == 231 ||
+              ClsGlobal.Matriz2[2][9] == 232 ||
+              ClsGlobal.Matriz2[2][9] == 233 ||
+              ClsGlobal.Matriz2[2][9] == 321 ||
+              ClsGlobal.Matriz2[2][9] == 322 ||
+              ClsGlobal.Matriz2[2][9] == 331 ||
+              ClsGlobal.Matriz2[2][9] == 332){
+                JBC10_2.setEnabled(false);
+           }else{
+                JBC10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][0] == 1 ||
+              ClsGlobal.Matriz2[3][0] == 121 ||
+              ClsGlobal.Matriz2[3][0] == 122 ||
+              ClsGlobal.Matriz2[3][0] == 123 ||
+              ClsGlobal.Matriz2[03][0] == 124 ||
+              ClsGlobal.Matriz2[3][0] == 131 ||
+              ClsGlobal.Matriz2[3][0] == 132 ||
+              ClsGlobal.Matriz2[3][0] == 133 ||
+              ClsGlobal.Matriz2[3][0] == 134 ||
+              ClsGlobal.Matriz2[3][0] == 221 ||
+              ClsGlobal.Matriz2[3][0] == 222 ||
+              ClsGlobal.Matriz2[3][0] == 223 ||
+              ClsGlobal.Matriz2[3][0] == 231 ||
+              ClsGlobal.Matriz2[3][0] == 232 ||
+              ClsGlobal.Matriz2[3][0] == 233 ||
+              ClsGlobal.Matriz2[3][0] == 321 ||
+              ClsGlobal.Matriz2[3][0] == 322 ||
+              ClsGlobal.Matriz2[3][0] == 331 ||
+              ClsGlobal.Matriz2[3][0] == 332){
+                JBD1_2.setEnabled(false);
+           }else{
+                JBD1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][1] == 1 ||
+              ClsGlobal.Matriz2[3][1] == 121 ||
+              ClsGlobal.Matriz2[3][1] == 122 ||
+              ClsGlobal.Matriz2[3][1] == 123 ||
+              ClsGlobal.Matriz2[3][1] == 124 ||
+              ClsGlobal.Matriz2[3][1] == 131 ||
+              ClsGlobal.Matriz2[3][1] == 132 ||
+              ClsGlobal.Matriz2[3][1] == 133 ||
+              ClsGlobal.Matriz2[3][1] == 134 ||
+              ClsGlobal.Matriz2[3][1] == 221 ||
+              ClsGlobal.Matriz2[3][1] == 222 ||
+              ClsGlobal.Matriz2[3][1] == 223 ||
+              ClsGlobal.Matriz2[3][1] == 231 ||
+              ClsGlobal.Matriz2[3][1] == 232 ||
+              ClsGlobal.Matriz2[3][1] == 233 ||
+              ClsGlobal.Matriz2[3][1] == 321 ||
+              ClsGlobal.Matriz2[3][1] == 322 ||
+              ClsGlobal.Matriz2[3][1] == 331 ||
+              ClsGlobal.Matriz2[3][1] == 332){
+                JBD2_2.setEnabled(false);
+           }else{
+                JBD2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][2] == 1 ||
+              ClsGlobal.Matriz2[3][2] == 121 ||
+              ClsGlobal.Matriz2[3][2] == 122 ||
+              ClsGlobal.Matriz2[3][2] == 123 ||
+              ClsGlobal.Matriz2[3][2] == 124 ||
+              ClsGlobal.Matriz2[3][2] == 131 ||
+              ClsGlobal.Matriz2[3][2] == 132 ||
+              ClsGlobal.Matriz2[3][2] == 133 ||
+              ClsGlobal.Matriz2[3][2] == 134 ||
+              ClsGlobal.Matriz2[3][2] == 221 ||
+              ClsGlobal.Matriz2[3][2] == 222 ||
+              ClsGlobal.Matriz2[3][2] == 223 ||
+              ClsGlobal.Matriz2[3][2] == 231 ||
+              ClsGlobal.Matriz2[3][2] == 232 ||
+              ClsGlobal.Matriz2[3][2] == 233 ||
+              ClsGlobal.Matriz2[3][2] == 321 ||
+              ClsGlobal.Matriz2[3][2] == 322 ||
+              ClsGlobal.Matriz2[3][2] == 331 ||
+              ClsGlobal.Matriz2[3][2] == 332){
+                JBD3_2.setEnabled(false);
+           }else{
+                JBD3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][3] == 1 ||
+              ClsGlobal.Matriz2[3][3] == 121 ||
+              ClsGlobal.Matriz2[3][3] == 122 ||
+              ClsGlobal.Matriz2[3][3] == 123 ||
+              ClsGlobal.Matriz2[3][3] == 124 ||
+              ClsGlobal.Matriz2[3][3] == 131 ||
+              ClsGlobal.Matriz2[3][3] == 132 ||
+              ClsGlobal.Matriz2[3][3] == 133 ||
+              ClsGlobal.Matriz2[3][3] == 134 ||
+              ClsGlobal.Matriz2[3][3] == 221 ||
+              ClsGlobal.Matriz2[3][3] == 222 ||
+              ClsGlobal.Matriz2[3][3] == 223 ||
+              ClsGlobal.Matriz2[3][3] == 231 ||
+              ClsGlobal.Matriz2[3][3] == 232 ||
+              ClsGlobal.Matriz2[3][3] == 233 ||
+              ClsGlobal.Matriz2[3][3] == 321 ||
+              ClsGlobal.Matriz2[3][3] == 322 ||
+              ClsGlobal.Matriz2[3][3] == 331 ||
+              ClsGlobal.Matriz2[3][3] == 332){
+                JBD4_2.setEnabled(false);
+           }else{
+                JBD4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][4] == 1 ||
+              ClsGlobal.Matriz2[3][4] == 121 ||
+              ClsGlobal.Matriz2[3][4] == 122 ||
+              ClsGlobal.Matriz2[3][4] == 123 ||
+              ClsGlobal.Matriz2[3][4] == 124 ||
+              ClsGlobal.Matriz2[3][4] == 131 ||
+              ClsGlobal.Matriz2[3][4] == 132 ||
+              ClsGlobal.Matriz2[3][4] == 133 ||
+              ClsGlobal.Matriz2[3][4] == 134 ||
+              ClsGlobal.Matriz2[3][4] == 221 ||
+              ClsGlobal.Matriz2[3][4] == 222 ||
+              ClsGlobal.Matriz2[3][4] == 223 ||
+              ClsGlobal.Matriz2[3][4] == 231 ||
+              ClsGlobal.Matriz2[3][4] == 232 ||
+              ClsGlobal.Matriz2[3][4] == 233 ||
+              ClsGlobal.Matriz2[3][4] == 321 ||
+              ClsGlobal.Matriz2[3][4] == 322 ||
+              ClsGlobal.Matriz2[3][4] == 331 ||
+              ClsGlobal.Matriz2[3][4] == 332){
+                JBD5_2.setEnabled(false);
+           }else{
+                JBD5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][5] == 1 ||
+              ClsGlobal.Matriz2[3][5] == 121 ||
+              ClsGlobal.Matriz2[3][5] == 122 ||
+              ClsGlobal.Matriz2[3][5] == 123 ||
+              ClsGlobal.Matriz2[3][5] == 124 ||
+              ClsGlobal.Matriz2[3][5] == 131 ||
+              ClsGlobal.Matriz2[3][5] == 132 ||
+              ClsGlobal.Matriz2[3][5] == 133 ||
+              ClsGlobal.Matriz2[3][5] == 134 ||
+              ClsGlobal.Matriz2[3][5] == 221 ||
+              ClsGlobal.Matriz2[3][5] == 222 ||
+              ClsGlobal.Matriz2[3][5] == 223 ||
+              ClsGlobal.Matriz2[3][5] == 231 ||
+              ClsGlobal.Matriz2[3][5] == 232 ||
+              ClsGlobal.Matriz2[3][5] == 233 ||
+              ClsGlobal.Matriz2[3][5] == 321 ||
+              ClsGlobal.Matriz2[3][5] == 322 ||
+              ClsGlobal.Matriz2[3][5] == 331 ||
+              ClsGlobal.Matriz2[3][5] == 332){
+                JBD6_2.setEnabled(false);
+           }else{
+                JBD6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][6] == 1 ||
+              ClsGlobal.Matriz2[3][6] == 121 ||
+              ClsGlobal.Matriz2[3][6] == 122 ||
+              ClsGlobal.Matriz2[3][6] == 123 ||
+              ClsGlobal.Matriz2[3][6] == 124 ||
+              ClsGlobal.Matriz2[3][6] == 131 ||
+              ClsGlobal.Matriz2[3][6] == 132 ||
+              ClsGlobal.Matriz2[3][6] == 133 ||
+              ClsGlobal.Matriz2[3][6] == 134 ||
+              ClsGlobal.Matriz2[3][6] == 221 ||
+              ClsGlobal.Matriz2[3][6] == 222 ||
+              ClsGlobal.Matriz2[3][6] == 223 ||
+              ClsGlobal.Matriz2[3][6] == 231 ||
+              ClsGlobal.Matriz2[3][6] == 232 ||
+              ClsGlobal.Matriz2[3][6] == 233 ||
+              ClsGlobal.Matriz2[3][6] == 321 ||
+              ClsGlobal.Matriz2[3][6] == 322 ||
+              ClsGlobal.Matriz2[3][6] == 331 ||
+              ClsGlobal.Matriz2[3][6] == 332){
+                JBD7_2.setEnabled(false);
+           }else{
+                JBD7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][7] == 1 ||
+              ClsGlobal.Matriz2[3][7] == 121 ||
+              ClsGlobal.Matriz2[3][7] == 122 ||
+              ClsGlobal.Matriz2[3][7] == 123 ||
+              ClsGlobal.Matriz2[3][7] == 124 ||
+              ClsGlobal.Matriz2[3][7] == 131 ||
+              ClsGlobal.Matriz2[3][7] == 132 ||
+              ClsGlobal.Matriz2[3][7] == 133 ||
+              ClsGlobal.Matriz2[3][7] == 134 ||
+              ClsGlobal.Matriz2[3][7] == 221 ||
+              ClsGlobal.Matriz2[3][7] == 222 ||
+              ClsGlobal.Matriz2[3][7] == 223 ||
+              ClsGlobal.Matriz2[3][7] == 231 ||
+              ClsGlobal.Matriz2[3][7] == 232 ||
+              ClsGlobal.Matriz2[3][7] == 233 ||
+              ClsGlobal.Matriz2[3][7] == 321 ||
+              ClsGlobal.Matriz2[3][7] == 322 ||
+              ClsGlobal.Matriz2[3][7] == 331 ||
+              ClsGlobal.Matriz2[3][7] == 332){
+                JBD8_2.setEnabled(false);
+           }else{
+                JBD8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][8] == 1 ||
+              ClsGlobal.Matriz2[3][8] == 121 ||
+              ClsGlobal.Matriz2[3][8] == 122 ||
+              ClsGlobal.Matriz2[3][8] == 123 ||
+              ClsGlobal.Matriz2[3][8] == 124 ||
+              ClsGlobal.Matriz2[3][8] == 131 ||
+              ClsGlobal.Matriz2[3][8] == 132 ||
+              ClsGlobal.Matriz2[3][8] == 133 ||
+              ClsGlobal.Matriz2[3][8] == 134 ||
+              ClsGlobal.Matriz2[3][8] == 221 ||
+              ClsGlobal.Matriz2[3][8] == 222 ||
+              ClsGlobal.Matriz2[3][8] == 223 ||
+              ClsGlobal.Matriz2[3][8] == 231 ||
+              ClsGlobal.Matriz2[3][8] == 232 ||
+              ClsGlobal.Matriz2[3][8] == 233 ||
+              ClsGlobal.Matriz2[3][8] == 321 ||
+              ClsGlobal.Matriz2[3][8] == 322 ||
+              ClsGlobal.Matriz2[3][8] == 331 ||
+              ClsGlobal.Matriz2[3][8] == 332){
+                JBD9_2.setEnabled(false);
+           }else{
+                JBD9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[3][9] == 1 ||
+              ClsGlobal.Matriz2[3][9] == 121 ||
+              ClsGlobal.Matriz2[3][9] == 122 ||
+              ClsGlobal.Matriz2[3][9] == 123 ||
+              ClsGlobal.Matriz2[3][9] == 124 ||
+              ClsGlobal.Matriz2[3][9] == 131 ||
+              ClsGlobal.Matriz2[3][9] == 132 ||
+              ClsGlobal.Matriz2[3][9] == 133 ||
+              ClsGlobal.Matriz2[3][9] == 134 ||
+              ClsGlobal.Matriz2[3][9] == 221 ||
+              ClsGlobal.Matriz2[3][9] == 222 ||
+              ClsGlobal.Matriz2[3][9] == 223 ||
+              ClsGlobal.Matriz2[3][9] == 231 ||
+              ClsGlobal.Matriz2[3][9] == 232 ||
+              ClsGlobal.Matriz2[3][9] == 233 ||
+              ClsGlobal.Matriz2[3][9] == 321 ||
+              ClsGlobal.Matriz2[3][9] == 322 ||
+              ClsGlobal.Matriz2[3][9] == 331 ||
+              ClsGlobal.Matriz2[3][9] == 332){
+                JBD10_2.setEnabled(false);
+           }else{
+                JBD10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][0] == 1 ||
+              ClsGlobal.Matriz2[4][0] == 121 ||
+              ClsGlobal.Matriz2[4][0] == 122 ||
+              ClsGlobal.Matriz2[4][0] == 123 ||
+              ClsGlobal.Matriz2[4][0] == 124 ||
+              ClsGlobal.Matriz2[4][0] == 131 ||
+              ClsGlobal.Matriz2[4][0] == 132 ||
+              ClsGlobal.Matriz2[4][0] == 133 ||
+              ClsGlobal.Matriz2[4][0] == 134 ||
+              ClsGlobal.Matriz2[4][0] == 221 ||
+              ClsGlobal.Matriz2[4][0] == 222 ||
+              ClsGlobal.Matriz2[4][0] == 223 ||
+              ClsGlobal.Matriz2[4][0] == 231 ||
+              ClsGlobal.Matriz2[4][0] == 232 ||
+              ClsGlobal.Matriz2[4][0] == 233 ||
+              ClsGlobal.Matriz2[4][0] == 321 ||
+              ClsGlobal.Matriz2[4][0] == 322 ||
+              ClsGlobal.Matriz2[4][0] == 331 ||
+              ClsGlobal.Matriz2[4][0] == 332){
+                JBE1_2.setEnabled(false);
+           }else{
+                JBE1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][1] == 1 ||
+              ClsGlobal.Matriz2[4][1] == 121 ||
+              ClsGlobal.Matriz2[4][1] == 122 ||
+              ClsGlobal.Matriz2[4][1] == 123 ||
+              ClsGlobal.Matriz2[4][1] == 124 ||
+              ClsGlobal.Matriz2[4][1] == 131 ||
+              ClsGlobal.Matriz2[4][1] == 132 ||
+              ClsGlobal.Matriz2[4][1] == 133 ||
+              ClsGlobal.Matriz2[4][1] == 134 ||
+              ClsGlobal.Matriz2[4][1] == 221 ||
+              ClsGlobal.Matriz2[4][1] == 222 ||
+              ClsGlobal.Matriz2[4][1] == 223 ||
+              ClsGlobal.Matriz2[4][1] == 231 ||
+              ClsGlobal.Matriz2[4][1] == 232 ||
+              ClsGlobal.Matriz2[4][1] == 233 ||
+              ClsGlobal.Matriz2[4][1] == 321 ||
+              ClsGlobal.Matriz2[4][1] == 322 ||
+              ClsGlobal.Matriz2[4][1] == 331 ||
+              ClsGlobal.Matriz2[4][1] == 332){
+                JBE2_2.setEnabled(false);
+           }else{
+                JBE2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][2] == 1 ||
+              ClsGlobal.Matriz2[4][2] == 121 ||
+              ClsGlobal.Matriz2[4][2] == 122 ||
+              ClsGlobal.Matriz2[4][2] == 123 ||
+              ClsGlobal.Matriz2[4][2] == 124 ||
+              ClsGlobal.Matriz2[4][2] == 131 ||
+              ClsGlobal.Matriz2[4][2] == 132 ||
+              ClsGlobal.Matriz2[4][2] == 133 ||
+              ClsGlobal.Matriz2[4][2] == 134 ||
+              ClsGlobal.Matriz2[4][2] == 221 ||
+              ClsGlobal.Matriz2[4][2] == 222 ||
+              ClsGlobal.Matriz2[4][2] == 223 ||
+              ClsGlobal.Matriz2[4][2] == 231 ||
+              ClsGlobal.Matriz2[4][2] == 232 ||
+              ClsGlobal.Matriz2[4][2] == 233 ||
+              ClsGlobal.Matriz2[4][2] == 321 ||
+              ClsGlobal.Matriz2[4][2] == 322 ||
+              ClsGlobal.Matriz2[4][2] == 331 ||
+              ClsGlobal.Matriz2[4][2] == 332){
+                JBE3_2.setEnabled(false);
+           }else{
+                JBE3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][3] == 1 ||
+              ClsGlobal.Matriz2[4][3] == 121 ||
+              ClsGlobal.Matriz2[4][3] == 122 ||
+              ClsGlobal.Matriz2[4][3] == 123 ||
+              ClsGlobal.Matriz2[4][3] == 124 ||
+              ClsGlobal.Matriz2[4][3] == 131 ||
+              ClsGlobal.Matriz2[4][3] == 132 ||
+              ClsGlobal.Matriz2[4][3] == 133 ||
+              ClsGlobal.Matriz2[4][3] == 134 ||
+              ClsGlobal.Matriz2[4][3] == 221 ||
+              ClsGlobal.Matriz2[4][3] == 222 ||
+              ClsGlobal.Matriz2[4][3] == 223 ||
+              ClsGlobal.Matriz2[4][3] == 231 ||
+              ClsGlobal.Matriz2[4][3] == 232 ||
+              ClsGlobal.Matriz2[4][3] == 233 ||
+              ClsGlobal.Matriz2[4][3] == 321 ||
+              ClsGlobal.Matriz2[4][3] == 322 ||
+              ClsGlobal.Matriz2[4][3] == 331 ||
+              ClsGlobal.Matriz2[4][3] == 332){
+                JBE4_2.setEnabled(false);
+           }else{
+                JBE4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][4] == 1 ||
+              ClsGlobal.Matriz2[4][4] == 121 ||
+              ClsGlobal.Matriz2[4][4] == 122 ||
+              ClsGlobal.Matriz2[4][4] == 123 ||
+              ClsGlobal.Matriz2[4][4] == 124 ||
+              ClsGlobal.Matriz2[4][4] == 131 ||
+              ClsGlobal.Matriz2[4][4] == 132 ||
+              ClsGlobal.Matriz2[4][4] == 133 ||
+              ClsGlobal.Matriz2[4][4] == 134 ||
+              ClsGlobal.Matriz2[4][4] == 221 ||
+              ClsGlobal.Matriz2[4][4] == 222 ||
+              ClsGlobal.Matriz2[4][4] == 223 ||
+              ClsGlobal.Matriz2[4][4] == 231 ||
+              ClsGlobal.Matriz2[4][4] == 232 ||
+              ClsGlobal.Matriz2[4][4] == 233 ||
+              ClsGlobal.Matriz2[4][4] == 321 ||
+              ClsGlobal.Matriz2[4][4] == 322 ||
+              ClsGlobal.Matriz2[4][4] == 331 ||
+              ClsGlobal.Matriz2[4][4] == 332){
+                JBE5_2.setEnabled(false);
+           }else{
+                JBE5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][5] == 1 ||
+              ClsGlobal.Matriz2[4][5] == 121 ||
+              ClsGlobal.Matriz2[4][5] == 122 ||
+              ClsGlobal.Matriz2[4][5] == 123 ||
+              ClsGlobal.Matriz2[4][5] == 124 ||
+              ClsGlobal.Matriz2[4][5] == 131 ||
+              ClsGlobal.Matriz2[4][5] == 132 ||
+              ClsGlobal.Matriz2[4][5] == 133 ||
+              ClsGlobal.Matriz2[4][5] == 134 ||
+              ClsGlobal.Matriz2[4][5] == 221 ||
+              ClsGlobal.Matriz2[4][5] == 222 ||
+              ClsGlobal.Matriz2[4][5] == 223 ||
+              ClsGlobal.Matriz2[4][5] == 231 ||
+              ClsGlobal.Matriz2[4][5] == 232 ||
+              ClsGlobal.Matriz2[4][5] == 233 ||
+              ClsGlobal.Matriz2[4][5] == 321 ||
+              ClsGlobal.Matriz2[4][5] == 322 ||
+              ClsGlobal.Matriz2[4][5] == 331 ||
+              ClsGlobal.Matriz2[4][5] == 332){
+                JBE6_2.setEnabled(false);
+           }else{
+                JBE6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][6] == 1 ||
+              ClsGlobal.Matriz2[4][6] == 121 ||
+              ClsGlobal.Matriz2[4][6] == 122 ||
+              ClsGlobal.Matriz2[4][6] == 123 ||
+              ClsGlobal.Matriz2[4][6] == 124 ||
+              ClsGlobal.Matriz2[4][6] == 131 ||
+              ClsGlobal.Matriz2[4][6] == 132 ||
+              ClsGlobal.Matriz2[4][6] == 133 ||
+              ClsGlobal.Matriz2[4][6] == 134 ||
+              ClsGlobal.Matriz2[4][6] == 221 ||
+              ClsGlobal.Matriz2[4][6] == 222 ||
+              ClsGlobal.Matriz2[4][6] == 223 ||
+              ClsGlobal.Matriz2[4][6] == 231 ||
+              ClsGlobal.Matriz2[4][6] == 232 ||
+              ClsGlobal.Matriz2[4][6] == 233 ||
+              ClsGlobal.Matriz2[4][6] == 321 ||
+              ClsGlobal.Matriz2[4][6] == 322 ||
+              ClsGlobal.Matriz2[4][6] == 331 ||
+              ClsGlobal.Matriz2[4][6] == 332){
+                JBE7_2.setEnabled(false);
+           }else{
+                JBE7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][7] == 1 ||
+              ClsGlobal.Matriz2[4][7] == 121 ||
+              ClsGlobal.Matriz2[4][7] == 122 ||
+              ClsGlobal.Matriz2[4][7] == 123 ||
+              ClsGlobal.Matriz2[4][7] == 124 ||
+              ClsGlobal.Matriz2[4][7] == 131 ||
+              ClsGlobal.Matriz2[4][7] == 132 ||
+              ClsGlobal.Matriz2[4][7] == 133 ||
+              ClsGlobal.Matriz2[4][7] == 134 ||
+              ClsGlobal.Matriz2[4][7] == 221 ||
+              ClsGlobal.Matriz2[4][7] == 222 ||
+              ClsGlobal.Matriz2[4][7] == 223 ||
+              ClsGlobal.Matriz2[4][7] == 231 ||
+              ClsGlobal.Matriz2[4][7] == 232 ||
+              ClsGlobal.Matriz2[4][7] == 233 ||
+              ClsGlobal.Matriz2[4][7] == 321 ||
+              ClsGlobal.Matriz2[4][7] == 322 ||
+              ClsGlobal.Matriz2[4][7] == 331 ||
+              ClsGlobal.Matriz2[4][7] == 332){
+                JBE8_2.setEnabled(false);
+           }else{
+                JBE8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][8] == 1 ||
+              ClsGlobal.Matriz2[4][8] == 121 ||
+              ClsGlobal.Matriz2[4][8] == 122 ||
+              ClsGlobal.Matriz2[4][8] == 123 ||
+              ClsGlobal.Matriz2[4][8] == 124 ||
+              ClsGlobal.Matriz2[4][8] == 131 ||
+              ClsGlobal.Matriz2[4][8] == 132 ||
+              ClsGlobal.Matriz2[4][8] == 133 ||
+              ClsGlobal.Matriz2[4][8] == 134 ||
+              ClsGlobal.Matriz2[4][8] == 221 ||
+              ClsGlobal.Matriz2[4][8] == 222 ||
+              ClsGlobal.Matriz2[4][8] == 223 ||
+              ClsGlobal.Matriz2[4][8] == 231 ||
+              ClsGlobal.Matriz2[4][8] == 232 ||
+              ClsGlobal.Matriz2[4][8] == 233 ||
+              ClsGlobal.Matriz2[4][8] == 321 ||
+              ClsGlobal.Matriz2[4][8] == 322 ||
+              ClsGlobal.Matriz2[4][8] == 331 ||
+              ClsGlobal.Matriz2[4][8] == 332){
+                JBE9_2.setEnabled(false);
+           }else{
+                JBE9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[4][9] == 1 ||
+              ClsGlobal.Matriz2[4][9] == 121 ||
+              ClsGlobal.Matriz2[4][9] == 122 ||
+              ClsGlobal.Matriz2[4][9] == 123 ||
+              ClsGlobal.Matriz2[4][9] == 124 ||
+              ClsGlobal.Matriz2[4][9] == 131 ||
+              ClsGlobal.Matriz2[4][9] == 132 ||
+              ClsGlobal.Matriz2[4][9] == 133 ||
+              ClsGlobal.Matriz2[4][9] == 134 ||
+              ClsGlobal.Matriz2[4][9] == 221 ||
+              ClsGlobal.Matriz2[4][9] == 222 ||
+              ClsGlobal.Matriz2[4][9] == 223 ||
+              ClsGlobal.Matriz2[4][9] == 231 ||
+              ClsGlobal.Matriz2[4][9] == 232 ||
+              ClsGlobal.Matriz2[4][9] == 233 ||
+              ClsGlobal.Matriz2[4][9] == 321 ||
+              ClsGlobal.Matriz2[4][9] == 322 ||
+              ClsGlobal.Matriz2[4][9] == 331 ||
+              ClsGlobal.Matriz2[4][9] == 332){
+                JBE10_2.setEnabled(false);
+           }else{
+                JBE10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][0] == 1 ||
+              ClsGlobal.Matriz2[5][0] == 121 ||
+              ClsGlobal.Matriz2[5][0] == 122 ||
+              ClsGlobal.Matriz2[5][0] == 123 ||
+              ClsGlobal.Matriz2[5][0] == 124 ||
+              ClsGlobal.Matriz2[5][0] == 131 ||
+              ClsGlobal.Matriz2[5][0] == 132 ||
+              ClsGlobal.Matriz2[5][0] == 133 ||
+              ClsGlobal.Matriz2[5][0] == 134 ||
+              ClsGlobal.Matriz2[5][0] == 221 ||
+              ClsGlobal.Matriz2[5][0] == 222 ||
+              ClsGlobal.Matriz2[5][0] == 223 ||
+              ClsGlobal.Matriz2[5][0] == 231 ||
+              ClsGlobal.Matriz2[5][0] == 232 ||
+              ClsGlobal.Matriz2[5][0] == 233 ||
+              ClsGlobal.Matriz2[5][0] == 321 ||
+              ClsGlobal.Matriz2[5][0] == 322 ||
+              ClsGlobal.Matriz2[5][0] == 331 ||
+              ClsGlobal.Matriz2[5][0] == 332){
+                JBF1_2.setEnabled(false);
+           }else{
+                JBF1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][1] == 1 ||
+              ClsGlobal.Matriz2[5][1] == 121 ||
+              ClsGlobal.Matriz2[5][1] == 122 ||
+              ClsGlobal.Matriz2[5][1] == 123 ||
+              ClsGlobal.Matriz2[5][1] == 124 ||
+              ClsGlobal.Matriz2[5][1] == 131 ||
+              ClsGlobal.Matriz2[5][1] == 132 ||
+              ClsGlobal.Matriz2[5][1] == 133 ||
+              ClsGlobal.Matriz2[5][1] == 134 ||
+              ClsGlobal.Matriz2[5][1] == 221 ||
+              ClsGlobal.Matriz2[5][1] == 222 ||
+              ClsGlobal.Matriz2[5][1] == 223 ||
+              ClsGlobal.Matriz2[5][1] == 231 ||
+              ClsGlobal.Matriz2[5][1] == 232 ||
+              ClsGlobal.Matriz2[5][1] == 233 ||
+              ClsGlobal.Matriz2[5][1] == 321 ||
+              ClsGlobal.Matriz2[5][1] == 322 ||
+              ClsGlobal.Matriz2[5][1] == 331 ||
+              ClsGlobal.Matriz2[5][1] == 332){
+                JBF2_2.setEnabled(false);
+           }else{
+                JBF2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][2] == 1 ||
+              ClsGlobal.Matriz2[5][2] == 121 ||
+              ClsGlobal.Matriz2[5][2] == 122 ||
+              ClsGlobal.Matriz2[5][2] == 123 ||
+              ClsGlobal.Matriz2[5][2] == 124 ||
+              ClsGlobal.Matriz2[5][2] == 131 ||
+              ClsGlobal.Matriz2[5][2] == 132 ||
+              ClsGlobal.Matriz2[5][2] == 133 ||
+              ClsGlobal.Matriz2[5][2] == 134 ||
+              ClsGlobal.Matriz2[5][2] == 221 ||
+              ClsGlobal.Matriz2[5][2] == 222 ||
+              ClsGlobal.Matriz2[5][2] == 223 ||
+              ClsGlobal.Matriz2[5][2] == 231 ||
+              ClsGlobal.Matriz2[5][2] == 232 ||
+              ClsGlobal.Matriz2[5][2] == 233 ||
+              ClsGlobal.Matriz2[5][2] == 321 ||
+              ClsGlobal.Matriz2[5][2] == 322 ||
+              ClsGlobal.Matriz2[5][2] == 331 ||
+              ClsGlobal.Matriz2[5][2] == 332){
+                JBF3_2.setEnabled(false);
+           }else
+                JBF3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][3] == 1 ||
+              ClsGlobal.Matriz2[5][3] == 121 ||
+              ClsGlobal.Matriz2[5][3] == 122 ||
+              ClsGlobal.Matriz2[5][3] == 123 ||
+              ClsGlobal.Matriz2[5][3] == 124 ||
+              ClsGlobal.Matriz2[5][3] == 131 ||
+              ClsGlobal.Matriz2[5][3] == 132 ||
+              ClsGlobal.Matriz2[5][3] == 133 ||
+              ClsGlobal.Matriz2[5][3] == 134 ||
+              ClsGlobal.Matriz2[5][3] == 221 ||
+              ClsGlobal.Matriz2[5][3] == 222 ||
+              ClsGlobal.Matriz2[5][3] == 223 ||
+              ClsGlobal.Matriz2[5][3] == 231 ||
+              ClsGlobal.Matriz2[5][3] == 232 ||
+              ClsGlobal.Matriz2[5][3] == 233 ||
+              ClsGlobal.Matriz2[5][3] == 321 ||
+              ClsGlobal.Matriz2[5][3] == 322 ||
+              ClsGlobal.Matriz2[5][3] == 331 ||
+              ClsGlobal.Matriz2[5][3] == 332){
+                JBF4_2.setEnabled(false);
+           }else{
+                JBF4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][4] == 1 ||
+              ClsGlobal.Matriz2[5][4] == 121 ||
+              ClsGlobal.Matriz2[5][4] == 122 ||
+              ClsGlobal.Matriz2[5][4] == 123 ||
+              ClsGlobal.Matriz2[5][4] == 124 ||
+              ClsGlobal.Matriz2[5][4] == 131 ||
+              ClsGlobal.Matriz2[5][4] == 132 ||
+              ClsGlobal.Matriz2[5][4] == 133 ||
+              ClsGlobal.Matriz2[5][4] == 134 ||
+              ClsGlobal.Matriz2[5][4] == 221 ||
+              ClsGlobal.Matriz2[5][4] == 222 ||
+              ClsGlobal.Matriz2[5][4] == 223 ||
+              ClsGlobal.Matriz2[5][4] == 231 ||
+              ClsGlobal.Matriz2[5][4] == 232 ||
+              ClsGlobal.Matriz2[5][4] == 233 ||
+              ClsGlobal.Matriz2[5][4] == 321 ||
+              ClsGlobal.Matriz2[5][4] == 322 ||
+              ClsGlobal.Matriz2[5][4] == 331 ||
+              ClsGlobal.Matriz2[5][4] == 332){
+                JBF5_2.setEnabled(false);
+           }else{
+                JBF5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][5] == 1 ||
+              ClsGlobal.Matriz2[5][5] == 121 ||
+              ClsGlobal.Matriz2[5][5] == 122 ||
+              ClsGlobal.Matriz2[5][5] == 123 ||
+              ClsGlobal.Matriz2[5][5] == 124 ||
+              ClsGlobal.Matriz2[5][5] == 131 ||
+              ClsGlobal.Matriz2[5][5] == 132 ||
+              ClsGlobal.Matriz2[5][5] == 133 ||
+              ClsGlobal.Matriz2[5][5] == 134 ||
+              ClsGlobal.Matriz2[5][5] == 221 ||
+              ClsGlobal.Matriz2[5][5] == 222 ||
+              ClsGlobal.Matriz2[5][5] == 223 ||
+              ClsGlobal.Matriz2[5][5] == 231 ||
+              ClsGlobal.Matriz2[5][5] == 232 ||
+              ClsGlobal.Matriz2[5][5] == 233 ||
+              ClsGlobal.Matriz2[5][5] == 321 ||
+              ClsGlobal.Matriz2[5][5] == 322 ||
+              ClsGlobal.Matriz2[5][5] == 331 ||
+              ClsGlobal.Matriz2[5][5] == 332){
+                JBF6_2.setEnabled(false);
+           }else{
+                JBF6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][6] == 1 ||
+              ClsGlobal.Matriz2[5][6] == 121 ||
+              ClsGlobal.Matriz2[5][6] == 122 ||
+              ClsGlobal.Matriz2[5][6] == 123 ||
+              ClsGlobal.Matriz2[5][6] == 124 ||
+              ClsGlobal.Matriz2[5][6] == 131 ||
+              ClsGlobal.Matriz2[5][6] == 132 ||
+              ClsGlobal.Matriz2[5][6] == 133 ||
+              ClsGlobal.Matriz2[5][6] == 134 ||
+              ClsGlobal.Matriz2[5][6] == 221 ||
+              ClsGlobal.Matriz2[5][6] == 222 ||
+              ClsGlobal.Matriz2[5][6] == 223 ||
+              ClsGlobal.Matriz2[5][6] == 231 ||
+              ClsGlobal.Matriz2[5][6] == 232 ||
+              ClsGlobal.Matriz2[5][6] == 233 ||
+              ClsGlobal.Matriz2[5][6] == 321 ||
+              ClsGlobal.Matriz2[5][6] == 322 ||
+              ClsGlobal.Matriz2[5][6] == 331 ||
+              ClsGlobal.Matriz2[5][6] == 332){
+                JBF7_2.setEnabled(false);
+           }else{
+                JBF7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][7] == 1 ||
+              ClsGlobal.Matriz2[5][7] == 121 ||
+              ClsGlobal.Matriz2[5][7] == 122 ||
+              ClsGlobal.Matriz2[5][7] == 123 ||
+              ClsGlobal.Matriz2[5][7] == 124 ||
+              ClsGlobal.Matriz2[5][7] == 131 ||
+              ClsGlobal.Matriz2[5][7] == 132 ||
+              ClsGlobal.Matriz2[5][7] == 133 ||
+              ClsGlobal.Matriz2[5][7] == 134 ||
+              ClsGlobal.Matriz2[5][7] == 221 ||
+              ClsGlobal.Matriz2[5][7] == 222 ||
+              ClsGlobal.Matriz2[5][7] == 223 ||
+              ClsGlobal.Matriz2[5][7] == 231 ||
+              ClsGlobal.Matriz2[5][7] == 232 ||
+              ClsGlobal.Matriz2[5][7] == 233 ||
+              ClsGlobal.Matriz2[5][7] == 321 ||
+              ClsGlobal.Matriz2[5][7] == 322 ||
+              ClsGlobal.Matriz2[5][7] == 331 ||
+              ClsGlobal.Matriz2[5][7] == 332){
+                JBF8_2.setEnabled(false);
+           }else{
+                JBF8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][8] == 1 ||
+              ClsGlobal.Matriz2[5][8] == 121 ||
+              ClsGlobal.Matriz2[5][8] == 122 ||
+              ClsGlobal.Matriz2[5][8] == 123 ||
+              ClsGlobal.Matriz2[5][8] == 124 ||
+              ClsGlobal.Matriz2[5][8] == 131 ||
+              ClsGlobal.Matriz2[5][8] == 132 ||
+              ClsGlobal.Matriz2[5][8] == 133 ||
+              ClsGlobal.Matriz2[5][8] == 134 ||
+              ClsGlobal.Matriz2[5][8] == 221 ||
+              ClsGlobal.Matriz2[5][8] == 222 ||
+              ClsGlobal.Matriz2[5][8] == 223 ||
+              ClsGlobal.Matriz2[5][8] == 231 ||
+              ClsGlobal.Matriz2[5][8] == 232 ||
+              ClsGlobal.Matriz2[5][8] == 233 ||
+              ClsGlobal.Matriz2[5][8] == 321 ||
+              ClsGlobal.Matriz2[5][8] == 322 ||
+              ClsGlobal.Matriz2[5][8] == 331 ||
+              ClsGlobal.Matriz2[5][8] == 332){
+                JBF9_2.setEnabled(false);
+           }else{
+                JBF9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[5][9] == 1 ||
+              ClsGlobal.Matriz2[5][9] == 121 ||
+              ClsGlobal.Matriz2[5][9] == 122 ||
+              ClsGlobal.Matriz2[5][9] == 123 ||
+              ClsGlobal.Matriz2[5][9] == 124 ||
+              ClsGlobal.Matriz2[5][9] == 131 ||
+              ClsGlobal.Matriz2[5][9] == 132 ||
+              ClsGlobal.Matriz2[5][9] == 133 ||
+              ClsGlobal.Matriz2[5][9] == 134 ||
+              ClsGlobal.Matriz2[5][9] == 221 ||
+              ClsGlobal.Matriz2[5][9] == 222 ||
+              ClsGlobal.Matriz2[5][9] == 223 ||
+              ClsGlobal.Matriz2[5][9] == 231 ||
+              ClsGlobal.Matriz2[5][9] == 232 ||
+              ClsGlobal.Matriz2[5][9] == 233 ||
+              ClsGlobal.Matriz2[5][9] == 321 ||
+              ClsGlobal.Matriz2[5][9] == 322 ||
+              ClsGlobal.Matriz2[5][9] == 331 ||
+              ClsGlobal.Matriz2[5][9] == 332){
+                JBF10_2.setEnabled(false);
+           }else{
+                JBF10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][0] == 1 ||
+              ClsGlobal.Matriz2[6][0] == 121 ||
+              ClsGlobal.Matriz2[6][0] == 122 ||
+              ClsGlobal.Matriz2[6][0] == 123 ||
+              ClsGlobal.Matriz2[6][0] == 124 ||
+              ClsGlobal.Matriz2[6][0] == 131 ||
+              ClsGlobal.Matriz2[6][0] == 132 ||
+              ClsGlobal.Matriz2[6][0] == 133 ||
+              ClsGlobal.Matriz2[6][0] == 134 ||
+              ClsGlobal.Matriz2[6][0] == 221 ||
+              ClsGlobal.Matriz2[6][0] == 222 ||
+              ClsGlobal.Matriz2[6][0] == 223 ||
+              ClsGlobal.Matriz2[6][0] == 231 ||
+              ClsGlobal.Matriz2[6][0] == 232 ||
+              ClsGlobal.Matriz2[6][0] == 233 ||
+              ClsGlobal.Matriz2[6][0] == 321 ||
+              ClsGlobal.Matriz2[6][0] == 322 ||
+              ClsGlobal.Matriz2[6][0] == 331 ||
+              ClsGlobal.Matriz2[6][0] == 332){
+                JBG1_2.setEnabled(false);
+           }else{
+                JBG1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][1] == 1 ||
+              ClsGlobal.Matriz2[6][1] == 121 ||
+              ClsGlobal.Matriz2[6][1] == 122 ||
+              ClsGlobal.Matriz2[6][1] == 123 ||
+              ClsGlobal.Matriz2[6][1] == 124 ||
+              ClsGlobal.Matriz2[6][1] == 131 ||
+              ClsGlobal.Matriz2[6][1] == 132 ||
+              ClsGlobal.Matriz2[6][1] == 133 ||
+              ClsGlobal.Matriz2[6][1] == 134 ||
+              ClsGlobal.Matriz2[6][1] == 221 ||
+              ClsGlobal.Matriz2[6][1] == 222 ||
+              ClsGlobal.Matriz2[6][1] == 223 ||
+              ClsGlobal.Matriz2[6][1] == 231 ||
+              ClsGlobal.Matriz2[6][1] == 232 ||
+              ClsGlobal.Matriz2[6][1] == 233 ||
+              ClsGlobal.Matriz2[6][1] == 321 ||
+              ClsGlobal.Matriz2[6][1] == 322 ||
+              ClsGlobal.Matriz2[6][1] == 331 ||
+              ClsGlobal.Matriz2[6][1] == 332){
+                JBG2_2.setEnabled(false);
+           }else{
+                JBG2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][2] == 1 ||
+              ClsGlobal.Matriz2[6][2] == 121 ||
+              ClsGlobal.Matriz2[6][2] == 122 ||
+              ClsGlobal.Matriz2[6][2] == 123 ||
+              ClsGlobal.Matriz2[6][2] == 124 ||
+              ClsGlobal.Matriz2[6][2] == 131 ||
+              ClsGlobal.Matriz2[6][2] == 132 ||
+              ClsGlobal.Matriz2[6][2] == 133 ||
+              ClsGlobal.Matriz2[6][2] == 134 ||
+              ClsGlobal.Matriz2[6][2] == 221 ||
+              ClsGlobal.Matriz2[6][2] == 222 ||
+              ClsGlobal.Matriz2[6][2] == 223 ||
+              ClsGlobal.Matriz2[6][2] == 231 ||
+              ClsGlobal.Matriz2[6][2] == 232 ||
+              ClsGlobal.Matriz2[6][2] == 233 ||
+              ClsGlobal.Matriz2[6][2] == 321 ||
+              ClsGlobal.Matriz2[6][2] == 322 ||
+              ClsGlobal.Matriz2[6][2] == 331 ||
+              ClsGlobal.Matriz2[6][2] == 332){
+                JBG3_2.setEnabled(false);
+           }else{
+                JBG3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][3] == 1 ||
+              ClsGlobal.Matriz2[6][3] == 121 ||
+              ClsGlobal.Matriz2[6][3] == 122 ||
+              ClsGlobal.Matriz2[6][3] == 123 ||
+              ClsGlobal.Matriz2[6][3] == 124 ||
+              ClsGlobal.Matriz2[6][3] == 131 ||
+              ClsGlobal.Matriz2[6][3] == 132 ||
+              ClsGlobal.Matriz2[6][3] == 133 ||
+              ClsGlobal.Matriz2[6][3] == 134 ||
+              ClsGlobal.Matriz2[6][3] == 221 ||
+              ClsGlobal.Matriz2[6][3] == 222 ||
+              ClsGlobal.Matriz2[6][3] == 223 ||
+              ClsGlobal.Matriz2[6][3] == 231 ||
+              ClsGlobal.Matriz2[6][3] == 232 ||
+              ClsGlobal.Matriz2[6][3] == 233 ||
+              ClsGlobal.Matriz2[6][3] == 321 ||
+              ClsGlobal.Matriz2[6][3] == 322 ||
+              ClsGlobal.Matriz2[6][3] == 331 ||
+              ClsGlobal.Matriz2[6][3] == 332){
+                JBG4_2.setEnabled(false);
+           }else{
+                JBG4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][4] == 1 ||
+              ClsGlobal.Matriz2[6][4] == 121 ||
+              ClsGlobal.Matriz2[6][4] == 122 ||
+              ClsGlobal.Matriz2[6][4] == 123 ||
+              ClsGlobal.Matriz2[6][4] == 124 ||
+              ClsGlobal.Matriz2[6][4] == 131 ||
+              ClsGlobal.Matriz2[6][4] == 132 ||
+              ClsGlobal.Matriz2[6][4] == 133 ||
+              ClsGlobal.Matriz2[6][4] == 134 ||
+              ClsGlobal.Matriz2[6][4] == 221 ||
+              ClsGlobal.Matriz2[6][4] == 222 ||
+              ClsGlobal.Matriz2[6][4] == 223 ||
+              ClsGlobal.Matriz2[6][4] == 231 ||
+              ClsGlobal.Matriz2[6][4] == 232 ||
+              ClsGlobal.Matriz2[6][4] == 233 ||
+              ClsGlobal.Matriz2[6][4] == 321 ||
+              ClsGlobal.Matriz2[6][4] == 322 ||
+              ClsGlobal.Matriz2[6][4] == 331 ||
+              ClsGlobal.Matriz2[6][4] == 332){
+                JBG5_2.setEnabled(false);
+           }else{
+                JBG5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][5] == 1 ||
+              ClsGlobal.Matriz2[6][5] == 121 ||
+              ClsGlobal.Matriz2[6][5] == 122 ||
+              ClsGlobal.Matriz2[6][5] == 123 ||
+              ClsGlobal.Matriz2[6][5] == 124 ||
+              ClsGlobal.Matriz2[6][5] == 131 ||
+              ClsGlobal.Matriz2[6][5] == 132 ||
+              ClsGlobal.Matriz2[6][5] == 133 ||
+              ClsGlobal.Matriz2[6][5] == 134 ||
+              ClsGlobal.Matriz2[6][5] == 221 ||
+              ClsGlobal.Matriz2[6][5] == 222 ||
+              ClsGlobal.Matriz2[6][5] == 223 ||
+              ClsGlobal.Matriz2[6][5] == 231 ||
+              ClsGlobal.Matriz2[6][5] == 232 ||
+              ClsGlobal.Matriz2[6][5] == 233 ||
+              ClsGlobal.Matriz2[6][5] == 321 ||
+              ClsGlobal.Matriz2[6][5] == 322 ||
+              ClsGlobal.Matriz2[6][5] == 331 ||
+              ClsGlobal.Matriz2[6][5] == 332){
+                JBG6_2.setEnabled(false);
+           }else{
+                JBG6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][6] == 1 ||
+              ClsGlobal.Matriz2[6][6] == 121 ||
+              ClsGlobal.Matriz2[6][6] == 122 ||
+              ClsGlobal.Matriz2[6][6] == 123 ||
+              ClsGlobal.Matriz2[6][6] == 124 ||
+              ClsGlobal.Matriz2[6][6] == 131 ||
+              ClsGlobal.Matriz2[6][6] == 132 ||
+              ClsGlobal.Matriz2[6][6] == 133 ||
+              ClsGlobal.Matriz2[6][6] == 134 ||
+              ClsGlobal.Matriz2[6][6] == 221 ||
+              ClsGlobal.Matriz2[6][6] == 222 ||
+              ClsGlobal.Matriz2[6][6] == 223 ||
+              ClsGlobal.Matriz2[6][6] == 231 ||
+              ClsGlobal.Matriz2[6][6] == 232 ||
+              ClsGlobal.Matriz2[6][6] == 233 ||
+              ClsGlobal.Matriz2[6][6] == 321 ||
+              ClsGlobal.Matriz2[6][6] == 322 ||
+              ClsGlobal.Matriz2[6][6] == 331 ||
+              ClsGlobal.Matriz2[6][6] == 332){
+                JBG7_2.setEnabled(false);
+           }else{
+                JBG7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][7] == 1 ||
+              ClsGlobal.Matriz2[6][7] == 121 ||
+              ClsGlobal.Matriz2[6][7] == 122 ||
+              ClsGlobal.Matriz2[6][7] == 123 ||
+              ClsGlobal.Matriz2[6][7] == 124 ||
+              ClsGlobal.Matriz2[6][7] == 131 ||
+              ClsGlobal.Matriz2[6][7] == 132 ||
+              ClsGlobal.Matriz2[6][7] == 133 ||
+              ClsGlobal.Matriz2[6][7] == 134 ||
+              ClsGlobal.Matriz2[6][7] == 221 ||
+              ClsGlobal.Matriz2[6][7] == 222 ||
+              ClsGlobal.Matriz2[6][7] == 223 ||
+              ClsGlobal.Matriz2[6][7] == 231 ||
+              ClsGlobal.Matriz2[6][7] == 232 ||
+              ClsGlobal.Matriz2[6][7] == 233 ||
+              ClsGlobal.Matriz2[6][7] == 321 ||
+              ClsGlobal.Matriz2[6][7] == 322 ||
+              ClsGlobal.Matriz2[6][7] == 331 ||
+              ClsGlobal.Matriz2[6][7] == 332){
+                JBG8_2.setEnabled(false);
+           }else{
+                JBG8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][8] == 1 ||
+              ClsGlobal.Matriz2[6][8] == 121 ||
+              ClsGlobal.Matriz2[6][8] == 122 ||
+              ClsGlobal.Matriz2[6][8] == 123 ||
+              ClsGlobal.Matriz2[6][8] == 124 ||
+              ClsGlobal.Matriz2[6][8] == 131 ||
+              ClsGlobal.Matriz2[6][8] == 132 ||
+              ClsGlobal.Matriz2[6][8] == 133 ||
+              ClsGlobal.Matriz2[6][8] == 134 ||
+              ClsGlobal.Matriz2[6][8] == 221 ||
+              ClsGlobal.Matriz2[6][8] == 222 ||
+              ClsGlobal.Matriz2[6][8] == 223 ||
+              ClsGlobal.Matriz2[6][8] == 231 ||
+              ClsGlobal.Matriz2[6][8] == 232 ||
+              ClsGlobal.Matriz2[6][8] == 233 ||
+              ClsGlobal.Matriz2[6][8] == 321 ||
+              ClsGlobal.Matriz2[6][8] == 322 ||
+              ClsGlobal.Matriz2[6][8] == 331 ||
+              ClsGlobal.Matriz2[6][8] == 332){
+                JBG9_2.setEnabled(false);
+           }else{
+                JBG9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[6][9] == 1 ||
+              ClsGlobal.Matriz2[6][9] == 121 ||
+              ClsGlobal.Matriz2[6][9] == 122 ||
+              ClsGlobal.Matriz2[6][9] == 123 ||
+              ClsGlobal.Matriz2[6][9] == 124 ||
+              ClsGlobal.Matriz2[6][9] == 131 ||
+              ClsGlobal.Matriz2[6][9] == 132 ||
+              ClsGlobal.Matriz2[6][9] == 133 ||
+              ClsGlobal.Matriz2[6][9] == 134 ||
+              ClsGlobal.Matriz2[6][9] == 221 ||
+              ClsGlobal.Matriz2[6][9] == 222 ||
+              ClsGlobal.Matriz2[6][9] == 223 ||
+              ClsGlobal.Matriz2[6][9] == 231 ||
+              ClsGlobal.Matriz2[6][9] == 232 ||
+              ClsGlobal.Matriz2[6][9] == 233 ||
+              ClsGlobal.Matriz2[6][9] == 321 ||
+              ClsGlobal.Matriz2[6][9] == 322 ||
+              ClsGlobal.Matriz2[6][9] == 331 ||
+              ClsGlobal.Matriz2[6][9] == 332){
+                JBG10_2.setEnabled(false);
+           }else{
+                JBG10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][0] == 1 ||
+              ClsGlobal.Matriz2[7][0] == 121 ||
+              ClsGlobal.Matriz2[7][0] == 122 ||
+              ClsGlobal.Matriz2[7][0] == 123 ||
+              ClsGlobal.Matriz2[7][0] == 124 ||
+              ClsGlobal.Matriz2[7][0] == 131 ||
+              ClsGlobal.Matriz2[7][0] == 132 ||
+              ClsGlobal.Matriz2[7][0] == 133 ||
+              ClsGlobal.Matriz2[7][0] == 134 ||
+              ClsGlobal.Matriz2[7][0] == 221 ||
+              ClsGlobal.Matriz2[7][0] == 222 ||
+              ClsGlobal.Matriz2[7][0] == 223 ||
+              ClsGlobal.Matriz2[7][0] == 231 ||
+              ClsGlobal.Matriz2[7][0] == 232 ||
+              ClsGlobal.Matriz2[7][0] == 233 ||
+              ClsGlobal.Matriz2[7][0] == 321 ||
+              ClsGlobal.Matriz2[7][0] == 322 ||
+              ClsGlobal.Matriz2[7][0] == 331 ||
+              ClsGlobal.Matriz2[7][0] == 332){
+                JBH1_2.setEnabled(false);
+           }else{
+                JBH1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][1] == 1 ||
+              ClsGlobal.Matriz2[7][1] == 121 ||
+              ClsGlobal.Matriz2[7][1] == 122 ||
+              ClsGlobal.Matriz2[7][1] == 123 ||
+              ClsGlobal.Matriz2[7][1] == 124 ||
+              ClsGlobal.Matriz2[7][1] == 131 ||
+              ClsGlobal.Matriz2[7][1] == 132 ||
+              ClsGlobal.Matriz2[7][1] == 133 ||
+              ClsGlobal.Matriz2[7][1] == 134 ||
+              ClsGlobal.Matriz2[7][1] == 221 ||
+              ClsGlobal.Matriz2[7][1] == 222 ||
+              ClsGlobal.Matriz2[7][1] == 223 ||
+              ClsGlobal.Matriz2[7][1] == 231 ||
+              ClsGlobal.Matriz2[7][1] == 232 ||
+              ClsGlobal.Matriz2[7][1] == 233 ||
+              ClsGlobal.Matriz2[7][1] == 321 ||
+              ClsGlobal.Matriz2[7][1] == 322 ||
+              ClsGlobal.Matriz2[7][1] == 331 ||
+              ClsGlobal.Matriz2[7][1] == 332){
+                JBH2_2.setEnabled(false);
+           }else{
+                JBH2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][2] == 1 ||
+              ClsGlobal.Matriz2[7][2] == 121 ||
+              ClsGlobal.Matriz2[7][2] == 122 ||
+              ClsGlobal.Matriz2[7][2] == 123 ||
+              ClsGlobal.Matriz2[7][2] == 124 ||
+              ClsGlobal.Matriz2[7][2] == 131 ||
+              ClsGlobal.Matriz2[7][2] == 132 ||
+              ClsGlobal.Matriz2[7][2] == 133 ||
+              ClsGlobal.Matriz2[7][2] == 134 ||
+              ClsGlobal.Matriz2[7][2] == 221 ||
+              ClsGlobal.Matriz2[7][2] == 222 ||
+              ClsGlobal.Matriz2[7][2] == 223 ||
+              ClsGlobal.Matriz2[7][2] == 231 ||
+              ClsGlobal.Matriz2[7][2] == 232 ||
+              ClsGlobal.Matriz2[7][2] == 233 ||
+              ClsGlobal.Matriz2[7][2] == 321 ||
+              ClsGlobal.Matriz2[7][2] == 322 ||
+              ClsGlobal.Matriz2[7][2] == 331 ||
+              ClsGlobal.Matriz2[7][2] == 332){
+                JBH3_2.setEnabled(false);
+           }else{
+                JBH3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][3] == 1 ||
+              ClsGlobal.Matriz2[7][3] == 121 ||
+              ClsGlobal.Matriz2[7][3] == 122 ||
+              ClsGlobal.Matriz2[7][3] == 123 ||
+              ClsGlobal.Matriz2[7][3] == 124 ||
+              ClsGlobal.Matriz2[7][3] == 131 ||
+              ClsGlobal.Matriz2[7][3] == 132 ||
+              ClsGlobal.Matriz2[7][3] == 133 ||
+              ClsGlobal.Matriz2[7][3] == 134 ||
+              ClsGlobal.Matriz2[7][3] == 221 ||
+              ClsGlobal.Matriz2[7][3] == 222 ||
+              ClsGlobal.Matriz2[7][3] == 223 ||
+              ClsGlobal.Matriz2[7][3] == 231 ||
+              ClsGlobal.Matriz2[7][3] == 232 ||
+              ClsGlobal.Matriz2[7][3] == 233 ||
+              ClsGlobal.Matriz2[7][3] == 321 ||
+              ClsGlobal.Matriz2[7][3] == 322 ||
+              ClsGlobal.Matriz2[7][3] == 331 ||
+              ClsGlobal.Matriz2[7][3] == 332){
+                JBH4_2.setEnabled(false);
+           }else{
+                JBH4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][4] == 1 ||
+              ClsGlobal.Matriz2[7][4] == 121 ||
+              ClsGlobal.Matriz2[7][4] == 122 ||
+              ClsGlobal.Matriz2[7][4] == 123 ||
+              ClsGlobal.Matriz2[7][4] == 124 ||
+              ClsGlobal.Matriz2[7][4] == 131 ||
+              ClsGlobal.Matriz2[7][4] == 132 ||
+              ClsGlobal.Matriz2[7][4] == 133 ||
+              ClsGlobal.Matriz2[7][4] == 134 ||
+              ClsGlobal.Matriz2[7][4] == 221 ||
+              ClsGlobal.Matriz2[7][4] == 222 ||
+              ClsGlobal.Matriz2[7][4] == 223 ||
+              ClsGlobal.Matriz2[7][4] == 231 ||
+              ClsGlobal.Matriz2[7][4] == 232 ||
+              ClsGlobal.Matriz2[7][4] == 233 ||
+              ClsGlobal.Matriz2[7][4] == 321 ||
+              ClsGlobal.Matriz2[7][4] == 322 ||
+              ClsGlobal.Matriz2[7][4] == 331 ||
+              ClsGlobal.Matriz2[7][4] == 332){
+                JBH5_2.setEnabled(false);
+           }else{
+                JBH5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][5] == 1 ||
+              ClsGlobal.Matriz2[7][5] == 121 ||
+              ClsGlobal.Matriz2[7][5] == 122 ||
+              ClsGlobal.Matriz2[7][5] == 123 ||
+              ClsGlobal.Matriz2[7][5] == 124 ||
+              ClsGlobal.Matriz2[7][5] == 131 ||
+              ClsGlobal.Matriz2[7][5] == 132 ||
+              ClsGlobal.Matriz2[7][5] == 133 ||
+              ClsGlobal.Matriz2[7][5] == 134 ||
+              ClsGlobal.Matriz2[7][5] == 221 ||
+              ClsGlobal.Matriz2[7][5] == 222 ||
+              ClsGlobal.Matriz2[7][5] == 223 ||
+              ClsGlobal.Matriz2[7][5] == 231 ||
+              ClsGlobal.Matriz2[7][5] == 232 ||
+              ClsGlobal.Matriz2[7][5] == 233 ||
+              ClsGlobal.Matriz2[7][5] == 321 ||
+              ClsGlobal.Matriz2[7][5] == 322 ||
+              ClsGlobal.Matriz2[7][5] == 331 ||
+              ClsGlobal.Matriz2[7][5] == 332){
+                JBH6_2.setEnabled(false);
+           }else{
+                JBH6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][6] == 1 ||
+              ClsGlobal.Matriz2[7][6] == 121 ||
+              ClsGlobal.Matriz2[7][6] == 122 ||
+              ClsGlobal.Matriz2[7][6] == 123 ||
+              ClsGlobal.Matriz2[7][6] == 124 ||
+              ClsGlobal.Matriz2[7][6] == 131 ||
+              ClsGlobal.Matriz2[7][6] == 132 ||
+              ClsGlobal.Matriz2[7][6] == 133 ||
+              ClsGlobal.Matriz2[7][6] == 134 ||
+              ClsGlobal.Matriz2[7][6] == 221 ||
+              ClsGlobal.Matriz2[7][6] == 222 ||
+              ClsGlobal.Matriz2[7][6] == 223 ||
+              ClsGlobal.Matriz2[7][6] == 231 ||
+              ClsGlobal.Matriz2[7][6] == 232 ||
+              ClsGlobal.Matriz2[7][6] == 233 ||
+              ClsGlobal.Matriz2[7][6] == 321 ||
+              ClsGlobal.Matriz2[7][6] == 322 ||
+              ClsGlobal.Matriz2[7][6] == 331 ||
+              ClsGlobal.Matriz2[7][6] == 332){
+                JBH7_2.setEnabled(false);
+           }else{
+                JBH7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][7] == 1 ||
+              ClsGlobal.Matriz2[7][7] == 121 ||
+              ClsGlobal.Matriz2[7][7] == 122 ||
+              ClsGlobal.Matriz2[7][7] == 123 ||
+              ClsGlobal.Matriz2[7][7] == 124 ||
+              ClsGlobal.Matriz2[7][7] == 131 ||
+              ClsGlobal.Matriz2[7][7] == 132 ||
+              ClsGlobal.Matriz2[7][7] == 133 ||
+              ClsGlobal.Matriz2[7][7] == 134 ||
+              ClsGlobal.Matriz2[7][7] == 221 ||
+              ClsGlobal.Matriz2[7][7] == 222 ||
+              ClsGlobal.Matriz2[7][7] == 223 ||
+              ClsGlobal.Matriz2[7][7] == 231 ||
+              ClsGlobal.Matriz2[7][7] == 232 ||
+              ClsGlobal.Matriz2[7][7] == 233 ||
+              ClsGlobal.Matriz2[7][7] == 321 ||
+              ClsGlobal.Matriz2[7][7] == 322 ||
+              ClsGlobal.Matriz2[7][7] == 331 ||
+              ClsGlobal.Matriz2[7][7] == 332){
+                JBH8_2.setEnabled(false);
+           }else{
+                JBH8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][8] == 1 ||
+              ClsGlobal.Matriz2[7][8] == 121 ||
+              ClsGlobal.Matriz2[7][8] == 122 ||
+              ClsGlobal.Matriz2[7][8] == 123 ||
+              ClsGlobal.Matriz2[7][8] == 124 ||
+              ClsGlobal.Matriz2[7][8] == 131 ||
+              ClsGlobal.Matriz2[7][8] == 132 ||
+              ClsGlobal.Matriz2[7][8] == 133 ||
+              ClsGlobal.Matriz2[7][8] == 134 ||
+              ClsGlobal.Matriz2[7][8] == 221 ||
+              ClsGlobal.Matriz2[7][8] == 222 ||
+              ClsGlobal.Matriz2[7][8] == 223 ||
+              ClsGlobal.Matriz2[7][8] == 231 ||
+              ClsGlobal.Matriz2[7][8] == 232 ||
+              ClsGlobal.Matriz2[7][8] == 233 ||
+              ClsGlobal.Matriz2[7][8] == 321 ||
+              ClsGlobal.Matriz2[7][8] == 322 ||
+              ClsGlobal.Matriz2[7][8] == 331 ||
+              ClsGlobal.Matriz2[7][8] == 332){
+                JBH9_2.setEnabled(false);
+           }else{
+                JBH9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[7][9] == 1 ||
+              ClsGlobal.Matriz2[7][9] == 121 ||
+              ClsGlobal.Matriz2[7][9] == 122 ||
+              ClsGlobal.Matriz2[7][9] == 123 ||
+              ClsGlobal.Matriz2[7][9] == 124 ||
+              ClsGlobal.Matriz2[7][9] == 131 ||
+              ClsGlobal.Matriz2[7][9] == 132 ||
+              ClsGlobal.Matriz2[7][9] == 133 ||
+              ClsGlobal.Matriz2[7][9] == 134 ||
+              ClsGlobal.Matriz2[7][9] == 221 ||
+              ClsGlobal.Matriz2[7][9] == 222 ||
+              ClsGlobal.Matriz2[7][9] == 223 ||
+              ClsGlobal.Matriz2[7][9] == 231 ||
+              ClsGlobal.Matriz2[7][9] == 232 ||
+              ClsGlobal.Matriz2[7][9] == 233 ||
+              ClsGlobal.Matriz2[7][9] == 321 ||
+              ClsGlobal.Matriz2[7][9] == 322 ||
+              ClsGlobal.Matriz2[7][9] == 331 ||
+              ClsGlobal.Matriz2[7][9] == 332){
+                JBH10_2.setEnabled(false);
+           }else{
+                JBH10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][0] == 1 ||
+              ClsGlobal.Matriz2[8][0] == 121 ||
+              ClsGlobal.Matriz2[8][0] == 122 ||
+              ClsGlobal.Matriz2[8][0] == 123 ||
+              ClsGlobal.Matriz2[8][0] == 124 ||
+              ClsGlobal.Matriz2[8][0] == 131 ||
+              ClsGlobal.Matriz2[8][0] == 132 ||
+              ClsGlobal.Matriz2[8][0] == 133 ||
+              ClsGlobal.Matriz2[8][0] == 134 ||
+              ClsGlobal.Matriz2[8][0] == 221 ||
+              ClsGlobal.Matriz2[8][0] == 222 ||
+              ClsGlobal.Matriz2[8][0] == 223 ||
+              ClsGlobal.Matriz2[8][0] == 231 ||
+              ClsGlobal.Matriz2[8][0] == 232 ||
+              ClsGlobal.Matriz2[8][0] == 233 ||
+              ClsGlobal.Matriz2[8][0] == 321 ||
+              ClsGlobal.Matriz2[8][0] == 322 ||
+              ClsGlobal.Matriz2[8][0] == 331 ||
+              ClsGlobal.Matriz2[8][0] == 332){
+                JBI1_2.setEnabled(false);
+           }else{
+                JBI1_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][1] == 1 ||
+              ClsGlobal.Matriz2[8][1] == 121 ||
+              ClsGlobal.Matriz2[8][1] == 122 ||
+              ClsGlobal.Matriz2[8][1] == 123 ||
+              ClsGlobal.Matriz2[8][1] == 124 ||
+              ClsGlobal.Matriz2[8][1] == 131 ||
+              ClsGlobal.Matriz2[8][1] == 132 ||
+              ClsGlobal.Matriz2[8][1] == 133 ||
+              ClsGlobal.Matriz2[8][1] == 134 ||
+              ClsGlobal.Matriz2[8][1] == 221 ||
+              ClsGlobal.Matriz2[8][1] == 222 ||
+              ClsGlobal.Matriz2[8][1] == 223 ||
+              ClsGlobal.Matriz2[8][1] == 231 ||
+              ClsGlobal.Matriz2[8][1] == 232 ||
+              ClsGlobal.Matriz2[8][1] == 233 ||
+              ClsGlobal.Matriz2[8][1] == 321 ||
+              ClsGlobal.Matriz2[8][1] == 322 ||
+              ClsGlobal.Matriz2[8][1] == 331 ||
+              ClsGlobal.Matriz2[8][1] == 332){
+                JBI2_2.setEnabled(false);
+           }else{
+                JBI2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][2] == 1 ||
+              ClsGlobal.Matriz2[8][2] == 121 ||
+              ClsGlobal.Matriz2[8][2] == 122 ||
+              ClsGlobal.Matriz2[8][2] == 123 ||
+              ClsGlobal.Matriz2[8][2] == 124 ||
+              ClsGlobal.Matriz2[8][2] == 131 ||
+              ClsGlobal.Matriz2[8][2] == 132 ||
+              ClsGlobal.Matriz2[8][2] == 133 ||
+              ClsGlobal.Matriz2[8][2] == 134 ||
+              ClsGlobal.Matriz2[8][2] == 221 ||
+              ClsGlobal.Matriz2[8][2] == 222 ||
+              ClsGlobal.Matriz2[8][2] == 223 ||
+              ClsGlobal.Matriz2[8][2] == 231 ||
+              ClsGlobal.Matriz2[8][2] == 232 ||
+              ClsGlobal.Matriz2[8][2] == 233 ||
+              ClsGlobal.Matriz2[8][2] == 321 ||
+              ClsGlobal.Matriz2[8][2] == 322 ||
+              ClsGlobal.Matriz2[8][2] == 331 ||
+              ClsGlobal.Matriz2[8][2] == 332){
+                JBI3_2.setEnabled(false);
+           }else{
+                JBI3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][3] == 1 ||
+              ClsGlobal.Matriz2[8][3] == 121 ||
+              ClsGlobal.Matriz2[8][3] == 122 ||
+              ClsGlobal.Matriz2[8][3] == 123 ||
+              ClsGlobal.Matriz2[8][3] == 124 ||
+              ClsGlobal.Matriz2[8][3] == 131 ||
+              ClsGlobal.Matriz2[8][3] == 132 ||
+              ClsGlobal.Matriz2[8][3] == 133 ||
+              ClsGlobal.Matriz2[8][3] == 134 ||
+              ClsGlobal.Matriz2[8][3] == 221 ||
+              ClsGlobal.Matriz2[8][3] == 222 ||
+              ClsGlobal.Matriz2[8][3] == 223 ||
+              ClsGlobal.Matriz2[8][3] == 231 ||
+              ClsGlobal.Matriz2[8][3] == 232 ||
+              ClsGlobal.Matriz2[8][3] == 233 ||
+              ClsGlobal.Matriz2[8][3] == 321 ||
+              ClsGlobal.Matriz2[8][3] == 322 ||
+              ClsGlobal.Matriz2[8][3] == 331 ||
+              ClsGlobal.Matriz2[8][3] == 332){
+                JBI4_2.setEnabled(false);
+           }else{
+                JBI4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][4] == 1 ||
+              ClsGlobal.Matriz2[8][4] == 121 ||
+              ClsGlobal.Matriz2[8][4] == 122 ||
+              ClsGlobal.Matriz2[8][4] == 123 ||
+              ClsGlobal.Matriz2[8][4] == 124 ||
+              ClsGlobal.Matriz2[8][4] == 131 ||
+              ClsGlobal.Matriz2[8][4] == 132 ||
+              ClsGlobal.Matriz2[8][4] == 133 ||
+              ClsGlobal.Matriz2[8][4] == 134 ||
+              ClsGlobal.Matriz2[8][4] == 221 ||
+              ClsGlobal.Matriz2[8][4] == 222 ||
+              ClsGlobal.Matriz2[8][4] == 223 ||
+              ClsGlobal.Matriz2[8][4] == 231 ||
+              ClsGlobal.Matriz2[8][4] == 232 ||
+              ClsGlobal.Matriz2[8][4] == 233 ||
+              ClsGlobal.Matriz2[8][4] == 321 ||
+              ClsGlobal.Matriz2[8][4] == 322 ||
+              ClsGlobal.Matriz2[8][4] == 331 ||
+              ClsGlobal.Matriz2[8][4] == 332){
+                JBI5_2.setEnabled(false);
+           }else{
+                JBI5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][5] == 1 ||
+              ClsGlobal.Matriz2[8][5] == 121 ||
+              ClsGlobal.Matriz2[8][5] == 122 ||
+              ClsGlobal.Matriz2[8][5] == 123 ||
+              ClsGlobal.Matriz2[8][5] == 124 ||
+              ClsGlobal.Matriz2[8][5] == 131 ||
+              ClsGlobal.Matriz2[8][5] == 132 ||
+              ClsGlobal.Matriz2[8][5] == 133 ||
+              ClsGlobal.Matriz2[8][5] == 134 ||
+              ClsGlobal.Matriz2[8][5] == 221 ||
+              ClsGlobal.Matriz2[8][5] == 222 ||
+              ClsGlobal.Matriz2[8][5] == 223 ||
+              ClsGlobal.Matriz2[8][5] == 231 ||
+              ClsGlobal.Matriz2[8][5] == 232 ||
+              ClsGlobal.Matriz2[8][5] == 233 ||
+              ClsGlobal.Matriz2[8][5] == 321 ||
+              ClsGlobal.Matriz2[8][5] == 322 ||
+              ClsGlobal.Matriz2[8][5] == 331 ||
+              ClsGlobal.Matriz2[8][5] == 332){
+                JBI6_2.setEnabled(false);
+           }else{
+                JBI6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][6] == 1 ||
+              ClsGlobal.Matriz2[8][6] == 121 ||
+              ClsGlobal.Matriz2[8][6] == 122 ||
+              ClsGlobal.Matriz2[8][6] == 123 ||
+              ClsGlobal.Matriz2[8][6] == 124 ||
+              ClsGlobal.Matriz2[8][6] == 131 ||
+              ClsGlobal.Matriz2[8][6] == 132 ||
+              ClsGlobal.Matriz2[8][6] == 133 ||
+              ClsGlobal.Matriz2[8][6] == 134 ||
+              ClsGlobal.Matriz2[8][6] == 221 ||
+              ClsGlobal.Matriz2[8][6] == 222 ||
+              ClsGlobal.Matriz2[8][6] == 223 ||
+              ClsGlobal.Matriz2[8][6] == 231 ||
+              ClsGlobal.Matriz2[8][6] == 232 ||
+              ClsGlobal.Matriz2[8][6] == 233 ||
+              ClsGlobal.Matriz2[8][6] == 321 ||
+              ClsGlobal.Matriz2[8][6] == 322 ||
+              ClsGlobal.Matriz2[8][6] == 331 ||
+              ClsGlobal.Matriz2[8][6] == 332){
+                JBI7_2.setEnabled(false);
+           }else{
+                JBI7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][7] == 1 ||
+              ClsGlobal.Matriz2[8][7] == 121 ||
+              ClsGlobal.Matriz2[8][7] == 122 ||
+              ClsGlobal.Matriz2[8][7] == 123 ||
+              ClsGlobal.Matriz2[8][7] == 124 ||
+              ClsGlobal.Matriz2[8][7] == 131 ||
+              ClsGlobal.Matriz2[8][7] == 132 ||
+              ClsGlobal.Matriz2[8][7] == 133 ||
+              ClsGlobal.Matriz2[8][7] == 134 ||
+              ClsGlobal.Matriz2[8][7] == 221 ||
+              ClsGlobal.Matriz2[8][7] == 222 ||
+              ClsGlobal.Matriz2[8][7] == 223 ||
+              ClsGlobal.Matriz2[8][7] == 231 ||
+              ClsGlobal.Matriz2[8][7] == 232 ||
+              ClsGlobal.Matriz2[8][7] == 233 ||
+              ClsGlobal.Matriz2[8][7] == 321 ||
+              ClsGlobal.Matriz2[8][7] == 322 ||
+              ClsGlobal.Matriz2[8][7] == 331 ||
+              ClsGlobal.Matriz2[8][7] == 332){
+                JBI8_2.setEnabled(false);
+           }else{
+                JBI8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][8] == 1 ||
+              ClsGlobal.Matriz2[8][8] == 121 ||
+              ClsGlobal.Matriz2[8][8] == 122 ||
+              ClsGlobal.Matriz2[8][8] == 123 ||
+              ClsGlobal.Matriz2[8][8] == 124 ||
+              ClsGlobal.Matriz2[8][8] == 131 ||
+              ClsGlobal.Matriz2[8][8] == 132 ||
+              ClsGlobal.Matriz2[8][8] == 133 ||
+              ClsGlobal.Matriz2[8][8] == 134 ||
+              ClsGlobal.Matriz2[8][8] == 221 ||
+              ClsGlobal.Matriz2[8][8] == 222 ||
+              ClsGlobal.Matriz2[8][8] == 223 ||
+              ClsGlobal.Matriz2[8][8] == 231 ||
+              ClsGlobal.Matriz2[8][8] == 232 ||
+              ClsGlobal.Matriz2[8][8] == 233 ||
+              ClsGlobal.Matriz2[8][8] == 321 ||
+              ClsGlobal.Matriz2[8][8] == 322 ||
+              ClsGlobal.Matriz2[8][8] == 331 ||
+              ClsGlobal.Matriz2[8][8] == 332){
+                JBI9_2.setEnabled(false);
+           }else{
+                JBI9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[8][9] == 1 ||
+              ClsGlobal.Matriz2[8][9] == 121 ||
+              ClsGlobal.Matriz2[8][9] == 122 ||
+              ClsGlobal.Matriz2[8][9] == 123 ||
+              ClsGlobal.Matriz2[8][9] == 124 ||
+              ClsGlobal.Matriz2[8][9] == 131 ||
+              ClsGlobal.Matriz2[8][9] == 132 ||
+              ClsGlobal.Matriz2[8][9] == 133 ||
+              ClsGlobal.Matriz2[8][9] == 134 ||
+              ClsGlobal.Matriz2[8][9] == 221 ||
+              ClsGlobal.Matriz2[8][9] == 222 ||
+              ClsGlobal.Matriz2[8][9] == 223 ||
+              ClsGlobal.Matriz2[8][9] == 231 ||
+              ClsGlobal.Matriz2[8][9] == 232 ||
+              ClsGlobal.Matriz2[8][9] == 233 ||
+              ClsGlobal.Matriz2[8][9] == 321 ||
+              ClsGlobal.Matriz2[8][9] == 322 ||
+              ClsGlobal.Matriz2[8][9] == 331 ||
+              ClsGlobal.Matriz2[8][9] == 332){
+                JBI10_2.setEnabled(false);
+           }else{
+                JBI10_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][0] == 1 ||
+              ClsGlobal.Matriz2[9][0] == 121 ||
+              ClsGlobal.Matriz2[9][0] == 122 ||
+              ClsGlobal.Matriz2[9][0] == 123 ||
+              ClsGlobal.Matriz2[9][0] == 124 ||
+              ClsGlobal.Matriz2[9][0] == 131 ||
+              ClsGlobal.Matriz2[9][0] == 132 ||
+              ClsGlobal.Matriz2[9][0] == 133 ||
+              ClsGlobal.Matriz2[9][0] == 134 ||
+              ClsGlobal.Matriz2[9][0] == 221 ||
+              ClsGlobal.Matriz2[9][0] == 222 ||
+              ClsGlobal.Matriz2[9][0] == 223 ||
+              ClsGlobal.Matriz2[9][0] == 231 ||
+              ClsGlobal.Matriz2[9][0] == 232 ||
+              ClsGlobal.Matriz2[9][0] == 233 ||
+              ClsGlobal.Matriz2[9][0] == 321 ||
+              ClsGlobal.Matriz2[9][0] == 322 ||
+              ClsGlobal.Matriz2[9][0] == 331 ||
+              ClsGlobal.Matriz2[9][0] == 332){
+                JBJ1_1.setEnabled(false);
+           }else{
+                JBJ1_1.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][1] == 1 ||
+              ClsGlobal.Matriz2[9][1] == 121 ||
+              ClsGlobal.Matriz2[9][1] == 122 ||
+              ClsGlobal.Matriz2[9][1] == 123 ||
+              ClsGlobal.Matriz2[9][1] == 124 ||
+              ClsGlobal.Matriz2[9][1] == 131 ||
+              ClsGlobal.Matriz2[9][1] == 132 ||
+              ClsGlobal.Matriz2[9][1] == 133 ||
+              ClsGlobal.Matriz2[9][1] == 134 ||
+              ClsGlobal.Matriz2[9][1] == 221 ||
+              ClsGlobal.Matriz2[9][1] == 222 ||
+              ClsGlobal.Matriz2[9][1] == 223 ||
+              ClsGlobal.Matriz2[9][1] == 231 ||
+              ClsGlobal.Matriz2[9][1] == 232 ||
+              ClsGlobal.Matriz2[9][1] == 233 ||
+              ClsGlobal.Matriz2[9][1] == 321 ||
+              ClsGlobal.Matriz2[9][1] == 322 ||
+              ClsGlobal.Matriz2[9][1] == 331 ||
+              ClsGlobal.Matriz2[9][1] == 332){
+                JBJ2_2.setEnabled(false);
+           }else{
+                JBJ2_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][2] == 1 ||
+              ClsGlobal.Matriz2[9][2] == 121 ||
+              ClsGlobal.Matriz2[9][2] == 122 ||
+              ClsGlobal.Matriz2[9][2] == 123 ||
+              ClsGlobal.Matriz2[9][2] == 124 ||
+              ClsGlobal.Matriz2[9][2] == 131 ||
+              ClsGlobal.Matriz2[9][2] == 132 ||
+              ClsGlobal.Matriz2[9][2] == 133 ||
+              ClsGlobal.Matriz2[9][2] == 134 ||
+              ClsGlobal.Matriz2[9][2] == 221 ||
+              ClsGlobal.Matriz2[9][2] == 222 ||
+              ClsGlobal.Matriz2[9][2] == 223 ||
+              ClsGlobal.Matriz2[9][2] == 231 ||
+              ClsGlobal.Matriz2[9][2] == 232 ||
+              ClsGlobal.Matriz2[9][2] == 233 ||
+              ClsGlobal.Matriz2[9][2] == 321 ||
+              ClsGlobal.Matriz2[9][2] == 322 ||
+              ClsGlobal.Matriz2[9][2] == 331 ||
+              ClsGlobal.Matriz2[9][2] == 332){
+                JBJ3_2.setEnabled(false);
+           }else{
+                JBJ3_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][3] == 1 ||
+              ClsGlobal.Matriz2[9][3] == 121 ||
+              ClsGlobal.Matriz2[9][3] == 122 ||
+              ClsGlobal.Matriz2[9][3] == 123 ||
+              ClsGlobal.Matriz2[9][3] == 124 ||
+              ClsGlobal.Matriz2[9][3] == 131 ||
+              ClsGlobal.Matriz2[9][3] == 132 ||
+              ClsGlobal.Matriz2[9][3] == 133 ||
+              ClsGlobal.Matriz2[9][3] == 134 ||
+              ClsGlobal.Matriz2[9][3] == 221 ||
+              ClsGlobal.Matriz2[9][3] == 222 ||
+              ClsGlobal.Matriz2[9][3] == 223 ||
+              ClsGlobal.Matriz2[9][3] == 231 ||
+              ClsGlobal.Matriz2[9][3] == 232 ||
+              ClsGlobal.Matriz2[9][3] == 233 ||
+              ClsGlobal.Matriz2[9][3] == 321 ||
+              ClsGlobal.Matriz2[9][3] == 322 ||
+              ClsGlobal.Matriz2[9][3] == 331 ||
+              ClsGlobal.Matriz2[9][3] == 332){
+                JBJ4_2.setEnabled(false);
+           }else{
+                JBJ4_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][4] == 1 ||
+              ClsGlobal.Matriz2[9][4] == 121 ||
+              ClsGlobal.Matriz2[9][4] == 122 ||
+              ClsGlobal.Matriz2[9][4] == 123 ||
+              ClsGlobal.Matriz2[9][4] == 124 ||
+              ClsGlobal.Matriz2[9][4] == 131 ||
+              ClsGlobal.Matriz2[9][4] == 132 ||
+              ClsGlobal.Matriz2[9][4] == 133 ||
+              ClsGlobal.Matriz2[9][4] == 134 ||
+              ClsGlobal.Matriz2[9][4] == 221 ||
+              ClsGlobal.Matriz2[9][4] == 222 ||
+              ClsGlobal.Matriz2[9][4] == 223 ||
+              ClsGlobal.Matriz2[9][4] == 231 ||
+              ClsGlobal.Matriz2[9][4] == 232 ||
+              ClsGlobal.Matriz2[9][4] == 233 ||
+              ClsGlobal.Matriz2[9][4] == 321 ||
+              ClsGlobal.Matriz2[9][4] == 322 ||
+              ClsGlobal.Matriz2[9][4] == 331 ||
+              ClsGlobal.Matriz2[9][4] == 332){
+                JBJ5_2.setEnabled(false);
+           }else{
+                JBJ5_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][5] == 1 ||
+              ClsGlobal.Matriz2[9][5] == 121 ||
+              ClsGlobal.Matriz2[9][5] == 122 ||
+              ClsGlobal.Matriz2[9][5] == 123 ||
+              ClsGlobal.Matriz2[9][5] == 124 ||
+              ClsGlobal.Matriz2[9][5] == 131 ||
+              ClsGlobal.Matriz2[9][5] == 132 ||
+              ClsGlobal.Matriz2[9][5] == 133 ||
+              ClsGlobal.Matriz2[9][5] == 134 ||
+              ClsGlobal.Matriz2[9][5] == 221 ||
+              ClsGlobal.Matriz2[9][5] == 222 ||
+              ClsGlobal.Matriz2[9][5] == 223 ||
+              ClsGlobal.Matriz2[9][5] == 231 ||
+              ClsGlobal.Matriz2[9][5] == 232 ||
+              ClsGlobal.Matriz2[9][5] == 233 ||
+              ClsGlobal.Matriz2[9][5] == 321 ||
+              ClsGlobal.Matriz2[9][5] == 322 ||
+              ClsGlobal.Matriz2[9][5] == 331 ||
+              ClsGlobal.Matriz2[9][5] == 332){
+                JBJ6_2.setEnabled(false);
+           }else{
+                JBJ6_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][6] == 1 ||
+              ClsGlobal.Matriz2[9][6] == 121 ||
+              ClsGlobal.Matriz2[9][6] == 122 ||
+              ClsGlobal.Matriz2[9][6] == 123 ||
+              ClsGlobal.Matriz2[9][6] == 124 ||
+              ClsGlobal.Matriz2[9][6] == 131 ||
+              ClsGlobal.Matriz2[9][6] == 132 ||
+              ClsGlobal.Matriz2[9][6] == 133 ||
+              ClsGlobal.Matriz2[9][6] == 134 ||
+              ClsGlobal.Matriz2[9][6] == 221 ||
+              ClsGlobal.Matriz2[9][6] == 222 ||
+              ClsGlobal.Matriz2[9][6] == 223 ||
+              ClsGlobal.Matriz2[9][6] == 231 ||
+              ClsGlobal.Matriz2[9][6] == 232 ||
+              ClsGlobal.Matriz2[9][6] == 233 ||
+              ClsGlobal.Matriz2[9][6] == 321 ||
+              ClsGlobal.Matriz2[9][6] == 322 ||
+              ClsGlobal.Matriz2[9][6] == 331 ||
+              ClsGlobal.Matriz2[9][6] == 332){
+                JBJ7_2.setEnabled(false);
+           }else{
+                JBJ7_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][7] == 1 ||
+              ClsGlobal.Matriz2[9][7] == 121 ||
+              ClsGlobal.Matriz2[9][7] == 122 ||
+              ClsGlobal.Matriz2[9][7] == 123 ||
+              ClsGlobal.Matriz2[9][7] == 124 ||
+              ClsGlobal.Matriz2[9][7] == 131 ||
+              ClsGlobal.Matriz2[9][7] == 132 ||
+              ClsGlobal.Matriz2[9][7] == 133 ||
+              ClsGlobal.Matriz2[9][7] == 134 ||
+              ClsGlobal.Matriz2[9][7] == 221 ||
+              ClsGlobal.Matriz2[9][7] == 222 ||
+              ClsGlobal.Matriz2[9][7] == 223 ||
+              ClsGlobal.Matriz2[9][7] == 231 ||
+              ClsGlobal.Matriz2[9][7] == 232 ||
+              ClsGlobal.Matriz2[9][7] == 233 ||
+              ClsGlobal.Matriz2[9][7] == 321 ||
+              ClsGlobal.Matriz2[9][7] == 322 ||
+              ClsGlobal.Matriz2[9][7] == 331 ||
+              ClsGlobal.Matriz2[9][7] == 332){
+                JBJ8_2.setEnabled(false);
+           }else{
+                JBJ8_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][8] == 1 ||
+              ClsGlobal.Matriz2[9][8] == 121 ||
+              ClsGlobal.Matriz2[9][8] == 122 ||
+              ClsGlobal.Matriz2[9][8] == 123 ||
+              ClsGlobal.Matriz2[9][8] == 124 ||
+              ClsGlobal.Matriz2[9][8] == 131 ||
+              ClsGlobal.Matriz2[9][8] == 132 ||
+              ClsGlobal.Matriz2[9][8] == 133 ||
+              ClsGlobal.Matriz2[9][8] == 134 ||
+              ClsGlobal.Matriz2[9][8] == 221 ||
+              ClsGlobal.Matriz2[9][8] == 222 ||
+              ClsGlobal.Matriz2[9][8] == 223 ||
+              ClsGlobal.Matriz2[9][8] == 231 ||
+              ClsGlobal.Matriz2[9][8] == 232 ||
+              ClsGlobal.Matriz2[9][8] == 233 ||
+              ClsGlobal.Matriz2[9][8] == 321 ||
+              ClsGlobal.Matriz2[9][8] == 322 ||
+              ClsGlobal.Matriz2[9][8] == 331 ||
+              ClsGlobal.Matriz2[9][8] == 332){
+                JBJ9_2.setEnabled(false);
+           }else{
+                JBJ9_2.setEnabled(true);
+           }
+           
+           if(ClsGlobal.Matriz2[9][9] == 1 ||
+              ClsGlobal.Matriz2[9][9] == 121 ||
+              ClsGlobal.Matriz2[9][9] == 122 ||
+              ClsGlobal.Matriz2[9][9] == 123 ||
+              ClsGlobal.Matriz2[9][9] == 124 ||
+              ClsGlobal.Matriz2[9][9] == 131 ||
+              ClsGlobal.Matriz2[9][9] == 132 ||
+              ClsGlobal.Matriz2[9][9] == 133 ||
+              ClsGlobal.Matriz2[9][9] == 134 ||
+              ClsGlobal.Matriz2[9][9] == 221 ||
+              ClsGlobal.Matriz2[9][9] == 222 ||
+              ClsGlobal.Matriz2[9][9] == 223 ||
+              ClsGlobal.Matriz2[9][9] == 231 ||
+              ClsGlobal.Matriz2[9][9] == 232 ||
+              ClsGlobal.Matriz2[9][9] == 233 ||
+              ClsGlobal.Matriz2[9][9] == 321 ||
+              ClsGlobal.Matriz2[9][9] == 322 ||
+              ClsGlobal.Matriz2[9][9] == 331 ||
+              ClsGlobal.Matriz2[9][9] == 332){
+                JBJ10_2.setEnabled(false);
+           }else{
+                JBJ10_2.setEnabled(true);
+           }
+        }
+    }
     
-}
-//lolsdkjfg
+
