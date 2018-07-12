@@ -145,9 +145,15 @@ public class ColocarBarcos extends javax.swing.JDialog{
     JLabel JLBarcoA2 = new JLabel();
     JLabel JLBarcoA3 = new JLabel();
     JLabel JLBarcoA4 = new JLabel();
+    
+    JLabel JLBarcoB = new JLabel();
+    JLabel JLBarcoB1 = new JLabel();
+    JLabel JLBarcoB2 = new JLabel();
+    
     JLabel JLBarcoD = new JLabel();
     JLabel JLBarcoD1 = new JLabel();
     JLabel JLBarcoD2 = new JLabel();
+    
     JLabel JLBarcoP = new JLabel();
     JLabel JLBarcoP1 = new JLabel();
     
@@ -298,34 +304,35 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         
+        //vertical
         JLBarcoA.setText("");
         JLBarcoA.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
         JLBarcoA2.setText("");
         JLBarcoA2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
         JLBarcoA3.setText("");
         JLBarcoA3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
         JLBarcoA4.setText("");
         JLBarcoA4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
-        JLBarcoD.setText("");
-        JLBarcoD.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
-        JLBarcoD1.setText("");
-        JLBarcoD1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
-        JLBarcoD2.setText("");
-        JLBarcoD2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoB.setText("");
+        JLBarcoB.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoB1.setText("");
+        JLBarcoB1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoB2.setText("");
+        JLBarcoB2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
         JLBarcoP.setText("");
         JLBarcoP.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
         JLBarcoP1.setText("");
         JLBarcoP1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
-        
+        /*JLBarcoD.setText("");
+        JLBarcoD.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoD1.setText("");
+        JLBarcoD1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoD2.setText("");
+        JLBarcoD2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        */
         JBA1_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBA1_1ActionPerformed(evt);
@@ -1062,6 +1069,9 @@ public class ColocarBarcos extends javax.swing.JDialog{
         this.add(JLBarcoA2);
         this.add(JLBarcoA3);
         this.add(JLBarcoA4);
+        this.add(JLBarcoB);
+        this.add(JLBarcoB1);
+        this.add(JLBarcoB2);
         this.add(JLBarcoD);
         this.add(JLBarcoD1);
         this.add(JLBarcoD2);
@@ -1205,12 +1215,12 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JLBarcoA3.reshape(300, 100, 60, 70);
         JLBarcoA4.reshape(300, 160, 60, 70);
         
-        JLBarcoD.reshape(450, 200, 60, 70);
-        JLBarcoD1.reshape(420, 200, 60, 70);
-        JLBarcoD2.reshape(390, 200, 60, 70);
+        JLBarcoB.reshape(360, 85, 60, 70);
+        JLBarcoB1.reshape(360, 115, 60, 70);
+        JLBarcoB2.reshape(360, 145, 60,70);
         
-        JLBarcoP.reshape(380, 110, 60, 70);
-        JLBarcoP1.reshape(380, 140, 60, 70);
+        JLBarcoP.reshape(420, 105, 60, 70);
+        JLBarcoP1.reshape(420, 135, 60, 70);
     
     }
     
