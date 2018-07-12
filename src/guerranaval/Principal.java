@@ -1,6 +1,8 @@
 
 package guerranaval;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Image;
 import java.util.Calendar;
 import java.util.Date;
@@ -1523,6 +1525,14 @@ public class Principal extends JFrame implements Runnable{
         this.add(JBMisil2);
         this.add(JBBombaNuclear2);
         
+        JLTurno1.setFont(new Font("Serif", Font.PLAIN, 24));
+        JLTurno1.setForeground(Color.RED);
+        
+        JLTurno2.setFont(new Font("Serif", Font.PLAIN, 24));
+        JLTurno2.setForeground(Color.RED);
+
+        this.add(JLTurno1);
+        this.add(JLTurno2);
         
         JL1_1.reshape(25, 15, 25, 25);
         JL2_1.reshape(50, 15, 25, 25);
@@ -1657,6 +1667,8 @@ public class Principal extends JFrame implements Runnable{
         JBJ10_1.reshape(250, 265, 25, 25);
         
         JBSeleccionarBarco1.reshape(50, 315, 200, 25);
+        
+        JLTurno1.reshape(330, 40, 25, 25);
         
         JLAmetralladora1.reshape(285, 75, 50, 50);
         JLMisil1.reshape(285, 125, 50, 50);
@@ -1804,6 +1816,8 @@ public class Principal extends JFrame implements Runnable{
         JLMisil2.reshape(685, 125, 50, 50);
         JLBombaNuclear2.reshape(685, 175, 50, 50);
         
+        JLTurno2.reshape(730, 40, 25, 25);
+        
         JBAmetralladora2.reshape(740, 75, 50, 50);
         JBMisil2.reshape(740, 125, 50, 50);
         JBBombaNuclear2.reshape(740, 175, 50, 50);
@@ -1812,6 +1826,7 @@ public class Principal extends JFrame implements Runnable{
         ActivarJugador2(false);
         
         ConfiguracionInicial Ci = new ConfiguracionInicial(this, true);
+        Ci.setUndecorated(true);
         Ci.setVisible(true);
         
         if (ClsGlobal.MultiJugador){
