@@ -1,13 +1,17 @@
 
 package guerranaval;
 
+import java.awt.Image;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class ConfiguracionInicial extends javax.swing.JDialog{
     
     JButton JB1Jugador = new JButton();
     JButton JB2Jugadores = new JButton();
+    JLabel abc = new JLabel();
     
     public ConfiguracionInicial(java.awt.Frame parent, boolean modal){
         super(parent, modal);
@@ -16,10 +20,14 @@ public class ConfiguracionInicial extends javax.swing.JDialog{
 
     private void constructor() {
         this.setTitle("Configuracion inicial");
-        this.setSize(300,200);
+        this.setSize(800,600);
         this.setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null);
+        
+        abc.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/fondo.png"))).getImage().getScaledInstance(800, 600, Image.SCALE_DEFAULT)));
+        this.add(abc);
+        abc.reshape(0,0, 800, 600);
         
         this.add(JB1Jugador);
         this.add(JB2Jugadores);
