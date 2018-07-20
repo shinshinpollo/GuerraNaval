@@ -1,4 +1,4 @@
-
+                 
 package guerranaval;
 
 class ClsGlobal {
