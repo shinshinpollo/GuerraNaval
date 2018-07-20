@@ -150,12 +150,18 @@ public class ColocarBarcos extends javax.swing.JDialog{
     JLabel JLBarcoB1 = new JLabel();
     JLabel JLBarcoB2 = new JLabel();
     
+    JLabel JLBarcoP = new JLabel();
+    JLabel JLBarcoP1 = new JLabel();
+    
+    //horizontal
+    JLabel JLBarcoM = new JLabel();
+    JLabel JLBarcoM1 = new JLabel();
+    JLabel JLBarcoM2 = new JLabel();
+    JLabel JLBarcoM3 = new JLabel();
+    
     JLabel JLBarcoD = new JLabel();
     JLabel JLBarcoD1 = new JLabel();
     JLabel JLBarcoD2 = new JLabel();
-    
-    JLabel JLBarcoP = new JLabel();
-    JLabel JLBarcoP1 = new JLabel();
     
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
@@ -326,13 +332,13 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JLBarcoP1.setText("");
         JLBarcoP1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
-        /*JLBarcoD.setText("");
+        JLBarcoD.setText("");
         JLBarcoD.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         JLBarcoD1.setText("");
         JLBarcoD1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         JLBarcoD2.setText("");
         JLBarcoD2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        */
+        
         JBA1_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBA1_1ActionPerformed(evt);
@@ -1210,17 +1216,25 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ9_1.reshape(225, 265, 25, 25);
         JBJ10_1.reshape(250, 265, 25, 25); 
         
-        JLBarcoA.reshape(300, 70, 60, 70);
-        JLBarcoA2.reshape(300, 130, 60, 70);
-        JLBarcoA3.reshape(300, 100, 60, 70);
-        JLBarcoA4.reshape(300, 160, 60, 70);
+        JLBarcoA.reshape(300, 30, 60, 70);
+        JLBarcoA2.reshape(300, 90, 60, 70);
+        JLBarcoA3.reshape(300, 60, 60, 70);
+        JLBarcoA4.reshape(300, 120, 60, 70);
         
-        JLBarcoB.reshape(360, 85, 60, 70);
-        JLBarcoB1.reshape(360, 115, 60, 70);
-        JLBarcoB2.reshape(360, 145, 60,70);
+        JLBarcoB.reshape(360, 45, 60, 70);
+        JLBarcoB1.reshape(360, 75, 60, 70);
+        JLBarcoB2.reshape(360, 105, 60,70);
         
-        JLBarcoP.reshape(420, 105, 60, 70);
-        JLBarcoP1.reshape(420, 135, 60, 70);
+        JLBarcoP.reshape(420, 65, 60, 70);
+        JLBarcoP1.reshape(420, 95, 60, 70);
+     
+        //horizontal
+        JLBarcoD.reshape(400, 230, 60, 70);
+        JLBarcoD1.reshape(370, 230, 60, 70);
+        JLBarcoD2.reshape(340, 230, 60, 70);
+        
+        
+        
     
     }
     
