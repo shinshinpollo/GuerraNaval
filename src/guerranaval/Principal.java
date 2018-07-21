@@ -18,6 +18,17 @@ public class Principal extends JFrame implements Runnable{
     //Se crea el hilo para el timmer
     Thread h1;
     
+    int[][] Matriz1 = new int[10][10];
+    int[][] Matriz2 = new int[10][10];
+    int[][] Matriz3 = new int[10][10];
+    int[][] Matriz4 = new int[10][10];
+    int[][] Matriz5 = new int[10][10];
+    int[][] Matriz6 = new int[10][10];
+    int[][] Matriz7 = new int[10][10];
+    int[][] Matriz8 = new int[10][10];
+    int[][] Matriz9 = new int[10][10];
+    int[][] Matriz10 = new int[10][10];
+    
     boolean BTurno1 = false;
     boolean BTurno2 = false;
     boolean BAmetralladora1 = false;
@@ -7447,16 +7458,6 @@ public class Principal extends JFrame implements Runnable{
         }
 
     private void GenerarJugador2() {
-        int[][] Matriz1 = new int[10][10];
-        int[][] Matriz2 = new int[10][10];
-        int[][] Matriz3 = new int[10][10];
-        int[][] Matriz4 = new int[10][10];
-        int[][] Matriz5 = new int[10][10];
-        int[][] Matriz6 = new int[10][10];
-        int[][] Matriz7 = new int[10][10];
-        int[][] Matriz8 = new int[10][10];
-        int[][] Matriz9 = new int[10][10];
-        int[][] Matriz10 = new int[10][10];
         
         Matriz1[0][0] = 101;
         Matriz1[0][1] = 101;
@@ -7686,29 +7687,29 @@ public class Principal extends JFrame implements Runnable{
         Matriz3[0][5] = 0;
         Matriz3[0][6] = 0;
         Matriz3[0][7] = 0;
-        Matriz3[0][8] = 0;
+        Matriz3[0][8] = 311;
         Matriz3[0][9] = 0;
         
-        Matriz3[1][0] = 0;
+        Matriz3[1][0] = 113;
         Matriz3[1][1] = 0;
         Matriz3[1][2] = 0;
-        Matriz3[1][3] = 0;
-        Matriz3[1][4] = 0;
-        Matriz3[1][5] = 0;
+        Matriz3[1][3] = 201;
+        Matriz3[1][4] = 201;
+        Matriz3[1][5] = 201;
         Matriz3[1][6] = 0;
         Matriz3[1][7] = 0;
-        Matriz3[1][8] = 0;
+        Matriz3[1][8] = 311;
         Matriz3[1][9] = 0;
        
-        Matriz3[2][0] = 0;
+        Matriz3[2][0] = 113;
         Matriz3[2][1] = 0;
         Matriz3[2][2] = 0;
         Matriz3[2][3] = 0;
         Matriz3[2][4] = 0;
         Matriz3[2][5] = 0;
-        Matriz3[2][6] = 0;
-        Matriz3[2][7] = 0;
-        Matriz3[2][8] = 0;
+        Matriz3[2][6] = 102;
+        Matriz3[2][7] = 102;
+        Matriz3[2][8] = 311;
         Matriz3[2][9] = 0;
        
         Matriz3[3][0] = 0;
@@ -7719,19 +7720,19 @@ public class Principal extends JFrame implements Runnable{
         Matriz3[3][5] = 0;
         Matriz3[3][6] = 0;
         Matriz3[3][7] = 0;
-        Matriz3[3][8] = 0;
-        Matriz3[3][9] = 0;
+        Matriz3[3][8] = 311;
+        Matriz3[3][9] = 213;
         
         Matriz3[4][0] = 0;
         Matriz3[4][1] = 0;
-        Matriz3[4][2] = 0;
-        Matriz3[4][3] = 0;
+        Matriz3[4][2] = 101;
+        Matriz3[4][3] = 101;
         Matriz3[4][4] = 0;
         Matriz3[4][5] = 0;
         Matriz3[4][6] = 0;
         Matriz3[4][7] = 0;
         Matriz3[4][8] = 0;
-        Matriz3[4][9] = 0;
+        Matriz3[4][9] = 213;
         
         Matriz3[5][0] = 0;
         Matriz3[5][1] = 0;
@@ -7739,18 +7740,18 @@ public class Principal extends JFrame implements Runnable{
         Matriz3[5][3] = 0;
         Matriz3[5][4] = 0;
         Matriz3[5][5] = 0;
-        Matriz3[5][6] = 0;
+        Matriz3[5][6] = 114;
         Matriz3[5][7] = 0;
         Matriz3[5][8] = 0;
-        Matriz3[5][9] = 0;
+        Matriz3[5][9] = 213;
         
         Matriz3[6][0] = 0;
         Matriz3[6][1] = 0;
-        Matriz3[6][2] = 0;
-        Matriz3[6][3] = 0;
-        Matriz3[6][4] = 0;
+        Matriz3[6][2] = 202;
+        Matriz3[6][3] = 202;
+        Matriz3[6][4] = 202;
         Matriz3[6][5] = 0;
-        Matriz3[6][6] = 0;
+        Matriz3[6][6] = 114;
         Matriz3[6][7] = 0;
         Matriz3[6][8] = 0;
         Matriz3[6][9] = 0;
@@ -7777,10 +7778,10 @@ public class Principal extends JFrame implements Runnable{
         Matriz3[8][8] = 0;
         Matriz3[8][9] = 0;
         
-        Matriz3[9][0] = 0;
-        Matriz3[9][1] = 0;
-        Matriz3[9][2] = 0;
-        Matriz3[9][3] = 0;
+        Matriz3[9][0] = 302;
+        Matriz3[9][1] = 302;
+        Matriz3[9][2] = 302;
+        Matriz3[9][3] = 302;
         Matriz3[9][4] = 0;
         Matriz3[9][5] = 0;
         Matriz3[9][6] = 0;
@@ -7796,11 +7797,11 @@ public class Principal extends JFrame implements Runnable{
         Matriz4[0][5] = 0;
         Matriz4[0][6] = 0;
         Matriz4[0][7] = 0;
-        Matriz4[0][8] = 0;
-        Matriz4[0][9] = 0;
+        Matriz4[0][8] = 102;
+        Matriz4[0][9] = 102;
         
         Matriz4[1][0] = 0;
-        Matriz4[1][1] = 0;
+        Matriz4[1][1] = 113;
         Matriz4[1][2] = 0;
         Matriz4[1][3] = 0;
         Matriz4[1][4] = 0;
@@ -7811,13 +7812,13 @@ public class Principal extends JFrame implements Runnable{
         Matriz4[1][9] = 0;
        
         Matriz4[2][0] = 0;
-        Matriz4[2][1] = 0;
+        Matriz4[2][1] = 113;
         Matriz4[2][2] = 0;
         Matriz4[2][3] = 0;
         Matriz4[2][4] = 0;
         Matriz4[2][5] = 0;
-        Matriz4[2][6] = 0;
-        Matriz4[2][7] = 0;
+        Matriz4[2][6] = 101;
+        Matriz4[2][7] = 101;
         Matriz4[2][8] = 0;
         Matriz4[2][9] = 0;
         
@@ -7830,31 +7831,31 @@ public class Principal extends JFrame implements Runnable{
         Matriz4[3][6] = 0;
         Matriz4[3][7] = 0;
         Matriz4[3][8] = 0;
-        Matriz4[3][9] = 0;
+        Matriz4[3][9] = 311;
         
-        Matriz4[4][0] = 0;
+        Matriz4[4][0] = 213;
         Matriz4[4][1] = 0;
         Matriz4[4][2] = 0;
         Matriz4[4][3] = 0;
-        Matriz4[4][4] = 0;
+        Matriz4[4][4] = 114;
         Matriz4[4][5] = 0;
         Matriz4[4][6] = 0;
         Matriz4[4][7] = 0;
         Matriz4[4][8] = 0;
-        Matriz4[4][9] = 0;
+        Matriz4[4][9] = 311;
         
-        Matriz4[5][0] = 0;
+        Matriz4[5][0] = 213;
         Matriz4[5][1] = 0;
         Matriz4[5][2] = 0;
         Matriz4[5][3] = 0;
-        Matriz4[5][4] = 0;
+        Matriz4[5][4] = 114;
         Matriz4[5][5] = 0;
         Matriz4[5][6] = 0;
         Matriz4[5][7] = 0;
         Matriz4[5][8] = 0;
-        Matriz4[5][9] = 0;
+        Matriz4[5][9] = 311;
         
-        Matriz4[6][0] = 0;
+        Matriz4[6][0] = 213;
         Matriz4[6][1] = 0;
         Matriz4[6][2] = 0;
         Matriz4[6][3] = 0;
@@ -7863,20 +7864,130 @@ public class Principal extends JFrame implements Runnable{
         Matriz4[6][6] = 0;
         Matriz4[6][7] = 0;
         Matriz4[6][8] = 0;
-        Matriz4[6][9] = 0;
+        Matriz4[6][9] = 311;
         
-        Matriz5[7][0] = 0;
+        Matriz4[7][0] = 0;
+        Matriz4[7][1] = 0;
+        Matriz4[7][2] = 302;
+        Matriz4[7][3] = 302;
+        Matriz4[7][4] = 302;
+        Matriz4[7][5] = 302;
+        Matriz4[7][6] = 0;
+        Matriz4[7][7] = 0;
+        Matriz4[7][8] = 0;
+        Matriz4[7][9] = 0;
+        
+        Matriz4[8][0] = 0;
+        Matriz4[8][1] = 0;
+        Matriz4[8][2] = 0;
+        Matriz4[8][3] = 0;
+        Matriz4[8][4] = 0;
+        Matriz4[8][5] = 0;
+        Matriz4[8][6] = 0;
+        Matriz4[8][7] = 0;
+        Matriz4[8][8] = 0;
+        Matriz4[8][9] = 0;
+        
+        Matriz4[9][0] = 201;
+        Matriz4[9][1] = 201;
+        Matriz4[9][2] = 201;
+        Matriz4[9][3] = 0;
+        Matriz4[9][4] = 0;
+        Matriz4[9][5] = 202;
+        Matriz4[9][6] = 202;
+        Matriz4[9][7] = 202;
+        Matriz4[9][8] = 0;
+        Matriz4[9][9] = 0;
+        
+        Matriz5[0][0] = 0;
+        Matriz5[0][1] = 0;
+        Matriz5[0][2] = 0;
+        Matriz5[0][3] = 101;
+        Matriz5[0][4] = 101;
+        Matriz5[0][5] = 0;
+        Matriz5[0][6] = 0;
+        Matriz5[0][7] = 0;
+        Matriz5[0][8] = 0;
+        Matriz5[0][9] = 0;
+        
+        Matriz5[1][0] = 0;
+        Matriz5[1][1] = 0;
+        Matriz5[1][2] = 0;
+        Matriz5[1][3] = 0;
+        Matriz5[1][4] = 0;
+        Matriz5[1][5] = 0;
+        Matriz5[1][6] = 0;
+        Matriz5[1][7] = 0;
+        Matriz5[1][8] = 0;
+        Matriz5[1][9] = 0;
+       
+        Matriz5[2][0] = 201;
+        Matriz5[2][1] = 201;
+        Matriz5[2][2] = 201;
+        Matriz5[2][3] = 0;
+        Matriz5[2][4] = 0;
+        Matriz5[2][5] = 0;
+        Matriz5[2][6] = 0;
+        Matriz5[2][7] = 0;
+        Matriz5[2][8] = 0;
+        Matriz5[2][9] = 0;
+        
+        Matriz5[3][0] = 0;
+        Matriz5[3][1] = 0;
+        Matriz5[3][2] = 0;
+        Matriz5[3][3] = 0;
+        Matriz5[3][4] = 0;
+        Matriz5[3][5] = 0;
+        Matriz5[3][6] = 0;
+        Matriz5[3][7] = 0;
+        Matriz5[3][8] = 102;
+        Matriz5[3][9] = 102;
+        
+        Matriz5[4][0] = 302;
+        Matriz5[4][1] = 302;
+        Matriz5[4][2] = 302;
+        Matriz5[4][3] = 302;
+        Matriz5[4][4] = 0;
+        Matriz5[4][5] = 114;
+        Matriz5[4][6] = 0;
+        Matriz5[4][7] = 0;
+        Matriz5[4][8] = 0;
+        Matriz5[4][9] = 0;
+        
+        Matriz5[5][0] = 0;
+        Matriz5[5][1] = 0;
+        Matriz5[5][2] = 0;
+        Matriz5[5][3] = 0;
+        Matriz5[5][4] = 0;
+        Matriz5[5][5] = 115;
+        Matriz5[5][6] = 0;
+        Matriz5[5][7] = 0;
+        Matriz5[5][8] = 311;
+        Matriz5[5][9] = 0;
+        
+        Matriz5[6][0] = 0;
+        Matriz5[6][1] = 0;
+        Matriz5[6][2] = 113;
+        Matriz5[6][3] = 0;
+        Matriz5[6][4] = 0;
+        Matriz5[6][5] = 0;
+        Matriz5[6][6] = 0;
+        Matriz5[6][7] = 0;
+        Matriz5[6][8] = 311;
+        Matriz5[6][9] = 0;
+       
+        Matriz5[7][0] = 213;
         Matriz5[7][1] = 0;
-        Matriz5[7][2] = 0;
+        Matriz5[7][2] = 113;
         Matriz5[7][3] = 0;
         Matriz5[7][4] = 0;
         Matriz5[7][5] = 0;
         Matriz5[7][6] = 0;
         Matriz5[7][7] = 0;
-        Matriz5[7][8] = 0;
+        Matriz5[7][8] = 311;
         Matriz5[7][9] = 0;
         
-        Matriz5[8][0] = 0;
+        Matriz5[8][0] = 213;
         Matriz5[8][1] = 0;
         Matriz5[8][2] = 0;
         Matriz5[8][3] = 0;
@@ -7884,36 +7995,36 @@ public class Principal extends JFrame implements Runnable{
         Matriz5[8][5] = 0;
         Matriz5[8][6] = 0;
         Matriz5[8][7] = 0;
-        Matriz5[8][8] = 0;
+        Matriz5[8][8] = 311;
         Matriz5[8][9] = 0;
         
-        Matriz5[9][0] = 0;
+        Matriz5[9][0] = 213;
         Matriz5[9][1] = 0;
         Matriz5[9][2] = 0;
         Matriz5[9][3] = 0;
-        Matriz5[9][4] = 0;
-        Matriz5[9][5] = 0;
-        Matriz5[9][6] = 0;
+        Matriz5[9][4] = 202;
+        Matriz5[9][5] = 202;
+        Matriz5[9][6] = 202;
         Matriz5[9][7] = 0;
         Matriz5[9][8] = 0;
         Matriz5[9][9] = 0;
-        
-        Matriz5[0][0] = 0;
-        Matriz5[0][1] = 0;
-        Matriz5[0][2] = 0;
-        Matriz5[0][3] = 0;
-        Matriz5[0][4] = 0;
-        Matriz5[0][5] = 0;
-        Matriz5[0][6] = 0;
-        Matriz5[0][7] = 0;
-        Matriz5[0][8] = 0;
-        Matriz5[0][9] = 0;
+       
+        Matriz6[0][0] = 102;
+        Matriz6[0][1] = 102;
+        Matriz6[0][2] = 0;
+        Matriz6[0][3] = 0;
+        Matriz6[0][4] = 0;
+        Matriz6[0][5] = 0;
+        Matriz6[0][6] = 0;
+        Matriz6[0][7] = 201;
+        Matriz6[0][8] = 201;
+        Matriz6[0][9] = 201;
         
         Matriz6[1][0] = 0;
         Matriz6[1][1] = 0;
         Matriz6[1][2] = 0;
         Matriz6[1][3] = 0;
-        Matriz6[1][4] = 0;
+        Matriz6[1][4] = 114;
         Matriz6[1][5] = 0;
         Matriz6[1][6] = 0;
         Matriz6[1][7] = 0;
@@ -7924,7 +8035,7 @@ public class Principal extends JFrame implements Runnable{
         Matriz6[2][1] = 0;
         Matriz6[2][2] = 0;
         Matriz6[2][3] = 0;
-        Matriz6[2][4] = 0;
+        Matriz6[2][4] = 114;
         Matriz6[2][5] = 0;
         Matriz6[2][6] = 0;
         Matriz6[2][7] = 0;
@@ -7940,40 +8051,40 @@ public class Principal extends JFrame implements Runnable{
         Matriz6[3][6] = 0;
         Matriz6[3][7] = 0;
         Matriz6[3][8] = 0;
-        Matriz6[3][9] = 0;
+        Matriz6[3][9] = 311;
         
         Matriz6[4][0] = 0;
         Matriz6[4][1] = 0;
         Matriz6[4][2] = 0;
-        Matriz6[4][3] = 0;
+        Matriz6[4][3] = 213;
         Matriz6[4][4] = 0;
         Matriz6[4][5] = 0;
-        Matriz6[4][6] = 0;
-        Matriz6[4][7] = 0;
+        Matriz6[4][6] = 101;
+        Matriz6[4][7] = 101;
         Matriz6[4][8] = 0;
-        Matriz6[4][9] = 0;
-        
-        Matriz2[5][0] = 0;
-        Matriz6[5][1] = 0;
+        Matriz6[4][9] = 311;
+       
+        Matriz6[5][0] = 0;
+        Matriz6[5][1] = 113;
         Matriz6[5][2] = 0;
-        Matriz6[5][3] = 0;
+        Matriz6[5][3] = 213;
         Matriz6[5][4] = 0;
         Matriz6[5][5] = 0;
         Matriz6[5][6] = 0;
         Matriz6[5][7] = 0;
         Matriz6[5][8] = 0;
-        Matriz6[5][9] = 0;
+        Matriz6[5][9] = 311;
         
         Matriz6[6][0] = 0;
-        Matriz6[6][1] = 0;
+        Matriz6[6][1] = 113;
         Matriz6[6][2] = 0;
-        Matriz6[6][3] = 0;
+        Matriz6[6][3] = 213;
         Matriz6[6][4] = 0;
         Matriz6[6][5] = 0;
         Matriz6[6][6] = 0;
         Matriz6[6][7] = 0;
         Matriz6[6][8] = 0;
-        Matriz6[6][9] = 0;
+        Matriz6[6][9] = 311;
         
         Matriz6[7][0] = 0;
         Matriz6[7][1] = 0;
@@ -7981,11 +8092,11 @@ public class Principal extends JFrame implements Runnable{
         Matriz6[7][3] = 0;
         Matriz6[7][4] = 0;
         Matriz6[7][5] = 0;
-        Matriz6[7][6] = 0;
-        Matriz6[7][7] = 0;
-        Matriz6[7][8] = 0;
+        Matriz6[7][6] = 202;
+        Matriz6[7][7] = 202;
+        Matriz6[7][8] = 202;
         Matriz6[7][9] = 0;
-        
+       
         Matriz6[8][0] = 0;
         Matriz6[8][1] = 0;
         Matriz6[8][2] = 0;
@@ -7997,37 +8108,37 @@ public class Principal extends JFrame implements Runnable{
         Matriz6[8][8] = 0;
         Matriz6[8][9] = 0;
         
-        Matriz6[9][0] = 0;
-        Matriz6[9][1] = 0;
-        Matriz6[9][2] = 0;
-        Matriz6[9][3] = 0;
+        Matriz6[9][0] = 302;
+        Matriz6[9][1] = 302;
+        Matriz6[9][2] = 302;
+        Matriz6[9][3] = 302;
         Matriz6[9][4] = 0;
         Matriz6[9][5] = 0;
         Matriz6[9][6] = 0;
         Matriz6[9][7] = 0;
         Matriz6[9][8] = 0;
         Matriz6[9][9] = 0;
-       
-        Matriz6[0][0] = 0;
-        Matriz6[0][1] = 0;
-        Matriz6[0][2] = 0;
-        Matriz6[0][3] = 0;
-        Matriz6[0][4] = 0;
-        Matriz6[0][5] = 0;
-        Matriz6[0][6] = 0;
-        Matriz6[0][7] = 0;
-        Matriz6[0][8] = 0;
-        Matriz6[0][9] = 0;
         
-        Matriz7[1][0] = 0;
-        Matriz7[1][1] = 0;
+        Matriz7[0][0] = 0;
+        Matriz7[0][1] = 0;
+        Matriz7[0][2] = 0;
+        Matriz7[0][3] = 0;
+        Matriz7[0][4] = 0;
+        Matriz7[0][5] = 0;
+        Matriz7[0][6] = 0;
+        Matriz7[0][7] = 0;
+        Matriz7[0][8] = 0;
+        Matriz7[0][9] = 0;
+        
+        Matriz7[1][0] = 101;
+        Matriz7[1][1] = 101;
         Matriz7[1][2] = 0;
         Matriz7[1][3] = 0;
         Matriz7[1][4] = 0;
         Matriz7[1][5] = 0;
         Matriz7[1][6] = 0;
-        Matriz7[1][7] = 0;
-        Matriz7[1][8] = 0;
+        Matriz7[1][7] = 102;
+        Matriz7[1][8] = 102;
         Matriz7[1][9] = 0;
        
         Matriz7[2][0] = 0;
@@ -8044,33 +8155,33 @@ public class Principal extends JFrame implements Runnable{
         Matriz7[3][0] = 0;
         Matriz7[3][1] = 0;
         Matriz7[3][2] = 0;
-        Matriz7[3][3] = 0;
-        Matriz7[3][4] = 0;
-        Matriz7[3][5] = 0;
+        Matriz7[3][3] = 201;
+        Matriz7[3][4] = 201;
+        Matriz7[3][5] = 201;
         Matriz7[3][6] = 0;
-        Matriz7[3][7] = 0;
+        Matriz7[3][7] = 311;
         Matriz7[3][8] = 0;
         Matriz7[3][9] = 0;
         
-        Matriz7[4][0] = 0;
+        Matriz7[4][0] = 113;
         Matriz7[4][1] = 0;
         Matriz7[4][2] = 0;
         Matriz7[4][3] = 0;
         Matriz7[4][4] = 0;
         Matriz7[4][5] = 0;
         Matriz7[4][6] = 0;
-        Matriz7[4][7] = 0;
+        Matriz7[4][7] = 311;
         Matriz7[4][8] = 0;
         Matriz7[4][9] = 0;
-       
-        Matriz7[5][0] = 0;
+        
+        Matriz7[5][0] = 113;
         Matriz7[5][1] = 0;
         Matriz7[5][2] = 0;
         Matriz7[5][3] = 0;
         Matriz7[5][4] = 0;
-        Matriz7[5][5] = 0;
+        Matriz7[5][5] = 213;
         Matriz7[5][6] = 0;
-        Matriz7[5][7] = 0;
+        Matriz7[5][7] = 311;
         Matriz7[5][8] = 0;
         Matriz7[5][9] = 0;
         
@@ -8079,18 +8190,18 @@ public class Principal extends JFrame implements Runnable{
         Matriz7[6][2] = 0;
         Matriz7[6][3] = 0;
         Matriz7[6][4] = 0;
-        Matriz7[6][5] = 0;
+        Matriz7[6][5] = 213;
         Matriz7[6][6] = 0;
-        Matriz7[6][7] = 0;
+        Matriz7[6][7] = 311;
         Matriz7[6][8] = 0;
         Matriz7[6][9] = 0;
         
-        Matriz7[7][0] = 0;
-        Matriz7[7][1] = 0;
-        Matriz7[7][2] = 0;
-        Matriz7[7][3] = 0;
+        Matriz7[7][0] = 302;
+        Matriz7[7][1] = 302;
+        Matriz7[7][2] = 302;
+        Matriz7[7][3] = 302;
         Matriz7[7][4] = 0;
-        Matriz7[7][5] = 0;
+        Matriz7[7][5] = 213;
         Matriz7[7][6] = 0;
         Matriz7[7][7] = 0;
         Matriz7[7][8] = 0;
@@ -8105,28 +8216,28 @@ public class Principal extends JFrame implements Runnable{
         Matriz7[8][6] = 0;
         Matriz7[8][7] = 0;
         Matriz7[8][8] = 0;
-        Matriz7[8][9] = 0;
-        
+        Matriz7[8][9] = 114;
+       
         Matriz7[9][0] = 0;
-        Matriz7[9][1] = 0;
-        Matriz7[9][2] = 0;
-        Matriz7[9][3] = 0;
+        Matriz7[9][1] = 202;
+        Matriz7[9][2] = 202;
+        Matriz7[9][3] = 202;
         Matriz7[9][4] = 0;
         Matriz7[9][5] = 0;
         Matriz7[9][6] = 0;
         Matriz7[9][7] = 0;
         Matriz7[9][8] = 0;
-        Matriz7[9][9] = 0;
+        Matriz7[9][9] = 114;
         
-        Matriz8[0][0] = 0;
-        Matriz8[0][1] = 0;
+        Matriz8[0][0] = 101;
+        Matriz8[0][1] = 101;
         Matriz8[0][2] = 0;
         Matriz8[0][3] = 0;
         Matriz8[0][4] = 0;
         Matriz8[0][5] = 0;
         Matriz8[0][6] = 0;
-        Matriz8[0][7] = 0;
-        Matriz8[0][8] = 0;
+        Matriz8[0][7] = 102;
+        Matriz8[0][8] = 102;
         Matriz8[0][9] = 0;
         
         Matriz8[1][0] = 0;
@@ -8139,17 +8250,17 @@ public class Principal extends JFrame implements Runnable{
         Matriz8[1][7] = 0;
         Matriz8[1][8] = 0;
         Matriz8[1][9] = 0;
-       
+      
         Matriz8[2][0] = 0;
         Matriz8[2][1] = 0;
-        Matriz8[2][2] = 0;
-        Matriz8[2][3] = 0;
-        Matriz8[2][4] = 0;
+        Matriz8[2][2] = 201;
+        Matriz8[2][3] = 201;
+        Matriz8[2][4] = 201;
         Matriz8[2][5] = 0;
-        Matriz8[2][6] = 0;
-        Matriz8[2][7] = 0;
-        Matriz8[2][8] = 0;
-        Matriz8[2][9] = 0;
+        Matriz8[2][6] = 302;
+        Matriz8[2][7] = 302;
+        Matriz8[2][8] = 302;
+        Matriz8[2][9] = 302;
         
         Matriz8[3][0] = 0;
         Matriz8[3][1] = 0;
@@ -8161,62 +8272,62 @@ public class Principal extends JFrame implements Runnable{
         Matriz8[3][7] = 0;
         Matriz8[3][8] = 0;
         Matriz8[3][9] = 0;
-        
+      
         Matriz8[4][0] = 0;
         Matriz8[4][1] = 0;
-        Matriz8[4][2] = 0;
+        Matriz8[4][2] = 311;
         Matriz8[4][3] = 0;
         Matriz8[4][4] = 0;
         Matriz8[4][5] = 0;
         Matriz8[4][6] = 0;
         Matriz8[4][7] = 0;
         Matriz8[4][8] = 0;
-        Matriz8[4][9] = 0;
+        Matriz8[4][9] = 114;
         
         Matriz8[5][0] = 0;
         Matriz8[5][1] = 0;
-        Matriz8[5][2] = 0;
+        Matriz8[5][2] = 311;
         Matriz8[5][3] = 0;
         Matriz8[5][4] = 0;
         Matriz8[5][5] = 0;
         Matriz8[5][6] = 0;
-        Matriz8[5][7] = 0;
+        Matriz8[5][7] = 213;
         Matriz8[5][8] = 0;
-        Matriz8[5][9] = 0;
+        Matriz8[5][9] = 114;
         
-        Matriz8[6][0] = 0;
+        Matriz8[6][0] = 113;
         Matriz8[6][1] = 0;
-        Matriz8[6][2] = 0;
+        Matriz8[6][2] = 311;
         Matriz8[6][3] = 0;
         Matriz8[6][4] = 0;
         Matriz8[6][5] = 0;
         Matriz8[6][6] = 0;
-        Matriz8[6][7] = 0;
+        Matriz8[6][7] = 213;
         Matriz8[6][8] = 0;
         Matriz8[6][9] = 0;
         
-        Matriz8[7][0] = 0;
+        Matriz8[7][0] = 113;
         Matriz8[7][1] = 0;
-        Matriz8[7][2] = 0;
+        Matriz8[7][2] = 311;
         Matriz8[7][3] = 0;
         Matriz8[7][4] = 0;
         Matriz8[7][5] = 0;
         Matriz8[7][6] = 0;
-        Matriz8[7][7] = 0;
+        Matriz8[7][7] = 213;
         Matriz8[7][8] = 0;
         Matriz8[7][9] = 0;
        
         Matriz8[8][0] = 0;
         Matriz8[8][1] = 0;
         Matriz8[8][2] = 0;
-        Matriz8[8][3] = 0;
-        Matriz8[8][4] = 0;
-        Matriz8[8][5] = 0;
+        Matriz8[8][3] = 202;
+        Matriz8[8][4] = 202;
+        Matriz8[8][5] = 202;
         Matriz8[8][6] = 0;
         Matriz8[8][7] = 0;
         Matriz8[8][8] = 0;
         Matriz8[8][9] = 0;
-       
+        
         Matriz8[9][0] = 0;
         Matriz8[9][1] = 0;
         Matriz8[9][2] = 0;
@@ -8232,7 +8343,7 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[0][1] = 0;
         Matriz9[0][2] = 0;
         Matriz9[0][3] = 0;
-        Matriz9[0][4] = 0;
+        Matriz9[0][4] = 311;
         Matriz9[0][5] = 0;
         Matriz9[0][6] = 0;
         Matriz9[0][7] = 0;
@@ -8243,20 +8354,20 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[1][1] = 0;
         Matriz9[1][2] = 0;
         Matriz9[1][3] = 0;
-        Matriz9[1][4] = 0;
+        Matriz9[1][4] = 311;
         Matriz9[1][5] = 0;
-        Matriz9[1][6] = 0;
+        Matriz9[1][6] = 113;
         Matriz9[1][7] = 0;
         Matriz9[1][8] = 0;
         Matriz9[1][9] = 0;
        
         Matriz9[2][0] = 0;
-        Matriz9[2][1] = 0;
-        Matriz9[2][2] = 0;
+        Matriz9[2][1] = 101;
+        Matriz9[2][2] = 101;
         Matriz9[2][3] = 0;
-        Matriz9[2][4] = 0;
+        Matriz9[2][4] = 311;
         Matriz9[2][5] = 0;
-        Matriz9[2][6] = 0;
+        Matriz9[2][6] = 113;
         Matriz9[2][7] = 0;
         Matriz9[2][8] = 0;
         Matriz9[2][9] = 0;
@@ -8265,30 +8376,30 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[3][1] = 0;
         Matriz9[3][2] = 0;
         Matriz9[3][3] = 0;
-        Matriz9[3][4] = 0;
+        Matriz9[3][4] = 311;
         Matriz9[3][5] = 0;
         Matriz9[3][6] = 0;
         Matriz9[3][7] = 0;
         Matriz9[3][8] = 0;
         Matriz9[3][9] = 0;
        
-        Matriz9[4][0] = 0;
-        Matriz9[4][1] = 0;
-        Matriz9[4][2] = 0;
+        Matriz9[4][0] = 202;
+        Matriz9[4][1] = 202;
+        Matriz9[4][2] = 202;
         Matriz9[4][3] = 0;
         Matriz9[4][4] = 0;
         Matriz9[4][5] = 0;
         Matriz9[4][6] = 0;
-        Matriz9[4][7] = 0;
-        Matriz9[4][8] = 0;
-        Matriz9[4][9] = 0;
+        Matriz9[4][7] = 201;
+        Matriz9[4][8] = 201;
+        Matriz9[4][9] = 201;
         
         Matriz9[5][0] = 0;
         Matriz9[5][1] = 0;
         Matriz9[5][2] = 0;
         Matriz9[5][3] = 0;
         Matriz9[5][4] = 0;
-        Matriz9[5][5] = 0;
+        Matriz9[5][5] = 114;
         Matriz9[5][6] = 0;
         Matriz9[5][7] = 0;
         Matriz9[5][8] = 0;
@@ -8299,20 +8410,20 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[6][2] = 0;
         Matriz9[6][3] = 0;
         Matriz9[6][4] = 0;
-        Matriz9[6][5] = 0;
+        Matriz9[6][5] = 114;
         Matriz9[6][6] = 0;
-        Matriz9[6][7] = 0;
+        Matriz9[6][7] = 213;
         Matriz9[6][8] = 0;
         Matriz9[6][9] = 0;
         
-        Matriz9[7][0] = 0;
-        Matriz9[7][1] = 0;
+        Matriz9[7][0] = 102;
+        Matriz9[7][1] = 102;
         Matriz9[7][2] = 0;
         Matriz9[7][3] = 0;
         Matriz9[7][4] = 0;
         Matriz9[7][5] = 0;
         Matriz9[7][6] = 0;
-        Matriz9[7][7] = 0;
+        Matriz9[7][7] = 213;
         Matriz9[7][8] = 0;
         Matriz9[7][9] = 0;
        
@@ -8323,14 +8434,14 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[8][4] = 0;
         Matriz9[8][5] = 0;
         Matriz9[8][6] = 0;
-        Matriz9[8][7] = 0;
+        Matriz9[8][7] = 213;
         Matriz9[8][8] = 0;
         Matriz9[8][9] = 0;
         
-        Matriz9[9][0] = 0;
-        Matriz9[9][1] = 0;
-        Matriz9[9][2] = 0;
-        Matriz9[9][3] = 0;
+        Matriz9[9][0] = 302;
+        Matriz9[9][1] = 302;
+        Matriz9[9][2] = 302;
+        Matriz9[9][3] = 302;
         Matriz9[9][4] = 0;
         Matriz9[9][5] = 0;
         Matriz9[9][6] = 0;
@@ -8338,11 +8449,11 @@ public class Principal extends JFrame implements Runnable{
         Matriz9[9][8] = 0;
         Matriz9[9][9] = 0;
         
-        Matriz10[0][0] = 0;
-        Matriz10[0][1] = 0;
+        Matriz10[0][0] = 101;
+        Matriz10[0][1] = 101;
         Matriz10[0][2] = 0;
         Matriz10[0][3] = 0;
-        Matriz10[0][4] = 0;
+        Matriz10[0][4] = 113;
         Matriz10[0][5] = 0;
         Matriz10[0][6] = 0;
         Matriz10[0][7] = 0;
@@ -8353,11 +8464,11 @@ public class Principal extends JFrame implements Runnable{
         Matriz10[1][1] = 0;
         Matriz10[1][2] = 0;
         Matriz10[1][3] = 0;
-        Matriz10[1][4] = 0;
+        Matriz10[1][4] = 113;
         Matriz10[1][5] = 0;
         Matriz10[1][6] = 0;
         Matriz10[1][7] = 0;
-        Matriz10[1][8] = 0;
+        Matriz10[1][8] = 114;
         Matriz10[1][9] = 0;
         
         Matriz10[2][0] = 0;
@@ -8368,12 +8479,12 @@ public class Principal extends JFrame implements Runnable{
         Matriz10[2][5] = 0;
         Matriz10[2][6] = 0;
         Matriz10[2][7] = 0;
-        Matriz10[2][8] = 0;
+        Matriz10[2][8] = 114;
         Matriz10[2][9] = 0;
         
-        Matriz10[3][0] = 0;
-        Matriz10[3][1] = 0;
-        Matriz10[3][2] = 0;
+        Matriz10[3][0] = 202;
+        Matriz10[3][1] = 202;
+        Matriz10[3][2] = 202;
         Matriz10[3][3] = 0;
         Matriz10[3][4] = 0;
         Matriz10[3][5] = 0;
@@ -8388,16 +8499,16 @@ public class Principal extends JFrame implements Runnable{
         Matriz10[4][3] = 0;
         Matriz10[4][4] = 0;
         Matriz10[4][5] = 0;
-        Matriz10[4][6] = 0;
-        Matriz10[4][7] = 0;
-        Matriz10[4][8] = 0;
+        Matriz10[4][6] = 201;
+        Matriz10[4][7] = 201;
+        Matriz10[4][8] = 201;
         Matriz10[4][9] = 0;
         
         Matriz10[5][0] = 0;
         Matriz10[5][1] = 0;
         Matriz10[5][2] = 0;
         Matriz10[5][3] = 0;
-        Matriz10[5][4] = 0;
+        Matriz10[5][4] = 213;
         Matriz10[5][5] = 0;
         Matriz10[5][6] = 0;
         Matriz10[5][7] = 0;
@@ -8405,26 +8516,26 @@ public class Principal extends JFrame implements Runnable{
         Matriz10[5][9] = 0;
         
         Matriz10[6][0] = 0;
-        Matriz10[6][1] = 0;
-        Matriz10[6][2] = 0;
+        Matriz10[6][1] = 102;
+        Matriz10[6][2] = 102;
         Matriz10[6][3] = 0;
-        Matriz10[6][4] = 0;
+        Matriz10[6][4] = 213;
         Matriz10[6][5] = 0;
         Matriz10[6][6] = 0;
         Matriz10[6][7] = 0;
         Matriz10[6][8] = 0;
-        Matriz10[6][9] = 0;
+        Matriz10[6][9] = 311;
         
         Matriz10[7][0] = 0;
         Matriz10[7][1] = 0;
         Matriz10[7][2] = 0;
         Matriz10[7][3] = 0;
-        Matriz10[7][4] = 0;
+        Matriz10[7][4] = 213;
         Matriz10[7][5] = 0;
         Matriz10[7][6] = 0;
         Matriz10[7][7] = 0;
         Matriz10[7][8] = 0;
-        Matriz10[7][9] = 0;
+        Matriz10[7][9] = 311;
         
         Matriz10[8][0] = 0;
         Matriz10[8][1] = 0;
@@ -8435,18 +8546,18 @@ public class Principal extends JFrame implements Runnable{
         Matriz10[8][6] = 0;
         Matriz10[8][7] = 0;
         Matriz10[8][8] = 0;
-        Matriz10[8][9] = 0;
+        Matriz10[8][9] = 311;
         
-        Matriz10[9][0] = 0;
-        Matriz10[9][1] = 0;
-        Matriz10[9][2] = 0;
-        Matriz10[9][3] = 0;
+        Matriz10[9][0] = 302;
+        Matriz10[9][1] = 302;
+        Matriz10[9][2] = 302;
+        Matriz10[9][3] = 302;
         Matriz10[9][4] = 0;
         Matriz10[9][5] = 0;
         Matriz10[9][6] = 0;
         Matriz10[9][7] = 0;
         Matriz10[9][8] = 0;
-        Matriz10[9][9] = 0;
+        Matriz10[9][9] = 311;
     }
     }
     
