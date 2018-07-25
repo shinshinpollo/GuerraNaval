@@ -141,27 +141,12 @@ public class ColocarBarcos extends javax.swing.JDialog{
     JButton JBJ9_1 = new JButton();
     JButton JBJ10_1 = new JButton();
     
-    JLabel JLBarcoA = new JLabel();
-    JLabel JLBarcoA2 = new JLabel();
-    JLabel JLBarcoA3 = new JLabel();
-    JLabel JLBarcoA4 = new JLabel();
-    
-    JLabel JLBarcoB = new JLabel();
-    JLabel JLBarcoB1 = new JLabel();
-    JLabel JLBarcoB2 = new JLabel();
-    
-    JLabel JLBarcoP = new JLabel();
-    JLabel JLBarcoP1 = new JLabel();
-    
-    //horizontal
-    JLabel JLBarcoM = new JLabel();
-    JLabel JLBarcoM1 = new JLabel();
-    JLabel JLBarcoM2 = new JLabel();
-    JLabel JLBarcoM3 = new JLabel();
-    
-    JLabel JLBarcoD = new JLabel();
-    JLabel JLBarcoD1 = new JLabel();
-    JLabel JLBarcoD2 = new JLabel();
+    JLabel JLBarcoV4 = new JLabel();
+    JLabel JLBarcoV3 = new JLabel();
+    JLabel JLBarcoV2 = new JLabel();
+    JLabel JLBarcoH4 = new JLabel();
+    JLabel JLBarcoH3 = new JLabel();
+    JLabel JLBarcoH2 = new JLabel();
     
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
@@ -311,33 +296,21 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         
         //vertical
-        JLBarcoA.setText("");
-        JLBarcoA.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoA2.setText("");
-        JLBarcoA2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoA3.setText("");
-        JLBarcoA3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoA4.setText("");
-        JLBarcoA4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
+        JLBarcoV4.setText("");
+        JLBarcoV4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/barco4completo.png"))).getImage().getScaledInstance(30, 110, Image.SCALE_DEFAULT)));
+        JLBarcoV3.setText("");
+        JLBarcoV3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV3.png"))).getImage().getScaledInstance(30, 90, Image.SCALE_DEFAULT)));
+        JLBarcoV2.setText("");
+        JLBarcoV2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV2.png"))).getImage().getScaledInstance(30, 60, Image.SCALE_DEFAULT)));
+        //horizontal
+        JLBarcoH4.setText("");
+        JLBarcoH4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH4.png"))).getImage().getScaledInstance(110, 30, Image.SCALE_DEFAULT)));
+        JLBarcoH3.setText("");
+        JLBarcoH3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH3.png"))).getImage().getScaledInstance(90, 30, Image.SCALE_DEFAULT)));
+        JLBarcoH2.setText("");
+        JLBarcoH2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH2.png"))).getImage().getScaledInstance(60, 30, Image.SCALE_DEFAULT)));
         
-        JLBarcoB.setText("");
-        JLBarcoB.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoB1.setText("");
-        JLBarcoB1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoB2.setText("");
-        JLBarcoB2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
-        JLBarcoP.setText("");
-        JLBarcoP.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoP1.setText("");
-        JLBarcoP1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        
-        JLBarcoD.setText("");
-        JLBarcoD.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoD1.setText("");
-        JLBarcoD1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-        JLBarcoD2.setText("");
-        JLBarcoD2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
         
         JBA1_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1070,19 +1043,12 @@ public class ColocarBarcos extends javax.swing.JDialog{
         this.add(JBJ8_1);
         this.add(JBJ9_1);
         this.add(JBJ10_1);
-        
-        this.add(JLBarcoA);
-        this.add(JLBarcoA2);
-        this.add(JLBarcoA3);
-        this.add(JLBarcoA4);
-        this.add(JLBarcoB);
-        this.add(JLBarcoB1);
-        this.add(JLBarcoB2);
-        this.add(JLBarcoD);
-        this.add(JLBarcoD1);
-        this.add(JLBarcoD2);
-        this.add(JLBarcoP);
-        this.add(JLBarcoP1);
+        this.add(JLBarcoV4);
+        this.add(JLBarcoV3);
+        this.add(JLBarcoV2);
+        this.add(JLBarcoH4);
+        this.add(JLBarcoH3);
+        this.add(JLBarcoH2);
         
         JL1_1.reshape(25, 15, 25, 25);
         JL2_1.reshape(50, 15, 25, 25);
@@ -1216,22 +1182,12 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JBJ9_1.reshape(225, 265, 25, 25);
         JBJ10_1.reshape(250, 265, 25, 25); 
         
-        JLBarcoA.reshape(300, 30, 60, 70);
-        JLBarcoA2.reshape(300, 90, 60, 70);
-        JLBarcoA3.reshape(300, 60, 60, 70);
-        JLBarcoA4.reshape(300, 120, 60, 70);
-        
-        JLBarcoB.reshape(360, 45, 60, 70);
-        JLBarcoB1.reshape(360, 75, 60, 70);
-        JLBarcoB2.reshape(360, 105, 60,70);
-        
-        JLBarcoP.reshape(420, 65, 60, 70);
-        JLBarcoP1.reshape(420, 95, 60, 70);
-     
-        //horizontal
-        JLBarcoD.reshape(400, 230, 60, 70);
-        JLBarcoD1.reshape(370, 230, 60, 70);
-        JLBarcoD2.reshape(340, 230, 60, 70);
+        JLBarcoV4.reshape(300, 50, 30, 110);
+        JLBarcoV3.reshape(360, 60, 30, 90);
+        JLBarcoV2.reshape(415, 75, 30, 60);
+        JLBarcoH4.reshape(330, 200, 110, 30);
+        JLBarcoH3.reshape(350, 230, 90, 30);
+        JLBarcoH2.reshape(380, 250, 60, 30);
         
         
         
