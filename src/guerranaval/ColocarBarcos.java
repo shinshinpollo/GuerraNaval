@@ -2,12 +2,14 @@
 package guerranaval;
 
 import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class ColocarBarcos extends javax.swing.JDialog{
+public class ColocarBarcos extends javax.swing.JDialog implements MouseListener{
     
     JLabel JL1_1 = new JLabel();
     JLabel JL2_1 = new JLabel();
@@ -912,6 +914,7 @@ public class ColocarBarcos extends javax.swing.JDialog{
             }
         });
         
+        
         this.add(JL1_1);
         this.add(JL2_1);
         this.add(JL3_1);
@@ -1185,9 +1188,9 @@ public class ColocarBarcos extends javax.swing.JDialog{
         JLBarcoV4.reshape(300, 50, 30, 110);
         JLBarcoV3.reshape(360, 60, 30, 90);
         JLBarcoV2.reshape(415, 75, 30, 60);
-        JLBarcoH4.reshape(330, 200, 110, 30);
-        JLBarcoH3.reshape(350, 230, 90, 30);
-        JLBarcoH2.reshape(380, 250, 60, 30);
+        JLBarcoH4.reshape(315, 200, 110, 30);
+        JLBarcoH3.reshape(326, 250, 90, 30);
+        JLBarcoH2.reshape(344, 300, 60, 30);
         
         
         
@@ -1593,5 +1596,32 @@ public class ColocarBarcos extends javax.swing.JDialog{
     private void JBJ10_1ActionPerformed(java.awt.event.ActionEvent evt) {
         JOptionPane.showMessageDialog(null, ("J10"));
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
+    
+
 }
