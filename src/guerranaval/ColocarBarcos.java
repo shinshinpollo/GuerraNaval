@@ -1599,12 +1599,19 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getButton() == MouseEvent.BUTTON1){
+           int mx = e.getX();
+           int my = e.getY();
+           System.out.print("x: " + mx + " y: " + my);
+           }
+        if (e.getButton() == MouseEvent.BUTTON3){
+            System.out.println();
+        }
     }
 
     @Override
