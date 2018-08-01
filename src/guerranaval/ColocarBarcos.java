@@ -4,13 +4,15 @@ package guerranaval;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class ColocarBarcos extends javax.swing.JDialog implements MouseListener{
-    
+public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionListener, MouseListener {
+    int xlabel, ylabel;
+            
     JLabel JL1_1 = new JLabel();
     JLabel JL2_1 = new JLabel();
     JLabel JL3_1 = new JLabel();
@@ -143,12 +145,12 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseListener{
     JButton JBJ9_1 = new JButton();
     JButton JBJ10_1 = new JButton();
     
-    JLabel JLBarcoV4 = new JLabel();
-    JLabel JLBarcoV3 = new JLabel();
-    JLabel JLBarcoV2 = new JLabel();
-    JLabel JLBarcoH4 = new JLabel();
-    JLabel JLBarcoH3 = new JLabel();
-    JLabel JLBarcoH2 = new JLabel();
+    JButton JLBarcoV4 = new JButton();
+    JButton JLBarcoV3 = new JButton();
+    JButton JLBarcoV2 = new JButton();
+    JButton JLBarcoH4 = new JButton();
+    JButton JLBarcoH3 = new JButton();
+    JButton JLBarcoH2 = new JButton();
     
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
@@ -1629,6 +1631,26 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseListener{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public void mouseDragg(MouseEvent e){
+        
+    }
+    public void mouseMove(MouseEvent e){
+        
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        int xm = e.getX();
+        int ym = e.getY();
+         xlabel = xm;
+         ylabel = ym;
+         repaint();
+    }
     
 
 }
