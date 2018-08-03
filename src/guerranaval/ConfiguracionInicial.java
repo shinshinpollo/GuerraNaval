@@ -47,8 +47,8 @@ public class ConfiguracionInicial extends javax.swing.JDialog{
             }
         });
         
-        JB1Jugador.reshape(50, 50, 200, 25);
-        JB2Jugadores.reshape(50, 100, 200, 25);
+        JB1Jugador.reshape(50, 450, 200, 25);
+        JB2Jugadores.reshape(50, 500, 200, 25);
     }
     
     private void JB1JugadorActionPerformed(java.awt.event.ActionEvent evt) {
