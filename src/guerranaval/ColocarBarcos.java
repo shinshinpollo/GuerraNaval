@@ -10,8 +10,15 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionListener, MouseListener {
-    int xlabel, ylabel;
+public class ColocarBarcos extends javax.swing.JDialog  {
+    int pequeno = 0, mediano = 0, grande = 0;
+    
+    boolean BH4 = false;
+    boolean BH3 = false;
+    boolean BH2 = false;
+    boolean BV4 = false;
+    boolean BV3 = false;
+    boolean BV2 = false;
             
     JLabel JL1_1 = new JLabel();
     JLabel JL2_1 = new JLabel();
@@ -145,12 +152,12 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
     JButton JBJ9_1 = new JButton();
     JButton JBJ10_1 = new JButton();
     
-    JButton JLBarcoV4 = new JButton();
-    JButton JLBarcoV3 = new JButton();
-    JButton JLBarcoV2 = new JButton();
-    JButton JLBarcoH4 = new JButton();
-    JButton JLBarcoH3 = new JButton();
-    JButton JLBarcoH2 = new JButton();
+    JButton JBBarcoV4 = new JButton();
+    JButton JBBarcoV3 = new JButton();
+    JButton JBBarcoV2 = new JButton();
+    JButton JBBarcoH4 = new JButton();
+    JButton JBBarcoH3 = new JButton();
+    JButton JBBarcoH2 = new JButton();
     
     public ColocarBarcos(java.awt.Frame parent, boolean modal, int jugador){
         super(parent, modal);
@@ -300,19 +307,19 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
         JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         
         //vertical
-        JLBarcoV4.setText("");
-        JLBarcoV4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/barco4completo.png"))).getImage().getScaledInstance(30, 110, Image.SCALE_DEFAULT)));
-        JLBarcoV3.setText("");
-        JLBarcoV3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV3.png"))).getImage().getScaledInstance(30, 90, Image.SCALE_DEFAULT)));
-        JLBarcoV2.setText("");
-        JLBarcoV2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV2.png"))).getImage().getScaledInstance(30, 60, Image.SCALE_DEFAULT)));
+        JBBarcoV4.setText("");
+        JBBarcoV4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/barco4completo.png"))).getImage().getScaledInstance(30, 110, Image.SCALE_DEFAULT)));
+        JBBarcoV3.setText("");
+        JBBarcoV3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV3.png"))).getImage().getScaledInstance(30, 90, Image.SCALE_DEFAULT)));
+        JBBarcoV2.setText("");
+        JBBarcoV2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoV2.png"))).getImage().getScaledInstance(30, 60, Image.SCALE_DEFAULT)));
         //horizontal
-        JLBarcoH4.setText("");
-        JLBarcoH4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH4.png"))).getImage().getScaledInstance(110, 30, Image.SCALE_DEFAULT)));
-        JLBarcoH3.setText("");
-        JLBarcoH3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH3.png"))).getImage().getScaledInstance(90, 30, Image.SCALE_DEFAULT)));
-        JLBarcoH2.setText("");
-        JLBarcoH2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH2.png"))).getImage().getScaledInstance(60, 30, Image.SCALE_DEFAULT)));
+        JBBarcoH4.setText("");
+        JBBarcoH4.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH4.png"))).getImage().getScaledInstance(110, 30, Image.SCALE_DEFAULT)));
+        JBBarcoH3.setText("");
+        JBBarcoH3.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH3.png"))).getImage().getScaledInstance(90, 30, Image.SCALE_DEFAULT)));
+        JBBarcoH2.setText("");
+        JBBarcoH2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoH2.png"))).getImage().getScaledInstance(60, 30, Image.SCALE_DEFAULT)));
         
         
         
@@ -916,6 +923,41 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
             }
         });
         
+        JBBarcoH4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoH4ActionPerformed(evt);
+            }
+        });
+        
+        JBBarcoH3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoH3ActionPerformed(evt);
+            }
+        });
+        
+        JBBarcoH2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoH2ActionPerformed(evt);
+            }
+        });
+        
+        JBBarcoV4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoV4ActionPerformed(evt);
+            }
+        });
+        
+        JBBarcoV3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoV3ActionPerformed(evt);
+            }
+        });
+        
+        JBBarcoV2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBarcoV2ActionPerformed(evt);
+            }
+        });
         
         this.add(JL1_1);
         this.add(JL2_1);
@@ -1048,12 +1090,12 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
         this.add(JBJ8_1);
         this.add(JBJ9_1);
         this.add(JBJ10_1);
-        this.add(JLBarcoV4);
-        this.add(JLBarcoV3);
-        this.add(JLBarcoV2);
-        this.add(JLBarcoH4);
-        this.add(JLBarcoH3);
-        this.add(JLBarcoH2);
+        this.add(JBBarcoV4);
+        this.add(JBBarcoV3);
+        this.add(JBBarcoV2);
+        this.add(JBBarcoH4);
+        this.add(JBBarcoH3);
+        this.add(JBBarcoH2);
         
         JL1_1.reshape(25, 15, 25, 25);
         JL2_1.reshape(50, 15, 25, 25);
@@ -1187,12 +1229,12 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
         JBJ9_1.reshape(225, 265, 25, 25);
         JBJ10_1.reshape(250, 265, 25, 25); 
         
-        JLBarcoV4.reshape(300, 50, 30, 110);
-        JLBarcoV3.reshape(360, 60, 30, 90);
-        JLBarcoV2.reshape(415, 75, 30, 60);
-        JLBarcoH4.reshape(315, 200, 110, 30);
-        JLBarcoH3.reshape(326, 250, 90, 30);
-        JLBarcoH2.reshape(344, 300, 60, 30);
+        JBBarcoV4.reshape(300, 50, 30, 110);
+        JBBarcoV3.reshape(360, 60, 30, 90);
+        JBBarcoV2.reshape(415, 75, 30, 60);
+        JBBarcoH4.reshape(315, 200, 110, 30);
+        JBBarcoH3.reshape(326, 250, 90, 30);
+        JBBarcoH2.reshape(344, 300, 60, 30);
         
         
         
@@ -1598,8 +1640,85 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
     private void JBJ10_1ActionPerformed(java.awt.event.ActionEvent evt) {
         JOptionPane.showMessageDialog(null, ("J10"));
     }
+    
+    private void JBBarcoV4ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (grande <= ClsGlobal.jugadorGrande){
+             JOptionPane.showMessageDialog(null, ("Vertical 4"));
+            BV4 = true;
+            BV3 = false;
+            BV2 = false;
+            BH4 = false;
+            BH3 = false;
+            BH2 = false;
+        }
+       
+    }
 
-    @Override
+    private void JBBarcoV3ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (mediano <= ClsGlobal.jugadorMediano){
+            JOptionPane.showMessageDialog(null, ("Vertical 3"));
+            BV4 = false;
+            BV3 = true;
+            BV2 = false;
+            BH4 = false;
+            BH3 = false;
+            BH2 = false;
+        }
+        
+    }
+    
+    private void JBBarcoV2ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (pequeno <= ClsGlobal.jugadorPequeno){
+            JOptionPane.showMessageDialog(null, ("Vertical 2"));
+            BV4 = false;
+            BV3 = false;
+            BV2 = true;
+            BH4 = false;
+            BH3 = false;
+            BH2 = false;
+        }
+        
+    }
+    
+    private void JBBarcoH4ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (grande <= ClsGlobal.jugadorGrande){
+            JOptionPane.showMessageDialog(null, ("Horizontal 4"));
+            BV4 = false;
+            BV3 = false;
+            BV2 = false;
+            BH4 = true;
+            BH3 = false;
+            BH2 = false;
+        }
+        
+    }
+    
+    private void JBBarcoH3ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (mediano <= ClsGlobal.jugadorMediano){
+            JOptionPane.showMessageDialog(null, ("Horizontal 3"));
+            BV4 = false;
+            BV3 = false;
+            BV2 = false;
+            BH4 = false;
+            BH3 = true;
+            BH2 = false;
+        }
+        
+    }
+    
+    private void JBBarcoH2ActionPerformed(java.awt.event.ActionEvent evt) {
+        if (pequeno <= ClsGlobal.jugadorPequeno){
+            JOptionPane.showMessageDialog(null, ("Horizontal 2"));
+            BV4 = false;
+            BV3 = false;
+            BV2 = false;
+            BH4 = false;
+            BH3 = false;
+            BH2 = true;
+        }
+        
+    }
+    /*@Override
     public void mouseClicked(MouseEvent e) {
        
     }
@@ -1647,10 +1766,9 @@ public class ColocarBarcos extends javax.swing.JDialog implements MouseMotionLis
     public void mouseMoved(MouseEvent e) {
         int xm = e.getX();
         int ym = e.getY();
-         xlabel = xm;
-         ylabel = ym;
+         
          repaint();
-    }
+    }*/
     
 
 }

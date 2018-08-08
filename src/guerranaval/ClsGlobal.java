@@ -154,6 +154,12 @@ class ClsGlobal {
     el segundo barco grande - 332
     */
     static int[][] Matriz2 = new int[10][10];
+    // variable asignada de cantidad de barcos pequeños para jugador 1
+    static int jugadorPequeno = 4;
+    // variable asignada de cantidad de barcos medianos para jugador 1
+    static int jugadorMediano = 3;
+    // variable asignada de cantidad de barcos grandes para jugador 1
+    static int jugadorGrande = 2;
     
-    
+   
 }
