@@ -2728,7 +2728,7 @@ public class ColocarBarcos extends javax.swing.JDialog  {
         }
         }
         else if (BH2){
-            if (Matriz[0][1] == 0 && Matriz[0][2] == 0){
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0){   
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
