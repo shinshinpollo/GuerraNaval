@@ -7,6 +7,7 @@ import java.awt.Image;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -1849,6 +1850,41 @@ public class Principal extends JFrame implements Runnable{
             JBSeleccionarBarco1.setVisible(true);
             JBSeleccionarBarco2.setVisible(false);
             GenerarJugador2();
+            Random Rnd = new Random();
+            int MatrizRandom = Rnd.nextInt(10) + 1;
+            switch(MatrizRandom){
+                case 1 :
+                    ClsGlobal.Matriz2 = Matriz1;
+                    break;
+                case 2 :
+                    ClsGlobal.Matriz2 = Matriz2;
+                    break;
+                case 3 :
+                    ClsGlobal.Matriz2 = Matriz3;
+                    break;
+                case 4:
+                    ClsGlobal.Matriz2 = Matriz4;
+                    break;
+                case 5 :
+                    ClsGlobal.Matriz2 = Matriz5;
+                    break;
+                case 6 :
+                    ClsGlobal.Matriz2 = Matriz6;
+                    break;
+                case 7 :
+                    ClsGlobal.Matriz2 = Matriz7;
+                    break;
+                case 8 :
+                    ClsGlobal.Matriz2 = Matriz8;
+                    break;
+                case 9 :
+                    ClsGlobal.Matriz2 = Matriz9;
+                    break;
+                case 10 :
+                    ClsGlobal.Matriz2 = Matriz10;
+                    break;
+            
+            }
             ActivarJugador2(true);
             ActivarArmasJugador(2);
             VisualizarArmasJugador(2);
