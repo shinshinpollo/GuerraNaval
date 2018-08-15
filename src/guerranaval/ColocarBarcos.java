@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 
 public class ColocarBarcos extends javax.swing.JDialog  {
     int pequeno = 0, mediano = 0, grande = 0;
+    int[][] Matriz = new int[10][10];
+            
     
     boolean BH4 = false;
     boolean BH3 = false;
@@ -163,6 +165,106 @@ public class ColocarBarcos extends javax.swing.JDialog  {
         super(parent, modal);
         constructor(jugador);
         
+        Matriz[0][0] = 0;
+        Matriz[0][1] = 0;
+        Matriz[0][2] = 0;
+        Matriz[0][3] = 0;
+        Matriz[0][4] = 0;
+        Matriz[0][5] = 0;
+        Matriz[0][6] = 0;
+        Matriz[0][7] = 0;
+        Matriz[0][8] = 0;
+        Matriz[0][9] = 0;
+        Matriz[1][0] = 0;
+        Matriz[1][1] = 0;
+        Matriz[1][2] = 0;
+        Matriz[1][3] = 0;
+        Matriz[1][4] = 0;
+        Matriz[1][5] = 0;
+        Matriz[1][6] = 0;
+        Matriz[1][7] = 0;
+        Matriz[1][8] = 0;
+        Matriz[1][9] = 0;
+        Matriz[2][0] = 0;
+        Matriz[2][1] = 0;
+        Matriz[2][2] = 0;
+        Matriz[2][3] = 0;
+        Matriz[2][4] = 0;
+        Matriz[2][5] = 0;
+        Matriz[2][6] = 0;
+        Matriz[2][7] = 0;
+        Matriz[2][8] = 0;
+        Matriz[2][9] = 0;
+        Matriz[3][0] = 0;
+        Matriz[3][1] = 0;
+        Matriz[3][2] = 0;
+        Matriz[3][3] = 0;
+        Matriz[3][4] = 0;
+        Matriz[3][5] = 0;
+        Matriz[3][6] = 0;
+        Matriz[3][7] = 0;
+        Matriz[3][8] = 0;
+        Matriz[3][9] = 0;
+        Matriz[4][0] = 0;
+        Matriz[4][1] = 0;
+        Matriz[4][2] = 0;
+        Matriz[4][3] = 0;
+        Matriz[4][4] = 0;
+        Matriz[4][5] = 0;
+        Matriz[4][6] = 0;
+        Matriz[4][7] = 0;
+        Matriz[4][8] = 0;
+        Matriz[4][9] = 0;
+        Matriz[5][0] = 0;
+        Matriz[5][1] = 0;
+        Matriz[5][2] = 0;
+        Matriz[5][3] = 0;
+        Matriz[5][4] = 0;
+        Matriz[5][5] = 0;
+        Matriz[5][6] = 0;
+        Matriz[5][7] = 0;
+        Matriz[5][8] = 0;
+        Matriz[5][9] = 0;
+        Matriz[6][0] = 0;
+        Matriz[6][1] = 0;
+        Matriz[6][2] = 0;
+        Matriz[6][3] = 0;
+        Matriz[6][4] = 0;
+        Matriz[6][5] = 0;
+        Matriz[6][6] = 0;
+        Matriz[6][7] = 0;
+        Matriz[6][8] = 0;
+        Matriz[6][9] = 0;
+        Matriz[7][0] = 0;
+        Matriz[7][1] = 0;
+        Matriz[7][2] = 0;
+        Matriz[7][3] = 0;
+        Matriz[7][4] = 0;
+        Matriz[7][5] = 0;
+        Matriz[7][6] = 0;
+        Matriz[7][7] = 0;
+        Matriz[7][8] = 0;
+        Matriz[7][9] = 0;
+        Matriz[8][0] = 0;
+        Matriz[8][1] = 0;
+        Matriz[8][2] = 0;
+        Matriz[8][3] = 0;
+        Matriz[8][4] = 0;
+        Matriz[8][5] = 0;
+        Matriz[8][6] = 0;
+        Matriz[8][7] = 0;
+        Matriz[8][8] = 0;
+        Matriz[8][9] = 0;
+        Matriz[9][0] = 0;
+        Matriz[9][1] = 0;
+        Matriz[9][2] = 0;
+        Matriz[9][3] = 0;
+        Matriz[9][4] = 0;
+        Matriz[9][5] = 0;
+        Matriz[9][6] = 0;
+        Matriz[9][7] = 0;
+        Matriz[9][8] = 0;
+        Matriz[9][9] = 0;
     }
 
     private void constructor(int jugador) {
@@ -2143,6 +2245,26 @@ public class ColocarBarcos extends javax.swing.JDialog  {
     
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
         //JOptionPane.showMessageDialog(null, ("A1"));
+        if (BH4){
+            
+        }
+        else if (BH3) {
+            
+        }
+        else if (BH2) {
+            
+          
+        }
+        else if (BV4){
+            
+        }
+        else if (BV3){
+            
+        }
+        else if (BV2){
+            
+            
+        }
     }
     
     private void JBA1_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
