@@ -2246,159 +2246,563 @@ public class ColocarBarcos extends javax.swing.JDialog  {
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
         //JOptionPane.showMessageDialog(null, ("A1"));
         if (BH4){
-            
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0 && Matriz[0][2] == 0 && Matriz[0][3] == 0){
+                if (grande == 0){
+                    Matriz[0][0] = 301;
+                    Matriz[0][1] = 301;
+                    Matriz[0][2] = 301;
+                    Matriz[0][3] = 301;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (grande == 1){
+                    Matriz[0][0] = 302;
+                    Matriz[0][1] = 302;
+                    Matriz[0][2] = 302;
+                    Matriz[0][3] = 302;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
         }
         else if (BH3) {
-            
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0 && Matriz[0][2] == 0){
+                if (mediano == 0){
+                    Matriz[0][0] = 201;
+                    Matriz[0][1] = 201;
+                    Matriz[0][2] = 201;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 1){
+                    Matriz[0][0] = 202;
+                    Matriz[0][1] = 202;
+                    Matriz[0][2] = 202;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 2){
+                    Matriz[0][0] = 203;
+                    Matriz[0][1] = 203;
+                    Matriz[0][2] = 203;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
         }
         else if (BH2) {
-            
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0){
+                if (pequeno == 0){
+                    Matriz[0][0] = 101;
+                    Matriz[0][1] = 101;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 1){
+                    Matriz[0][0] = 102;
+                    Matriz[0][1] = 102;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 2){
+                    Matriz[0][0] = 103;
+                    Matriz[0][1] = 103;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 3){
+                    Matriz[0][0] = 104;
+                    Matriz[0][1] = 104;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
           
         }
         else if (BV4){
-            
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0 && Matriz[2][0] == 0 && Matriz[3][0] == 0){
+                if (grande == 0){
+                    Matriz[0][0] = 311;
+                    Matriz[1][0] = 311;
+                    Matriz[2][0] = 311;
+                    Matriz[3][0] = 311;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (grande == 1){
+                    Matriz[0][0] = 312;
+                    Matriz[1][0] = 312;
+                    Matriz[2][0] = 312;
+                    Matriz[3][0] = 312;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
         }
         else if (BV3){
-            
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0 && Matriz[2][0] == 0){
+                if (mediano == 0){
+                    Matriz[0][0] = 211;
+                    Matriz[1][0] = 211;
+                    Matriz[2][0] = 211;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    
+                }
+                else if (mediano == 1){
+                    Matriz[0][0] = 212;
+                    Matriz[1][0] = 212;
+                    Matriz[2][0] = 212;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 2){
+                    Matriz[0][0] = 213;
+                    Matriz[1][0] = 213;
+                    Matriz[2][0] = 213;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
         }
         else if (BV2){
-            
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0){
+                if (pequeno == 0){
+                    Matriz[0][0] = 111;
+                    Matriz[1][0] = 111;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 1){
+                    Matriz[0][0] = 112;
+                    Matriz[1][0] = 112;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 2){
+                    Matriz[0][0] = 113;
+                    Matriz[1][0] = 113;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 3){
+                    Matriz[0][0] = 114;
+                    Matriz[1][0] = 114;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
             
         }
     }
     
     private void JBA1_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
         if (BH4){
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0  && Matriz[0][2] == 0 && Matriz[0][3] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            }    
+            
         }
         else if (BH3){
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0  && Matriz[0][2] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            }
         }
         else if (BH2){
+            if (Matriz[0][0] == 0 && Matriz[0][1] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            }
         }
         else if (BV4){
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0  && Matriz[2][0] == 0 && Matriz[3][0] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BV3){
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0  && Matriz[2][0] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BV2){
+            if (Matriz[0][0] == 0 && Matriz[1][0] == 0){
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+        }
         }
     }  
     
     private void JBA1_1MouseExited(java.awt.event.MouseEvent evt) {                                     
-       if (BH4){
+       
+        if (BH4){
+            if (Matriz[0][0] == 0 )
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][1] == 0)
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][2] == 0)
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][3] == 0)
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BH3){
+            if (Matriz[0][0] == 0)
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][1] == 0)
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][2] == 0)
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BH2){
+            if (Matriz[0][0] == 0)
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][1] == 0)
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV4){
+            if (Matriz[0][0] == 0)
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][0] == 0)
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[2][0] == 0)
             JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[3][0] == 0)
             JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV3){
+            if (Matriz[0][0] == 0)
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][0] == 0)
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[2][0] == 0)
             JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV2){
+            if (Matriz[0][0] == 0)
             JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][0] == 0)
             JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
     }
     
     private void JBA2_1ActionPerformed(java.awt.event.ActionEvent evt) {
         //JOptionPane.showMessageDialog(null, ("A2"));
+        if (BH4){
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0 && Matriz[0][3] == 0 && Matriz[0][4] == 0){
+                if (grande == 0){
+                    Matriz[0][1] = 301;
+                    Matriz[0][2] = 301;
+                    Matriz[0][3] = 301;
+                    Matriz[0][4] = 301;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (grande == 1){
+                    Matriz[0][1] = 302;
+                    Matriz[0][2] = 302;
+                    Matriz[0][3] = 302;
+                    Matriz[0][4] = 302;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+        }
+        else if (BH3) {
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0 && Matriz[0][3] == 0){
+                if (mediano == 0){
+                    Matriz[0][1] = 201;
+                    Matriz[0][2] = 201;
+                    Matriz[0][3] = 201;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 1){
+                    Matriz[0][1] = 202;
+                    Matriz[0][2] = 202;
+                    Matriz[0][3] = 202;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 2){
+                    Matriz[0][1] = 203;
+                    Matriz[0][2] = 203;
+                    Matriz[0][3] = 203;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+        }
+        else if (BH2) {
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0){
+                if (pequeno == 0){
+                    Matriz[0][1] = 101;
+                    Matriz[0][2] = 101;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 1){
+                    Matriz[0][1] = 102;
+                    Matriz[0][2] = 102;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 2){
+                    Matriz[0][1] = 103;
+                    Matriz[0][2] = 103;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 3){
+                    Matriz[0][1] = 104;
+                    Matriz[0][2] = 104;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+          
+        }
+        else if (BV4){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0 && Matriz[2][1] == 0 && Matriz[3][1] == 0){
+                if (grande == 0){
+                    Matriz[0][1] = 311;
+                    Matriz[1][1] = 311;
+                    Matriz[2][1] = 311;
+                    Matriz[3][1] = 311;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (grande == 1){
+                    Matriz[0][1] = 312;
+                    Matriz[1][1] = 312;
+                    Matriz[2][1] = 312;
+                    Matriz[3][1] = 312;
+                    grande++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+        }
+        else if (BV3){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0 && Matriz[2][1] == 0){
+                if (mediano == 0){
+                    Matriz[0][1] = 211;
+                    Matriz[1][1] = 211;
+                    Matriz[2][1] = 211;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    
+                }
+                else if (mediano == 1){
+                    Matriz[0][1] = 212;
+                    Matriz[1][1] = 212;
+                    Matriz[2][1] = 212;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (mediano == 2){
+                    Matriz[0][1] = 213;
+                    Matriz[1][1] = 213;
+                    Matriz[2][1] = 213;
+                    mediano++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+        }
+        else if (BV2){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0){
+                if (pequeno == 0){
+                    Matriz[0][1] = 111;
+                    Matriz[1][1] = 111;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 1){
+                    Matriz[0][1] = 112;
+                    Matriz[1][1] = 112;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 2){
+                    Matriz[0][1] = 113;
+                    Matriz[1][1] = 113;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+                else if (pequeno == 3){
+                    Matriz[0][1] = 114;
+                    Matriz[1][1] = 114;
+                    pequeno++;
+                    JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                    JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+                }
+            }
+            
+        }
     }
     
     private void JBA2_1MouseEntered(java.awt.event.MouseEvent evt) {                                      
         if (BH4){
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0  && Matriz[0][3] == 0 && Matriz[0][3] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BH3){
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0  && Matriz[0][3] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BH2){
+            if (Matriz[0][1] == 0 && Matriz[0][2] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoD_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }   
         else if (BV4){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0  && Matriz[2][1] == 0 && Matriz[3][1] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BV3){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0  && Matriz[2][1] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
+        }
         else if (BV2){
+            if (Matriz[0][1] == 0 && Matriz[1][1] == 0){
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_1.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/BarcoA_4.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+        }
         }
     }  
     
     private void JBA2_1MouseExited(java.awt.event.MouseEvent evt) {                                     
        if (BH4){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][2] == 0 )
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][3] == 0 )
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][4] == 0 )
             JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BH3){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][2] == 0 )
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][0] == 0 )
             JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BH2){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[0][2] == 0 )
             JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV4){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][1] == 0 )
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[2][1] == 0 )
             JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[3][1] == 0 )
             JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV3){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][1] == 0 )
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[2][1] == 0 )
             JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
         else if (BV2){
+            if (Matriz[0][1] == 0 )
             JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+            if (Matriz[1][1] == 0 )
             JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         }
     }
