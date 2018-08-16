@@ -636,6 +636,11 @@ public class Principal extends JFrame implements Runnable{
         JBJ10_2.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Blanco.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
         
         
+        JBAmetralladora1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBAmetralladora1ActionPerformed(evt);
+            }
+        });
         
         JBSeleccionarBarco1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1855,33 +1860,43 @@ public class Principal extends JFrame implements Runnable{
             switch(MatrizRandom){
                 case 1 :
                     ClsGlobal.Matriz2 = Matriz1;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 2 :
                     ClsGlobal.Matriz2 = Matriz2;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 3 :
                     ClsGlobal.Matriz2 = Matriz3;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 4:
                     ClsGlobal.Matriz2 = Matriz4;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 5 :
                     ClsGlobal.Matriz2 = Matriz5;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 6 :
                     ClsGlobal.Matriz2 = Matriz6;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 7 :
                     ClsGlobal.Matriz2 = Matriz7;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 8 :
                     ClsGlobal.Matriz2 = Matriz8;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 9 :
                     ClsGlobal.Matriz2 = Matriz9;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
                 case 10 :
                     ClsGlobal.Matriz2 = Matriz10;
+                    ClsGlobal.Confirmacion2 = true;
                     break;
             
             }
@@ -1892,403 +1907,12218 @@ public class Principal extends JFrame implements Runnable{
     }
     
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A1"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBA1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A2"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][1] == 0){
+               ClsGlobal.Matriz1[0][1] = 1;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 101){
+               ClsGlobal.Matriz1[0][1] = 121;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 102){
+               ClsGlobal.Matriz1[0][1] = 122;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 103){
+               ClsGlobal.Matriz1[0][1] = 123;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 104){
+               ClsGlobal.Matriz1[0][1] = 124;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][1] == 111){
+               ClsGlobal.Matriz1[0][1] = 131;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 112){
+               ClsGlobal.Matriz1[0][1] = 132;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 113){
+               ClsGlobal.Matriz1[0][1] = 133;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 114){
+               ClsGlobal.Matriz1[0][1] = 134;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][1] == 201){
+               ClsGlobal.Matriz1[0][1] = 221;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 202){
+               ClsGlobal.Matriz1[0][1] = 222;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 223){
+               ClsGlobal.Matriz1[0][1] = 223;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][1] == 211){
+               ClsGlobal.Matriz1[0][1] = 231;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 212){
+               ClsGlobal.Matriz1[0][1] = 232;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 213){
+               ClsGlobal.Matriz1[0][1] = 233;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][1] == 301){
+               ClsGlobal.Matriz1[0][1] = 321;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 302){
+               ClsGlobal.Matriz1[0][1] = 322;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][1] == 311){
+               ClsGlobal.Matriz1[0][1] = 331;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][1] == 3112){
+               ClsGlobal.Matriz1[0][1] = 332;
+               JBA2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A3"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][2] == 0){
+               ClsGlobal.Matriz1[0][2] = 1;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 101){
+               ClsGlobal.Matriz1[0][2] = 121;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 102){
+               ClsGlobal.Matriz1[0][2] = 122;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 103){
+               ClsGlobal.Matriz1[0][2] = 123;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 104){
+               ClsGlobal.Matriz1[0][2] = 124;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][2] == 111){
+               ClsGlobal.Matriz1[0][2] = 131;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 112){
+               ClsGlobal.Matriz1[0][2] = 132;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 113){
+               ClsGlobal.Matriz1[0][2] = 133;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 114){
+               ClsGlobal.Matriz1[0][2] = 134;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][2] == 201){
+               ClsGlobal.Matriz1[0][2] = 221;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 202){
+               ClsGlobal.Matriz1[0][2] = 222;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 223){
+               ClsGlobal.Matriz1[0][2] = 223;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][2] == 211){
+               ClsGlobal.Matriz1[0][2] = 231;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 212){
+               ClsGlobal.Matriz1[0][2] = 232;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 213){
+               ClsGlobal.Matriz1[0][2] = 233;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][2] == 301){
+               ClsGlobal.Matriz1[0][2] = 321;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 302){
+               ClsGlobal.Matriz1[0][2] = 322;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][2] == 311){
+               ClsGlobal.Matriz1[0][2] = 331;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][2] == 3112){
+               ClsGlobal.Matriz1[0][2] = 332;
+               JBA3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A4"));
-    }
+       // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][3] == 0){
+               ClsGlobal.Matriz1[0][3] = 1;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 101){
+               ClsGlobal.Matriz1[0][3] = 121;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 102){
+               ClsGlobal.Matriz1[0][3] = 122;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 103){
+               ClsGlobal.Matriz1[0][3] = 123;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 104){
+               ClsGlobal.Matriz1[0][3] = 124;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][3] == 111){
+               ClsGlobal.Matriz1[0][3] = 131;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 112){
+               ClsGlobal.Matriz1[0][3] = 132;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 113){
+               ClsGlobal.Matriz1[0][3] = 133;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 114){
+               ClsGlobal.Matriz1[0][3] = 134;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][3] == 201){
+               ClsGlobal.Matriz1[0][3] = 221;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 202){
+               ClsGlobal.Matriz1[0][3] = 222;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 223){
+               ClsGlobal.Matriz1[0][3] = 223;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][3] == 211){
+               ClsGlobal.Matriz1[0][3] = 231;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 212){
+               ClsGlobal.Matriz1[0][3] = 232;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 213){
+               ClsGlobal.Matriz1[0][3] = 233;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][3] == 301){
+               ClsGlobal.Matriz1[0][3] = 321;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 302){
+               ClsGlobal.Matriz1[0][3] = 322;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][3] == 311){
+               ClsGlobal.Matriz1[0][3] = 331;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][3] == 3112){
+               ClsGlobal.Matriz1[0][3] = 332;
+               JBA4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
+    } 
     
     private void JBA5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A5"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][4] == 0){
+               ClsGlobal.Matriz1[0][4] = 1;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 101){
+               ClsGlobal.Matriz1[0][4] = 121;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 102){
+               ClsGlobal.Matriz1[0][4] = 122;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 103){
+               ClsGlobal.Matriz1[0][4] = 123;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 104){
+               ClsGlobal.Matriz1[0][4] = 124;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][4] == 111){
+               ClsGlobal.Matriz1[0][4] = 131;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 112){
+               ClsGlobal.Matriz1[0][4] = 132;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 113){
+               ClsGlobal.Matriz1[0][4] = 133;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 114){
+               ClsGlobal.Matriz1[0][4] = 134;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][4] == 201){
+               ClsGlobal.Matriz1[0][4] = 221;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 202){
+               ClsGlobal.Matriz1[0][4] = 222;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 223){
+               ClsGlobal.Matriz1[0][4] = 223;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][4] == 211){
+               ClsGlobal.Matriz1[0][4] = 231;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 212){
+               ClsGlobal.Matriz1[0][4] = 232;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 213){
+               ClsGlobal.Matriz1[0][4] = 233;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][4] == 301){
+               ClsGlobal.Matriz1[0][4] = 321;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 302){
+               ClsGlobal.Matriz1[0][4] = 322;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][4] == 311){
+               ClsGlobal.Matriz1[0][4] = 331;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][4] == 3112){
+               ClsGlobal.Matriz1[0][4] = 332;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
-    
+ 
     private void JBA6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][5] == 0){
+               ClsGlobal.Matriz1[0][5] = 1;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 101){
+               ClsGlobal.Matriz1[0][5] = 121;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 102){
+               ClsGlobal.Matriz1[0][5] = 122;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 103){
+               ClsGlobal.Matriz1[0][5] = 123;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 104){
+               ClsGlobal.Matriz1[0][5] = 124;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][5] == 111){
+               ClsGlobal.Matriz1[0][5] = 131;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 112){
+               ClsGlobal.Matriz1[0][5] = 132;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 113){
+               ClsGlobal.Matriz1[0][5] = 133;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 114){
+               ClsGlobal.Matriz1[0][5] = 134;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][5] == 201){
+               ClsGlobal.Matriz1[0][5] = 221;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 202){
+               ClsGlobal.Matriz1[0][5] = 222;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 223){
+               ClsGlobal.Matriz1[0][5] = 223;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][5] == 211){
+               ClsGlobal.Matriz1[0][5] = 231;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 212){
+               ClsGlobal.Matriz1[0][5] = 232;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 213){
+               ClsGlobal.Matriz1[0][5] = 233;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][5] == 301){
+               ClsGlobal.Matriz1[0][5] = 321;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 302){
+               ClsGlobal.Matriz1[0][5] = 322;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][5] == 311){
+               ClsGlobal.Matriz1[0][5] = 331;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][5] == 3112){
+               ClsGlobal.Matriz1[0][5] = 332;
+               JBA6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][6] == 0){
+               ClsGlobal.Matriz1[0][6] = 1;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 101){
+               ClsGlobal.Matriz1[0][6] = 121;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 102){
+               ClsGlobal.Matriz1[0][6] = 122;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 103){
+               ClsGlobal.Matriz1[0][6] = 123;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 104){
+               ClsGlobal.Matriz1[0][6] = 124;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][6] == 111){
+               ClsGlobal.Matriz1[0][6] = 131;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 112){
+               ClsGlobal.Matriz1[0][6] = 132;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 113){
+               ClsGlobal.Matriz1[0][6] = 133;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 114){
+               ClsGlobal.Matriz1[0][6]= 134;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][6] == 201){
+               ClsGlobal.Matriz1[0][6] = 221;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 202){
+               ClsGlobal.Matriz1[0][6] = 222;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 223){
+               ClsGlobal.Matriz1[0][6] = 223;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][6] == 211){
+               ClsGlobal.Matriz1[0][6] = 231;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 212){
+               ClsGlobal.Matriz1[0][6] = 232;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 213){
+               ClsGlobal.Matriz1[0][6] = 233;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][6] == 301){
+               ClsGlobal.Matriz1[0][6] = 321;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 302){
+               ClsGlobal.Matriz1[0][6] = 322;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][6] == 311){
+               ClsGlobal.Matriz1[0][6] = 331;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][6] == 312){
+               ClsGlobal.Matriz1[0][6] = 332;
+               JBA7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][7] == 0){
+               ClsGlobal.Matriz1[0][7] = 1;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 101){
+               ClsGlobal.Matriz1[0][7] = 121;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 102){
+               ClsGlobal.Matriz1[0][7] = 122;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 103){
+               ClsGlobal.Matriz1[0][7] = 123;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 104){
+               ClsGlobal.Matriz1[0][7] = 124;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][7] == 111){
+               ClsGlobal.Matriz1[0][7] = 131;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 112){
+               ClsGlobal.Matriz1[0][7] = 132;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 113){
+               ClsGlobal.Matriz1[0][7] = 133;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 114){
+               ClsGlobal.Matriz1[0][7] = 134;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][7] == 201){
+               ClsGlobal.Matriz1[0][7] = 221;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 202){
+               ClsGlobal.Matriz1[0][7] = 222;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 223){
+               ClsGlobal.Matriz1[0][7] = 223;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][7] == 211){
+               ClsGlobal.Matriz1[0][7] = 231;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 212){
+               ClsGlobal.Matriz1[0][7] = 232;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 213){
+               ClsGlobal.Matriz1[0][7] = 233;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][7] == 301){
+               ClsGlobal.Matriz1[0][7] = 321;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 302){
+               ClsGlobal.Matriz1[0][7] = 322;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][7] == 311){
+               ClsGlobal.Matriz1[0][7] = 331;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][7] == 3112){
+               ClsGlobal.Matriz1[0][7] = 332;
+               JBA8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A9"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][8] == 0){
+               ClsGlobal.Matriz1[0][8] = 1;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 101){
+               ClsGlobal.Matriz1[0][8] = 121;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 102){
+               ClsGlobal.Matriz1[0][8] = 122;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 103){
+               ClsGlobal.Matriz1[0][8] = 123;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 104){
+               ClsGlobal.Matriz1[0][8] = 124;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][8] == 111){
+               ClsGlobal.Matriz1[0][8] = 131;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 112){
+               ClsGlobal.Matriz1[0][8] = 132;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 113){
+               ClsGlobal.Matriz1[0][8] = 133;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 114){
+               ClsGlobal.Matriz1[0][8] = 134;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][8] == 201){
+               ClsGlobal.Matriz1[0][8] = 221;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 202){
+               ClsGlobal.Matriz1[0][8] = 222;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 223){
+               ClsGlobal.Matriz1[0][8] = 223;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][8] == 211){
+               ClsGlobal.Matriz1[0][8] = 231;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 212){
+               ClsGlobal.Matriz1[0][8] = 232;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 213){
+               ClsGlobal.Matriz1[0][8] = 233;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][8] == 301){
+               ClsGlobal.Matriz1[0][8] = 321;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 302){
+               ClsGlobal.Matriz1[0][8] = 322;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][8] == 311){
+               ClsGlobal.Matriz1[0][8] = 331;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][8] == 3112){
+               ClsGlobal.Matriz1[0][8] = 332;
+               JBA9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBA10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("A10"));
+        // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][9] == 0){
+               ClsGlobal.Matriz1[0][9] = 1;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 101){
+               ClsGlobal.Matriz1[0][9] = 121;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 102){
+               ClsGlobal.Matriz1[0][9] = 122;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 103){
+               ClsGlobal.Matriz1[0][9] = 123;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 104){
+               ClsGlobal.Matriz1[0][9] = 124;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][9] == 111){
+               ClsGlobal.Matriz1[0][9] = 131;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 112){
+               ClsGlobal.Matriz1[0][9] = 132;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 113){
+               ClsGlobal.Matriz1[0][9] = 133;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 114){
+               ClsGlobal.Matriz1[0][9] = 134;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][9] == 201){
+               ClsGlobal.Matriz1[0][9] = 221;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 202){
+               ClsGlobal.Matriz1[0][9] = 222;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 223){
+               ClsGlobal.Matriz1[0][9] = 223;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][9] == 211){
+               ClsGlobal.Matriz1[0][9] = 231;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 212){
+               ClsGlobal.Matriz1[0][9] = 232;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 213){
+               ClsGlobal.Matriz1[0][9] = 233;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][9] == 301){
+               ClsGlobal.Matriz1[0][9] = 321;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 302){
+               ClsGlobal.Matriz1[0][9] = 322;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][9] == 311){
+               ClsGlobal.Matriz1[0][9] = 331;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][9] == 3112){
+               ClsGlobal.Matriz1[0][9] = 332;
+               JBA10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[1][0] == 0){
+               ClsGlobal.Matriz1[1][0] = 1;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 101){
+               ClsGlobal.Matriz1[1][0] = 121;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 102){
+               ClsGlobal.Matriz1[1][0] = 122;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 103){
+               ClsGlobal.Matriz1[1][0] = 123;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 104){
+               ClsGlobal.Matriz1[1][0] = 124;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[1][0] == 111){
+               ClsGlobal.Matriz1[1][0] = 131;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 112){
+               ClsGlobal.Matriz1[1][0] = 132;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 113){
+               ClsGlobal.Matriz1[1][0] = 133;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 114){
+               ClsGlobal.Matriz1[1][0] = 134;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[1][0] == 201){
+               ClsGlobal.Matriz1[1][0] = 221;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 202){
+               ClsGlobal.Matriz1[1][0] = 222;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 223){
+               ClsGlobal.Matriz1[1][0] = 223;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[1][0] == 211){
+               ClsGlobal.Matriz1[1][0] = 231;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 212){
+               ClsGlobal.Matriz1[1][0] = 232;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 213){
+               ClsGlobal.Matriz1[1][0] = 233;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[1][0] == 301){
+               ClsGlobal.Matriz1[1][0] = 321;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 302){
+               ClsGlobal.Matriz1[1][0] = 322;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[1][0] == 311){
+               ClsGlobal.Matriz1[1][0] = 331;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][0] == 3112){
+               ClsGlobal.Matriz1[1][0] = 332;
+               JBB1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[1][1] == 0){
+               ClsGlobal.Matriz1[1][1] = 1;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 101){
+               ClsGlobal.Matriz1[1][1] = 121;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 102){
+               ClsGlobal.Matriz1[1][1] = 122;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 103){
+               ClsGlobal.Matriz1[1][1] = 123;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 104){
+               ClsGlobal.Matriz1[1][1] = 124;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[1][1] == 111){
+               ClsGlobal.Matriz1[1][1] = 131;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 112){
+               ClsGlobal.Matriz1[1][1] = 132;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 113){
+               ClsGlobal.Matriz1[1][1] = 133;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 114){
+               ClsGlobal.Matriz1[1][1] = 134;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[1][1] == 201){
+               ClsGlobal.Matriz1[1][1] = 221;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 202){
+               ClsGlobal.Matriz1[1][1] = 222;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 223){
+               ClsGlobal.Matriz1[1][1] = 223;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[1][1] == 211){
+               ClsGlobal.Matriz1[1][1] = 231;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 212){
+               ClsGlobal.Matriz1[1][1] = 232;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 213){
+               ClsGlobal.Matriz1[1][1] = 233;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[1][1] == 301){
+               ClsGlobal.Matriz1[1][1] = 321;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 302){
+               ClsGlobal.Matriz1[1][1] = 322;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[1][1] == 311){
+               ClsGlobal.Matriz1[1][1] = 331;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 3112){
+               ClsGlobal.Matriz1[1][1] = 332;
+               JBB2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[1][1] == 0){
+               ClsGlobal.Matriz1[1][1] = 1;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 101){
+               ClsGlobal.Matriz1[1][1] = 121;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[1][1] == 102){
+               ClsGlobal.Matriz1[1][1] = 122;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBB10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("B10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBB10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBC10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("C10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBC10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBD10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("D10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBD10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBE10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("E10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBE10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBF10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("F10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBF10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBG10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("G10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBG10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBH10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("H10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBH10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
      private void JBI1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBI10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("I10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBI10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ1_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J1"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ1_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ2_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J2"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ2_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ3_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J3"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ3_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ4_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J4"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ4_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ5_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J5"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBA5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ5_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ6_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J6"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ6_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ7_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J7"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ7_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ8_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J8"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ8_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ9_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J9"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ9_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
     }
     
     private void JBJ10_1ActionPerformed(java.awt.event.ActionEvent evt) {
-        JOptionPane.showMessageDialog(null, ("J10"));
+         // Barcos pequeños horizontales 
+        if(BAmetralladora1){
+            if(ClsGlobal.Matriz1[0][0] == 0){
+               ClsGlobal.Matriz1[0][0] = 1;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo2.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 101){
+               ClsGlobal.Matriz1[0][0] = 121;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 102){
+               ClsGlobal.Matriz1[0][0] = 122;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 103){
+               ClsGlobal.Matriz1[0][0] = 123;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 104){
+               ClsGlobal.Matriz1[0][0] = 124;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            // Estos son los barcos pequeños verticales
+            
+            
+            if(ClsGlobal.Matriz1[0][0] == 111){
+               ClsGlobal.Matriz1[0][0] = 131;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 112){
+               ClsGlobal.Matriz1[0][0] = 132;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 113){
+               ClsGlobal.Matriz1[0][0] = 133;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 114){
+               ClsGlobal.Matriz1[0][0] = 134;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos medianos Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 201){
+               ClsGlobal.Matriz1[0][0] = 221;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 202){
+               ClsGlobal.Matriz1[0][0] = 222;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 223){
+               ClsGlobal.Matriz1[0][0] = 223;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Medianos verticales
+            if(ClsGlobal.Matriz1[0][0] == 211){
+               ClsGlobal.Matriz1[0][0] = 231;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 212){
+               ClsGlobal.Matriz1[0][0] = 232;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 213){
+               ClsGlobal.Matriz1[0][0] = 233;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            //Barcos Grandes Horizontales
+            
+            if(ClsGlobal.Matriz1[0][0] == 301){
+               ClsGlobal.Matriz1[0][0] = 321;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 302){
+               ClsGlobal.Matriz1[0][0] = 322;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            // Barcos Grandes verticales 
+            if(ClsGlobal.Matriz1[0][0] == 311){
+               ClsGlobal.Matriz1[0][0] = 331;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            if(ClsGlobal.Matriz1[0][0] == 3112){
+               ClsGlobal.Matriz1[0][0] = 332;
+               JBJ10_1.setIcon(new ImageIcon((new ImageIcon(getClass().getResource("/Imagenes/Disparo3.png"))).getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT)));
+               ClsGlobal.Ametralladora1--;
+            }
+            
+            
+            
+        }else if(BMisil1){
+        
+        }else if(BBombaNuclear1){}
+        
+    }
+    
+    
+    
+    private void JBAmetralladora1ActionPerformed(java.awt.event.ActionEvent evt) {
+        if(ClsGlobal.Ametralladora1 > 0){
+         BAmetralladora1 = true;
+         BMisil1 = false;
+         BBombaNuclear1 = false;
+         BAmetralladora2 = false;
+         BMisil2 = false;
+         BBombaNuclear2 = false;
+        }else {
+        JOptionPane.showMessageDialog(null, "La ametralladora ya no tiene balas");
+        }
     }
     
     private void JBSeleccionarBarco1ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -2300,6 +14130,9 @@ public class Principal extends JFrame implements Runnable{
             ActivarJugador1(true);
             ActivarArmasJugador(1);
             VisualizarArmasJugador(1);
+            if (ClsGlobal.Confirmacion1 && ClsGlobal.Confirmacion2){
+            BTurno1 = true;
+            }
        } 
    
     }
@@ -2314,6 +14147,9 @@ public class Principal extends JFrame implements Runnable{
              ActivarJugador2(true);
              ActivarArmasJugador(2);
              VisualizarArmasJugador(2);
+             if (ClsGlobal.Confirmacion1 && ClsGlobal.Confirmacion2){
+            BTurno1 = true;
+            }
        } 
     }
 
