@@ -1907,6 +1907,7 @@ public class Principal extends JFrame implements Runnable{
     }
     
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
+        
         // Barcos pequeños horizontales 
         if(BAmetralladora1){
             if(ClsGlobal.Matriz1[0][0] == 0){
