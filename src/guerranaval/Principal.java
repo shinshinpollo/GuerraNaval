@@ -1906,6 +1906,7 @@ public class Principal extends JFrame implements Runnable{
         }
     }
     
+    
     private void JBA1_1ActionPerformed(java.awt.event.ActionEvent evt) {
         
         // Barcos pequeños horizontales 
