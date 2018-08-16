@@ -3,6 +3,7 @@ package guerranaval;
 
 class ClsGlobal {
 
+    
     //MultiJugador true = 2 jugadores, false = 1 jugador
     static boolean MultiJugador;
     //Confirmacion1 true = El jugador 1 ya puso sus barcos, false = el jugador 1 no ah puesto sus barcos
